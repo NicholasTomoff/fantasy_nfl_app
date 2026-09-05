@@ -17,4 +17,7 @@ COPY . .
 EXPOSE 8080
 
 # Run uvicorn with your FastAPI app
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+# --forwarded-allow-ips=*: Fly terminates TLS and proxies plain HTTP from a
+# private address, so without this uvicorn ignores X-Forwarded-Proto and
+# builds redirects as http:// -- which an HTTPS page blocks as mixed content.
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080", "--proxy-headers", "--forwarded-allow-ips", "*"]
