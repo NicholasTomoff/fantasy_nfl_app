@@ -4,7 +4,7 @@ from collections import defaultdict
 from typing import List, Optional
 
 from fastapi import APIRouter, Depends, Query, HTTPException
-from sqlalchemy import func, select
+from sqlalchemy import func, select, and_
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import joinedload, aliased
 
@@ -18,8 +18,12 @@ logger = logging.getLogger("uvicorn.error")
 # ---------- Endpoint 1: Get players by position ----------
 @router.get("/players/{position}", response_model=List[schemas.PlayerOut])
 async def get_players_by_position(position: str, db: AsyncSession = Depends(get_db)):
-    stmt = select(models.Player).options(joinedload(models.Player.team))
-    
+    stmt = (
+        select(models.Player)
+        .options(joinedload(models.Player.team))
+        .filter(models.Player.active.is_(True))  # current rosters only
+    )
+
     if position.upper() == "WR":
         stmt = stmt.filter(models.Player.position.in_(["WR", "TE"]))
     else:
@@ -43,7 +47,6 @@ async def get_top_players_by_position(position: str, season: int = Query(..., de
         raise HTTPException(status_code=400, detail="Invalid position")
 
     pg = aliased(PlayerGameStat)
-    g = aliased(NFLGame)
 
     stmt = (
         select(
@@ -57,8 +60,17 @@ async def get_top_players_by_position(position: str, season: int = Query(..., de
                 else pg.receiving_yards
             ), 0).label("total_yards"),
         )
-        .outerjoin(pg, Player.player_id == pg.player_id)
-        .outerjoin(g, (pg.game_id == g.id) & (g.season == season))
+        .select_from(Player)
+        # LEFT JOIN only the stat rows belonging to this season. Restricting the
+        # joined rows (rather than filtering afterwards) keeps players with no
+        # stats -- rookies, and everyone before week 1 -- at a coalesced 0.
+        .outerjoin(
+            pg,
+            and_(
+                Player.player_id == pg.player_id,
+                pg.game_id.in_(select(NFLGame.id).where(NFLGame.season == season).scalar_subquery()),
+            ),
+        )
     )
 
     if position_upper == "WR":
@@ -68,7 +80,6 @@ async def get_top_players_by_position(position: str, season: int = Query(..., de
 
     stmt = (
         stmt.filter(Player.active == True)
-        .filter(g.season == season)  # ✅ apply season filter AFTER the join
         .group_by(Player.player_id, Player.player_name, Player.team_name, Player.team_id)
         .order_by(func.coalesce(func.sum(
             pg.passing_yards if position_upper == "QB" 
@@ -158,6 +169,19 @@ async def get_players_with_stats(position: str, seasons: Optional[List[int]] = Q
     if not stat_field:
         raise HTTPException(status_code=400, detail="Invalid position")
 
+    # Keep the season condition INSIDE the outer join. As a trailing WHERE it
+    # would collapse the LEFT JOIN into an INNER JOIN and drop every player
+    # without stats in that season (all rookies -- and in a season that has not
+    # started yet, everyone).
+    stat_join = Player.player_id == PlayerGameStat.player_id
+    if seasons:
+        stat_join = and_(
+            stat_join,
+            PlayerGameStat.game_id.in_(
+                select(NFLGame.id).where(NFLGame.season.in_(seasons)).scalar_subquery()
+            ),
+        )
+
     try:
         stmt = (
                 select(
@@ -169,8 +193,8 @@ async def get_players_with_stats(position: str, seasons: Optional[List[int]] = Q
                     Team.name.label("team_name"),
                     func.coalesce(func.sum(stat_field), 0).label("total_yards"),
                 )
-                .outerjoin(PlayerGameStat, Player.player_id == PlayerGameStat.player_id)
-                .outerjoin(NFLGame, PlayerGameStat.game_id == NFLGame.id)
+                .select_from(Player)
+                .outerjoin(PlayerGameStat, stat_join)
                 .outerjoin(Team, Team.id == Player.team_id)
                 .where(Player.active.is_(True))
             )
@@ -180,10 +204,6 @@ async def get_players_with_stats(position: str, seasons: Optional[List[int]] = Q
             stmt = stmt.where(Player.position.in_(["WR", "TE"]))
         else:
             stmt = stmt.where(Player.position == position_upper)
-
-        # Seasonal filter (THIS is the key addition)
-        if seasons:
-            stmt = stmt.where(NFLGame.season.in_(seasons))
 
         stmt = stmt.group_by(
             Player.id,

@@ -5,6 +5,11 @@ __pycache__/
 *.pyd
 env/
 venv/
+# the project venv lives at app/venv, which a bare `venv/` does not match
+**/venv/
+**/__pycache__/
+.mypy_cache/
+**/.mypy_cache/
 .env
 
 # Node
