@@ -184,7 +184,9 @@ export default function StreakHistoryPage() {
 
             {/* SEASON CARDS */}
             <div className="stat-card-grid">
-                {history.map(season => (
+                {/* Newest season first. The chart stays chronological so the
+                    trend lines still read left-to-right. */}
+                {[...history].reverse().map(season => (
                     <div key={season.season} className="season-card">
                         <h3>{season.season}</h3>
 
