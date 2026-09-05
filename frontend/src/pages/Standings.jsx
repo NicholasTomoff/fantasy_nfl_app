@@ -9,7 +9,7 @@ import { useLeague } from "@/context/LeagueContext";
 const renderStreakIcons = (count) => {
   if (count === 0) {
     return (
-      <span className="text-red-600 font-bold flex items-center justify-center gap-1">
+      <span className="text-red-400 font-bold flex items-center justify-center gap-1">
         <FaTimes /> 0
       </span>
     );
@@ -28,7 +28,7 @@ const renderTripleStreakIcons = (points) => {
   const count = Math.floor(points / 5);
   if (count === 0) {
     return (
-      <span className="text-red-600 font-bold flex items-center justify-center gap-1">
+      <span className="text-red-400 font-bold flex items-center justify-center gap-1">
         <FaTimes /> 0
       </span>
     );
@@ -43,7 +43,16 @@ const renderTripleStreakIcons = (points) => {
   );
 };
 
+// Rank 1-3 use the same medal colours as the Streak Hub podium, so "who is
+// winning" reads identically across the app.
+const RANK_STYLES = {
+  1: { row: "bg-yellow-400/10", accent: "border-l-4 border-l-yellow-400", rank: "text-yellow-300 font-extrabold" },
+  2: { row: "bg-slate-300/10", accent: "border-l-4 border-l-slate-300", rank: "text-slate-200 font-bold" },
+  3: { row: "bg-orange-400/10", accent: "border-l-4 border-l-orange-400", rank: "text-orange-300 font-bold" },
+};
+
 const Standings = () => {
+  const { user } = useUser();
   const [standings, setStandings] = useState([]);
   const [allSeasons, setAllSeasons] = useState([]);
   const { season, setSeason, currentWeek, setCurrentWeek } = useSeason();
@@ -209,6 +218,10 @@ const Standings = () => {
   }
 
   // Compute ranks before rendering
+  // Same person, whether the row came back keyed by email or name.
+  const isMe = (entry) =>
+    !!user?.email && entry.user_email?.toLowerCase() === user.email.toLowerCase();
+
   const standingsWithRanks = (() => {
     let lastPoints = null;
     let lastRank = 0;
@@ -240,7 +253,7 @@ const Standings = () => {
         </h2>
 
         <div className="flex items-center gap-2">
-          <label htmlFor="season" className="text-sm font-medium text-gray-700">
+          <label htmlFor="season" className="text-sm font-medium text-gray-300">
             Season:
           </label>
           <select
@@ -257,7 +270,7 @@ const Standings = () => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center text-gray-500 mb-4 px-2">
+      <div className="flex justify-between items-center text-gray-400 mb-4 px-2">
         <p className="text-sm">
           Finalized Through: <span className="font-medium">Week {currentFinalizedWeek !== null ? currentFinalizedWeek : "..."}</span>
         </p>
@@ -299,40 +312,46 @@ const Standings = () => {
             {standingsWithRanks.map((entry, index) => (
               <tr
                 key={index}
-                className="text-center group hover:bg-black"
+                className={[
+                  "text-center group transition-colors hover:bg-slate-700/60",
+                  RANK_STYLES[entry.rank]?.row ?? "",
+                  isMe(entry) ? "ring-1 ring-inset ring-blue-400/60 bg-blue-500/10" : "",
+                ].join(" ")}
               >
-                <td className="border p-2 group-hover:text-white">{entry.rank}</td>
-                <td className="border p-2 font-semibold text-left text-white bg-gray-800 sticky left-0 z-[5]">
+                <td className={`border p-2 ${RANK_STYLES[entry.rank]?.accent ?? ""} ${RANK_STYLES[entry.rank]?.rank ?? ""}`}>
+                  {entry.rank}
+                </td>
+                <td className={`border p-2 font-semibold text-left text-white sticky left-0 z-[5] ${isMe(entry) ? "bg-blue-900" : "bg-gray-800"}`}>
                   {entry.user_name}
                 </td>
-                <td className="border p-2 text-center text-yellow-300 text-lg font-extrabold group-hover:text-white">
+                <td className="border p-2 text-center text-yellow-300 text-lg font-extrabold">
                   {entry.total_points}
                 </td>
-                <td className="border p-2 group-hover:text-white">
+                <td className="border p-2">
                   {renderTripleStreakIcons(entry.triple_streak)}
                 </td>
-                <td className="border p-2 text-center group-hover:text-white">
+                <td className="border p-2 text-center">
                   {entry.weekly_points}
                 </td>
-                <td className="border p-2 group-hover:text-white">
+                <td className="border p-2">
                   {renderStreakIcons(entry.streaks.QB)}
                 </td>
-                <td className="border p-2 group-hover:text-white">
+                <td className="border p-2">
                   {renderStreakIcons(entry.streaks.RB)}
                 </td>
-                <td className="border p-2 group-hover:text-white">
+                <td className="border p-2">
                   {renderStreakIcons(entry.streaks.WR)}
                 </td>
-                <td className="border p-2 text-left group-hover:text-white">
+                <td className="border p-2 text-left">
                   {entry.picks.QB}
                 </td>
-                <td className="border p-2 text-left group-hover:text-white">
+                <td className="border p-2 text-left">
                   {entry.picks.RB}
                 </td>
-                <td className="border p-2 text-left group-hover:text-white">
+                <td className="border p-2 text-left">
                   {entry.picks.WR}
                 </td>
-                <td className="border p-2 text-center text-green-400 group-hover:text-white font-bold">
+                <td className="border p-2 text-center text-green-400 font-bold">
                   {maxPointsByUser[entry.user_email] ?? "-"}
                 </td>
 
