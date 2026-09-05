@@ -18,4 +18,4 @@ async def get_current_season_endpoint(db: AsyncSession = Depends(get_db)):
 async def get_all_seasons(db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(Season).order_by(Season.year.desc()))
     seasons = result.scalars().all()
-    return [{"year": s.year, "start_date": s.start_date, "end_date": s.end_date} for s in seasons]
+    return [{"year": s.year, "is_current": s.is_current, "start_date": s.start_date, "end_date": s.end_date} for s in seasons]

@@ -8,18 +8,19 @@ from sqlalchemy.future import select
 from sqlalchemy import and_
 from app.models import WeeklyPick, PlayerGameStat, WeeklyScore, PositionStreak, AllPositionStreak, NFLGame, Player, LeagueMember, User
 from app.database import async_session
+from app.utils.membership import get_active_member_emails
 from typing import Optional
 import logging
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-async def get_previous_week_score(db: AsyncSession, email: str, week: int, league_id: int) -> Optional[WeeklyScore]:
+async def get_previous_week_score(db: AsyncSession, email: str, week: int, season: int, league_id: int) -> Optional[WeeklyScore]:
     if week <= 1:
         print(f"⏮️ Week {week} - no previous week to load score from.")
         return None
     result = await db.execute(
-        select(WeeklyScore).filter_by(user_email=email, week=week-1, league_id=league_id)
+        select(WeeklyScore).filter_by(user_email=email, week=week-1, season=season, league_id=league_id)
     )
     prev_score = result.scalars().first()
     print(f"🔙 Loaded previous week {week-1} score for {email}: {prev_score}")
@@ -149,9 +150,20 @@ def evaluate_hit(pos: str, stat, player_position: str = None) -> bool:
 async def score_week_with_session(db: AsyncSession, week: int, season: int, league_id: int):
     print(f"🏈 Scoring Week {week} for league {league_id}, season {season}...")
 
+    # --- Members playing this league THIS season (falls back to the full
+    #     roster when the season was never opened for check-in) ---
+    all_users = await get_active_member_emails(db, league_id, season)
+
     # Load all picks for this week and league
-    result = await db.execute(select(WeeklyPick).filter_by(week=week, league_id=league_id))
+    result = await db.execute(select(WeeklyPick).filter_by(week=week, season=season, league_id=league_id))
     picks = result.scalars().all()
+
+    # Drop picks belonging to members who are sitting this season out. Their
+    # pick rows stay in the table; they simply are not scored or ranked.
+    skipped = [p.user_email for p in picks if p.user_email not in all_users]
+    if skipped:
+        print(f"🚫 Ignoring picks from members not active this season: {sorted(set(skipped))}")
+    picks = [p for p in picks if p.user_email in all_users]
     print(f"👥 Found {len(picks)} picks to score.")
 
     # ==================================================
@@ -160,14 +172,6 @@ async def score_week_with_session(db: AsyncSession, week: int, season: int, leag
 
     # Users who DID submit picks this week
     picked_users = {p.user_email for p in picks}
-
-    # --- Correct: all league members ---
-    result = await db.execute(
-        select(User.email)
-        .join(LeagueMember, LeagueMember.user_id == User.id)
-        .filter(LeagueMember.league_id == league_id)
-    )
-    all_users = set(result.scalars().all())
 
     # Users missing this week
     users_without_picks = all_users - picked_users
@@ -178,7 +182,7 @@ async def score_week_with_session(db: AsyncSession, week: int, season: int, leag
 
     for email in users_without_picks:
         print(f"🔍 Processing carry-forward for {email} week {week} league {league_id}...")
-        prev = await get_previous_week_score(db, email, week, league_id)
+        prev = await get_previous_week_score(db, email, week, season, league_id)
 
         if not prev:
             print(f"🛟 No previous score to carry for {email}, skipping.")
@@ -189,6 +193,7 @@ async def score_week_with_session(db: AsyncSession, week: int, season: int, leag
             select(WeeklyScore).filter_by(
                 user_email=email,
                 week=week,
+                season=season,
                 league_id=league_id,
             )
         )
@@ -245,7 +250,7 @@ async def score_week_with_session(db: AsyncSession, week: int, season: int, leag
         print(f"\n🔍 Scoring for user: {email}")
 
         # Previous week's score
-        previous_score = await get_previous_week_score(db, email, week, league_id)
+        previous_score = await get_previous_week_score(db, email, week, season, league_id)
         prev_qb_streak = previous_score.qb_streak if previous_score else 0
         prev_rb_streak = previous_score.rb_streak if previous_score else 0
         prev_wr_streak = previous_score.wr_streak if previous_score else 0
@@ -331,7 +336,7 @@ async def score_week_with_session(db: AsyncSession, week: int, season: int, leag
               f"All-pos bonus: {all_bonus}")
 
         # Save or update WeeklyScore
-        result = await db.execute(select(WeeklyScore).filter_by(user_email=email, week=week, league_id=league_id))
+        result = await db.execute(select(WeeklyScore).filter_by(user_email=email, week=week, season=season, league_id=league_id))
         existing_score = result.scalars().first()
 
         if existing_score:
@@ -395,7 +400,7 @@ async def project_max_points(league_id: int, currentFinalizedWeek: int, season: 
     async with async_session() as db:  
         # Get distinct list of users from WeeklyPick (league context)
         q = await db.execute(
-            select(WeeklyPick.user_email).filter_by(league_id=league_id).distinct()
+            select(WeeklyPick.user_email).filter_by(league_id=league_id, season=season).distinct()
         )
         users = q.scalars().all() 
 
@@ -408,6 +413,7 @@ async def project_max_points(league_id: int, currentFinalizedWeek: int, season: 
                 select(WeeklyScore).filter_by(
                     user_email=email,
                     week=currentFinalizedWeek,
+                    season=season,
                     league_id=league_id
                 )
             )

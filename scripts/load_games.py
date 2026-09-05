@@ -23,7 +23,7 @@ HEADERS = {
     "x-rapidapi-key": API_KEY,
 }
 
-SEASON = 2025  # Change per season
+SEASON = 2026  # Change per season
 LEAGUE_ID = 1  # NFL per API docs
 LEAGUE = "NFL"
 
@@ -60,7 +60,7 @@ async def load_games_into_db(games, session: AsyncSession):
                 # UPDATE mutable fields (kickoff time, status, scores)
             existing.week = game_data.get("week", existing.week)
             existing.stage = game_data.get("stage", existing.stage)
-            existing.date = (
+            existing.datetime = (
                 datetime
                 .fromtimestamp(game_data["date"]["timestamp"], tz=timezone.utc)
                 .replace(tzinfo=None)

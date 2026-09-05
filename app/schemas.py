@@ -1,6 +1,7 @@
 from pydantic import BaseModel, EmailStr, constr, Field
 from typing import Optional, List, Dict
 from datetime import datetime
+from enum import Enum
 
 # ------------- Team Schema -------------
 class TeamOut(BaseModel):
@@ -278,6 +279,39 @@ class LeagueSeasonFinancePayoutUpdate(BaseModel):
 class LeagueSeasonMemberPaymentUpdate(BaseModel):
     paid: bool
     paid_date: Optional[datetime] = None
+
+# --- League Season Membership (per-season "are you in?" check-in) ---
+class SeasonMemberStatus(str, Enum):
+    pending = "pending"
+    in_ = "in"
+    out = "out"
+
+
+class LeagueSeasonMemberOut(BaseModel):
+    user_id: int
+    user_name: Optional[str] = None
+    user_email: Optional[str] = None
+    status: SeasonMemberStatus = SeasonMemberStatus.pending
+    responded_at: Optional[datetime] = None
+    set_by_commissioner: bool = False
+
+    class Config:
+        orm_mode = True
+
+
+class LeagueSeasonRosterOut(BaseModel):
+    league_id: int
+    league_name: Optional[str] = None
+    season_year: int
+    is_commissioner: bool = False
+    my_status: SeasonMemberStatus = SeasonMemberStatus.pending
+    counts: Dict[str, int] = Field(default_factory=dict)
+    members: List[LeagueSeasonMemberOut] = Field(default_factory=list)
+
+
+class SeasonMemberStatusUpdate(BaseModel):
+    status: SeasonMemberStatus
+
 
 # --- Streak History ---
 class StreakHistoryBase(BaseModel):

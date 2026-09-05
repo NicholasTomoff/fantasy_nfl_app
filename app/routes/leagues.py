@@ -465,3 +465,160 @@ async def toggle_member_payment(league_id: int, season_year: int, user_id: int, 
             for mp in finance.member_payments
         ]
     )
+
+
+# =====================================================================
+# Season check-in: who is playing this league this season
+#
+# league_members is the permanent roster and is never deleted, so a member
+# who sits out keeps every pick, score and podium finish from prior seasons.
+# league_season_members answers "are you in for THIS year".
+# =====================================================================
+
+async def _load_league(league_id: int, db: AsyncSession) -> models.League:
+    result = await db.execute(
+        select(models.League)
+        .where(models.League.id == league_id)
+        .options(joinedload(models.League.members).joinedload(models.LeagueMember.user))
+    )
+    league = result.scalars().unique().one_or_none()
+    if not league:
+        raise HTTPException(status_code=404, detail="League not found")
+    return league
+
+
+async def _season_member_rows(league_id: int, season_year: int, db: AsyncSession):
+    result = await db.execute(
+        select(models.LeagueSeasonMember).filter_by(
+            league_id=league_id, season_year=season_year
+        )
+    )
+    return {r.user_id: r for r in result.scalars().all()}
+
+
+def _roster_response(league, season_year, rows, current_user) -> schemas.LeagueSeasonRosterOut:
+    is_commissioner = league.created_by_user_id == current_user.id
+    members, counts = [], {"in": 0, "out": 0, "pending": 0}
+    my_status = schemas.SeasonMemberStatus.pending
+
+    for m in league.members:
+        if not m.user:
+            continue
+        row = rows.get(m.user.id)
+        status = row.status if row else "pending"
+        counts[status] = counts.get(status, 0) + 1
+        if m.user.id == current_user.id:
+            my_status = schemas.SeasonMemberStatus(status)
+        members.append(
+            schemas.LeagueSeasonMemberOut(
+                user_id=m.user.id,
+                user_name=m.user.name,
+                user_email=m.user.email,
+                status=schemas.SeasonMemberStatus(status),
+                responded_at=row.responded_at if row else None,
+                set_by_commissioner=bool(row and row.set_by_user_id),
+            )
+        )
+
+    members.sort(key=lambda x: (x.status != "in", (x.user_name or "").lower()))
+    return schemas.LeagueSeasonRosterOut(
+        league_id=league.id,
+        league_name=league.name,
+        season_year=season_year,
+        is_commissioner=is_commissioner,
+        my_status=my_status,
+        counts=counts,
+        members=members,
+    )
+
+
+async def _set_status(league_id, season_year, user_id, status, db, set_by=None):
+    """Upsert one member's season status. Caller has already authorised."""
+    result = await db.execute(
+        select(models.LeagueSeasonMember).filter_by(
+            league_id=league_id, season_year=season_year, user_id=user_id
+        )
+    )
+    row = result.scalars().one_or_none()
+    if row:
+        row.status = status
+        row.responded_at = datetime.utcnow()
+        row.set_by_user_id = set_by
+    else:
+        db.add(
+            models.LeagueSeasonMember(
+                league_id=league_id,
+                season_year=season_year,
+                user_id=user_id,
+                status=status,
+                responded_at=datetime.utcnow(),
+                set_by_user_id=set_by,
+            )
+        )
+    await db.commit()
+
+
+# --------- Season roster with member's status ---------
+@router.get("/{league_id}/season/{season_year}/roster", response_model=schemas.LeagueSeasonRosterOut)
+async def get_season_roster(league_id: int, season_year: int, db: AsyncSession = Depends(get_db), current_user: models.User = Depends(get_current_user)):
+    league = await _load_league(league_id, db)
+    rows = await _season_member_rows(league_id, season_year, db)
+    return _roster_response(league, season_year, rows, current_user)
+
+
+# --------- Open the season: create pending rows for the whole roster ---------
+@router.post("/{league_id}/season/{season_year}/open", response_model=schemas.LeagueSeasonRosterOut)
+async def open_season(league_id: int, season_year: int, db: AsyncSession = Depends(get_db), current_user: models.User = Depends(get_current_user)):
+    league = await _load_league(league_id, db)
+    if league.created_by_user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Only the league commissioner can open a season.")
+
+    season = (await db.execute(select(models.Season).filter_by(year=season_year))).scalars().first()
+    if not season:
+        raise HTTPException(status_code=400, detail=f"No season row for {season_year}.")
+
+    existing = await _season_member_rows(league_id, season_year, db)
+    created = 0
+    for m in league.members:
+        if m.user and m.user.id not in existing:
+            db.add(
+                models.LeagueSeasonMember(
+                    league_id=league_id,
+                    season_year=season_year,
+                    user_id=m.user.id,
+                    status="pending",
+                )
+            )
+            created += 1
+    if created:
+        await db.commit()
+    logger.info(f"Opened season {season_year} for league {league_id}: {created} pending rows")
+
+    rows = await _season_member_rows(league_id, season_year, db)
+    return _roster_response(league, season_year, rows, current_user)
+
+
+# --------- Member answers "in" or "out" for themselves ---------
+@router.post("/{league_id}/season/{season_year}/me", response_model=schemas.LeagueSeasonRosterOut)
+async def set_my_season_status(league_id: int, season_year: int, payload: schemas.SeasonMemberStatusUpdate, db: AsyncSession = Depends(get_db), current_user: models.User = Depends(get_current_user)):
+    league = await _load_league(league_id, db)
+    if not any(m.user_id == current_user.id for m in league.members):
+        raise HTTPException(status_code=403, detail="You are not a member of this league.")
+
+    await _set_status(league_id, season_year, current_user.id, payload.status.value, db)
+    rows = await _season_member_rows(league_id, season_year, db)
+    return _roster_response(league, season_year, rows, current_user)
+
+
+# --------- Commissioner sets a member's status ---------
+@router.post("/{league_id}/season/{season_year}/member/{user_id}/status", response_model=schemas.LeagueSeasonRosterOut)
+async def set_member_season_status(league_id: int, season_year: int, user_id: int, payload: schemas.SeasonMemberStatusUpdate, db: AsyncSession = Depends(get_db), current_user: models.User = Depends(get_current_user)):
+    league = await _load_league(league_id, db)
+    if league.created_by_user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Only the league commissioner can set another member's status.")
+    if not any(m.user_id == user_id for m in league.members):
+        raise HTTPException(status_code=404, detail="That user is not on this league's roster.")
+
+    await _set_status(league_id, season_year, user_id, payload.status.value, db, set_by=current_user.id)
+    rows = await _season_member_rows(league_id, season_year, db)
+    return _roster_response(league, season_year, rows, current_user)

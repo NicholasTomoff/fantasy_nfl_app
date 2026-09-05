@@ -9,7 +9,7 @@ from app.models import Player, Team
 from app.database import get_db
 from sqlalchemy import select
 
-SEASON = 2025
+SEASON = 2026
 PLAYER_FILENAME = f"app/data/players_{SEASON}.json"
 TEAM_FILENAME = f"app/data/teams_{SEASON}.json"
 

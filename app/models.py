@@ -200,6 +200,36 @@ class LeagueMember(Base):
         UniqueConstraint('user_id', 'league_id', name='uq_user_league'),
     )
 
+class LeagueSeasonMember(Base):
+    """
+    Per-season participation for a league.
+
+    `league_members` stays the permanent roster -- "has ever played here" -- and is
+    never deleted, which is what keeps a departed member's picks, scores and podium
+    finishes resolvable. This table answers the separate question of who is actually
+    playing in a given season.
+    """
+    __tablename__ = "league_season_members"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    league_id = Column(Integer, ForeignKey("leagues.id"), nullable=False, index=True)
+    season_year = Column(Integer, nullable=False, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False, index=True)
+
+    status = Column(String, nullable=False, default="pending")  # pending | in | out
+    responded_at = Column(DateTime, nullable=True)
+    # set by a commissioner override rather than the member themselves
+    set_by_user_id = Column(Integer, ForeignKey("users.id"), nullable=True)
+
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    league = relationship("League", backref="season_members", lazy="selectin")
+    user = relationship("User", foreign_keys=[user_id], lazy="joined")
+
+    __table_args__ = (
+        UniqueConstraint("league_id", "season_year", "user_id", name="uq_league_season_member"),
+    )
+
 class LeagueInviteToken(Base):
     __tablename__ = "league_invite_tokens"
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
@@ -294,6 +324,7 @@ __all_models__ = [
 
     League,               # Requires User via created_by_user_id
     LeagueMember,         # Requires League, User
+    LeagueSeasonMember,   # Requires League, User -- per-season participation
     LeagueInviteToken,    # Requires League
     LeagueSeasonFinance,
     LeagueSeasonMemberPayment, 

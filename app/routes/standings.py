@@ -4,6 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.database import get_db
 from app.models import User, WeeklyScore, WeeklyPick, Player, LeagueMember
 from sqlalchemy.orm import joinedload
+from app.utils.membership import get_active_member_emails
 
 router = APIRouter()
 
@@ -62,6 +63,8 @@ async def get_standings(league_id: int, week: int, season: int, db: AsyncSession
     print(f"✅ In standings: league_id={league_id}, season={season}, week={week}")
 
     # Step 1: Get league members with eager loaded memberships
+    active_emails = await get_active_member_emails(db, league_id, season)
+
     result = await db.execute(
         select(User)
         .options(
@@ -71,6 +74,7 @@ async def get_standings(league_id: int, week: int, season: int, db: AsyncSession
         )
         .join(LeagueMember, LeagueMember.user_id == User.id)
         .filter(LeagueMember.league_id == league_id)
+        .filter(User.email.in_(active_emails) if active_emails else False)
     )
     users = result.scalars().unique().all()
     print(f"👥 Found {len(users)} users in league {league_id}")
