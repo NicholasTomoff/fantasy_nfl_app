@@ -30,12 +30,13 @@ const CreateLeague = () => {
         }
 
         try {
-            const res = await apiFetch("/api/leagues/", {
+            // No trailing slash: the route is registered as "/api/leagues", and
+            // FastAPI answers "/api/leagues/" with a 307 the browser refuses to
+            // follow cross-origin on a preflighted request.
+            // Headers are left to apiFetch, which attaches the bearer token
+            // correctly -- options.headers is spread last and would override it.
+            const res = await apiFetch("/api/leagues", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer  ${token}`, // Adjust if you use different auth header
-                },
                 body: JSON.stringify({ name, min_players: minPlayers, season_year: seasonYear }),
             });
 

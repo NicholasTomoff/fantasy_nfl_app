@@ -296,12 +296,11 @@ const Leagues = () => {
         if (!token) return;
         try {
             setJoiningId(leagueId);
+            // Auth header left to apiFetch: options.headers is spread last, so a
+            // hand-built one overrides it -- and "Bearer  <token>" (two spaces)
+            // parses to a token with a leading space and 401s.
             const res = await apiFetch(`/api/leagues/${leagueId}/join`, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer  ${token}`,
-                },
                 body: JSON.stringify({ user_id: user.id }),
             });
             if (!res.ok) {
