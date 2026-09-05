@@ -126,7 +126,7 @@ async def join_league(league_id: int, db: AsyncSession = Depends(get_db), curren
         raise HTTPException(status_code=400, detail="User already joined this league")
 
     new_member = models.LeagueMember(league_id=league_id, user_id=current_user.id)
-    await db.add(new_member)
+    db.add(new_member)
     await db.commit()
     await db.refresh(new_member)
 

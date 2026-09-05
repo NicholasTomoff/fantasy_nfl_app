@@ -47,6 +47,74 @@
     margin-top: 10px;
 }
 
+/* ---- Season card rows -------------------------------------------------
+   Labels stay quiet, values carry the colour. Grouping plus tinting means
+   you can find the podium or the position records without reading down
+   every line. */
+
+.season-card h3 {
+    margin: 0 0 14px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: 0.5px;
+}
+
+.card-group {
+    padding: 10px 0;
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.card-group:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.card-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.card-label {
+    flex: 0 0 auto;
+    min-width: 104px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #94a3b8;
+}
+
+.card-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+.card-holder {
+    font-size: 13px;
+    font-style: italic;
+    color: #cbd5e1;
+    opacity: 0.75;
+}
+
+/* podium */
+.tone-gold   { color: #fbbf24; }
+.tone-silver { color: #e2e8f0; }
+.tone-bronze { color: #fb923c; }
+
+/* season records -- matched to the chart line colours */
+.tone-green  { color: #4ade80; }
+.tone-indigo { color: #a5b4fc; }
+.tone-orange { color: #fdba74; }
+
+/* positions */
+.tone-qb { color: #60a5fa; }
+.tone-rb { color: #f472b6; }
+.tone-wr { color: #2dd4bf; }
+
 .record-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

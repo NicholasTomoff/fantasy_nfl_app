@@ -187,41 +187,67 @@ export default function StreakHistoryPage() {
                 {history.map(season => (
                     <div key={season.season} className="season-card">
                         <h3>{season.season}</h3>
-                        <p><strong>Champion:</strong> {season.champion_name}</p>
-                        <p><strong>Runner-Up:</strong> {season.runner_up_name}</p>
-                        <p><strong>Third:</strong> {season.third_place_name}</p>
-                        <p><strong>Members:</strong> {season.member_count}</p>
-                        <p>
-                            <strong>Best Start:</strong> {season.best_triple_start}
-                            {season.best_triple_start_name && ` (${season.best_triple_start_name})`}
-                        </p>
-                        <p>
-                            <strong>Longest Triple:</strong> {season.longest_triple_streak}
-                            {season.longest_triple_name && ` (${season.longest_triple_name})`}
-                        </p>
-                        <p>
-                            <strong>QB / RB / WR:</strong>{" "}
-                            {season.longest_qb_streak}{season.longest_qb_name && ` (${season.longest_qb_name})`} /{" "}
-                            {season.longest_rb_streak}{season.longest_rb_name && ` (${season.longest_rb_name})`} /{" "}
-                            {season.longest_wr_streak}{season.longest_wr_name && ` (${season.longest_wr_name})`}
-                        </p>
-                        <p>
-                            <strong>Most Triples:</strong> {season.most_triples_in_season}
-                            {season.most_triples_name && ` (${season.most_triples_name})`}
-                        </p>
-                        <p>
-                            <strong>Clinched:</strong>{" "}
-                            {season.clinched_week
-                                ? `Week ${season.clinched_week}`
-                                : season.clinched_note ?? "—"}
-                        </p>
-                        {season.winner_score != null && (
-                            <p><strong>Winning Score:</strong> {season.winner_score}</p>
-                        )}
+
+                        <div className="card-group">
+                            <CardRow label="Champion" value={season.champion_name} tone="gold" />
+                            <CardRow label="Runner-Up" value={season.runner_up_name} tone="silver" />
+                            <CardRow label="Third" value={season.third_place_name} tone="bronze" />
+                        </div>
+
+                        <div className="card-group">
+                            <CardRow
+                                label="Best Start"
+                                value={season.best_triple_start}
+                                holder={season.best_triple_start_name}
+                                tone="green"
+                            />
+                            <CardRow
+                                label="Longest Triple"
+                                value={season.longest_triple_streak}
+                                holder={season.longest_triple_name}
+                                tone="indigo"
+                            />
+                            <CardRow
+                                label="Most Triples"
+                                value={season.most_triples_in_season}
+                                holder={season.most_triples_name}
+                                tone="orange"
+                            />
+                        </div>
+
+                        <div className="card-group">
+                            <CardRow label="QB" value={season.longest_qb_streak} holder={season.longest_qb_name} tone="qb" />
+                            <CardRow label="RB" value={season.longest_rb_streak} holder={season.longest_rb_name} tone="rb" />
+                            <CardRow label="WR" value={season.longest_wr_streak} holder={season.longest_wr_name} tone="wr" />
+                        </div>
+
+                        <div className="card-group">
+                            <CardRow label="Players" value={season.member_count} />
+                            <CardRow
+                                label="Clinched"
+                                value={season.clinched_week ? `Week ${season.clinched_week}` : season.clinched_note ?? "—"}
+                            />
+                            {season.winner_score != null && (
+                                <CardRow label="Winning Score" value={season.winner_score} />
+                            )}
+                        </div>
                     </div>
                 ))}
             </div>
         </div>
+    );
+}
+
+// One label/value line on a season card. `tone` tints the value so the eye can
+// pick out a section without reading every label.
+function CardRow({ label, value, holder, tone }) {
+    if (value === null || value === undefined || value === "") return null;
+    return (
+        <p className="card-row">
+            <span className="card-label">{label}</span>
+            <span className={`card-value${tone ? ` tone-${tone}` : ""}`}>{value}</span>
+            {holder && <span className="card-holder">{holder}</span>}
+        </p>
     );
 }
 

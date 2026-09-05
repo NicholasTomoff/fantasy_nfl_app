@@ -32,7 +32,7 @@ async def seed_seasons():
             existing = result.scalar_one_or_none()
 
             if not existing:
-                await db.add(Season(**data))
+                db.add(Season(**data))
 
         await db.commit()
         print("✅ Seeded seasons.")
