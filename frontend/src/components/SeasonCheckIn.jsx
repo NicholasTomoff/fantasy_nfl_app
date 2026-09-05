@@ -150,8 +150,12 @@ const SeasonCheckIn = ({ leagueId, seasonYear }) => {
                 key={m.user_id}
                 className="bg-blue-700 rounded-xl p-3 shadow-md flex items-center justify-between gap-2"
               >
-                <div className="min-w-0">
-                  <p className="text-white font-medium truncate">{m.user_name || m.user_email}</p>
+                {/* Names wrap rather than truncate -- a half-shown name is
+                    useless when the whole point is knowing who has answered. */}
+                <div className="flex-1 min-w-0">
+                  <p className="text-white font-medium break-words leading-tight">
+                    {m.user_name || m.user_email}
+                  </p>
                   <span className={`inline-block mt-1 px-2 py-0.5 rounded-full border text-xs ${STATUS_STYLE[m.status]}`}>
                     {STATUS_LABEL[m.status]}
                     {m.set_by_commissioner && " (set by you)"}
@@ -161,7 +165,8 @@ const SeasonCheckIn = ({ leagueId, seasonYear }) => {
                   disabled={busy}
                   value={m.status}
                   onChange={(e) => setFor(m.user_id, e.target.value)}
-                  className="bg-blue-800 text-white text-sm rounded-lg px-2 py-1 border border-blue-400/40"
+                  title="Set this member's status for the season"
+                  className="shrink-0 bg-blue-800 text-white text-xs rounded-lg pl-1.5 pr-5 py-0.5 border border-blue-400/40"
                 >
                   <option value="in">In</option>
                   <option value="out">Out</option>
