@@ -51,7 +51,7 @@ async def create_league(league_in: schemas.LeagueCreate, db: AsyncSession = Depe
         season_year=league_in.season_year,
         created_by_user_id=current_user.id,
     )
-    await db.add(league)
+    db.add(league)
     await db.commit()
     await db.refresh(league)
     return league
