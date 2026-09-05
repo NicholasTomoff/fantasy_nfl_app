@@ -311,6 +311,26 @@ class StreakSeasonHistory(Base):
 
     clinched_week = Column(Integer, nullable=True)
 
+    # --- Display labels -------------------------------------------------
+    # Who held each record, as text. The generator fills these by resolving the
+    # *_user_id columns at write time; hand-entered historical seasons use them
+    # directly. Text because real results do not fit a single user id: ties
+    # ("Tom 6A/Patrick O'Neill"), shared records ("Nick & Patrick & Cody"),
+    # and players who never had an account. A label always wins over an id.
+    champion_label = Column(String, nullable=True)
+    runner_up_label = Column(String, nullable=True)
+    third_place_label = Column(String, nullable=True)
+    best_triple_start_label = Column(String, nullable=True)
+    longest_triple_label = Column(String, nullable=True)
+    most_triples_label = Column(String, nullable=True)
+    longest_qb_label = Column(String, nullable=True)
+    longest_rb_label = Column(String, nullable=True)
+    longest_wr_label = Column(String, nullable=True)
+
+    # "week 16" parses into clinched_week; "full season" only into the note.
+    clinched_note = Column(String, nullable=True)
+    winner_score = Column(Integer, nullable=True)
+
     created_at = Column(DateTime, default=datetime.utcnow)
 
     __table_args__ = (

@@ -342,6 +342,8 @@ class StreakHistoryBase(BaseModel):
     most_triples_user_id: Optional[int] = None
 
     clinched_week: Optional[int] = None
+    clinched_note: Optional[str] = None
+    winner_score: Optional[int] = None
 
 
 class StreakHistoryCreate(StreakHistoryBase):
@@ -355,6 +357,12 @@ class StreakHistoryOut(StreakHistoryBase):
     champion_name: Optional[str] = None
     runner_up_name: Optional[str] = None
     third_place_name: Optional[str] = None
+    best_triple_start_name: Optional[str] = None
+    longest_triple_name: Optional[str] = None
+    most_triples_name: Optional[str] = None
+    longest_qb_name: Optional[str] = None
+    longest_rb_name: Optional[str] = None
+    longest_wr_name: Optional[str] = None
 
     class Config:
         from_attributes = True    

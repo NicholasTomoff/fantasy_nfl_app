@@ -16,6 +16,14 @@ export default function StreakHistoryPage() {
     const [viewMode, setViewMode] = useState("league");
     const [leagueId, setLeagueId] = useState(1);
     const [history, setHistory] = useState([]);
+    const [leagues, setLeagues] = useState([]);
+
+    useEffect(() => {
+        apiFetch("/api/leagues/all")
+            .then(res => (res.ok ? res.json() : []))
+            .then(data => setLeagues(Array.isArray(data) ? data : []))
+            .catch(err => console.error("Failed to load leagues:", err));
+    }, []);
 
     useEffect(() => {
         const endpoint =
@@ -88,9 +96,12 @@ export default function StreakHistoryPage() {
                 <div className="league-select">
                     <select
                         value={leagueId}
-                        onChange={(e) => setLeagueId(e.target.value)}
+                        onChange={(e) => setLeagueId(Number(e.target.value))}
                     >
-                        <option value={1}>League 1</option>
+                        {leagues.length === 0 && <option value={leagueId}>Loading…</option>}
+                        {leagues.map(l => (
+                            <option key={l.id} value={l.id}>{l.name}</option>
+                        ))}
                     </select>
                 </div>
             )}
@@ -102,30 +113,39 @@ export default function StreakHistoryPage() {
                         title="Longest Triple Streak"
                         value={records.longestTriple.longest_triple_streak}
                         season={records.longestTriple.season}
+                        holder={records.longestTriple.longest_triple_name}
                     />
                     <RecordCard
                         title="Longest QB Streak"
                         value={records.qb.longest_qb_streak}
                         season={records.qb.season}
+                        holder={records.qb.longest_qb_name}
                     />
                     <RecordCard
                         title="Longest RB Streak"
                         value={records.rb.longest_rb_streak}
                         season={records.rb.season}
+                        holder={records.rb.longest_rb_name}
                     />
                     <RecordCard
                         title="Longest WR Streak"
                         value={records.wr.longest_wr_streak}
                         season={records.wr.season}
+                        holder={records.wr.longest_wr_name}
                     />
                     <RecordCard
                         title="Most Triple Streaks"
                         value={records.mostTriples.most_triples_in_season}
                         season={records.mostTriples.season}
+                        holder={records.mostTriples.most_triples_name}
                     />
                     <RecordCard
                         title="Earliest Clinch"
-                        value={`Week ${records.earliestClinch?.clinched_week ?? "-"}`}
+                        value={
+                            records.earliestClinch?.clinched_week
+                                ? `Week ${records.earliestClinch.clinched_week}`
+                                : records.earliestClinch?.clinched_note ?? "—"
+                        }
                         season={records.earliestClinch?.season}
                     />
                 </div>
@@ -138,7 +158,7 @@ export default function StreakHistoryPage() {
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="season" />
                         <YAxis />
-                        <Tooltip />
+                        <Tooltip content={<HistoryTooltip />} />
                         <Legend />
                         <Line
                             type="monotone"
@@ -171,16 +191,33 @@ export default function StreakHistoryPage() {
                         <p><strong>Runner-Up:</strong> {season.runner_up_name}</p>
                         <p><strong>Third:</strong> {season.third_place_name}</p>
                         <p><strong>Members:</strong> {season.member_count}</p>
-                        <p><strong>Best Start:</strong> {season.best_triple_start}</p>
-                        <p><strong>Longest Triple:</strong> {season.longest_triple_streak}</p>
+                        <p>
+                            <strong>Best Start:</strong> {season.best_triple_start}
+                            {season.best_triple_start_name && ` (${season.best_triple_start_name})`}
+                        </p>
+                        <p>
+                            <strong>Longest Triple:</strong> {season.longest_triple_streak}
+                            {season.longest_triple_name && ` (${season.longest_triple_name})`}
+                        </p>
                         <p>
                             <strong>QB / RB / WR:</strong>{" "}
-                            {season.longest_qb_streak} /{" "}
-                            {season.longest_rb_streak} /{" "}
-                            {season.longest_wr_streak}
+                            {season.longest_qb_streak}{season.longest_qb_name && ` (${season.longest_qb_name})`} /{" "}
+                            {season.longest_rb_streak}{season.longest_rb_name && ` (${season.longest_rb_name})`} /{" "}
+                            {season.longest_wr_streak}{season.longest_wr_name && ` (${season.longest_wr_name})`}
                         </p>
-                        <p><strong>Most Triples:</strong> {season.most_triples_in_season}</p>
-                        <p><strong>Clinched Week:</strong> {season.clinched_week ?? "—"}</p>
+                        <p>
+                            <strong>Most Triples:</strong> {season.most_triples_in_season}
+                            {season.most_triples_name && ` (${season.most_triples_name})`}
+                        </p>
+                        <p>
+                            <strong>Clinched:</strong>{" "}
+                            {season.clinched_week
+                                ? `Week ${season.clinched_week}`
+                                : season.clinched_note ?? "—"}
+                        </p>
+                        {season.winner_score != null && (
+                            <p><strong>Winning Score:</strong> {season.winner_score}</p>
+                        )}
                     </div>
                 ))}
             </div>
@@ -188,11 +225,38 @@ export default function StreakHistoryPage() {
     );
 }
 
-function RecordCard({ title, value, season }) {
+// Recharts hands the tooltip the whole row, so the holder names travel with
+// the plotted values and can be shown alongside them.
+function HistoryTooltip({ active, payload, label }) {
+    if (!active || !payload?.length) return null;
+    const row = payload[0].payload;
+    const HOLDER = {
+        longest_triple_streak: row.longest_triple_name,
+        best_triple_start: row.best_triple_start_name,
+        most_triples_in_season: row.most_triples_name,
+    };
+    return (
+        <div className="chart-tooltip">
+            <div className="chart-tooltip-season">{label}</div>
+            {row.champion_name && (
+                <div className="chart-tooltip-champ">🏆 {row.champion_name}</div>
+            )}
+            {payload.map(p => (
+                <div key={p.dataKey} style={{ color: p.stroke }}>
+                    {p.name}: <strong>{p.value}</strong>
+                    {HOLDER[p.dataKey] ? ` — ${HOLDER[p.dataKey]}` : ""}
+                </div>
+            ))}
+        </div>
+    );
+}
+
+function RecordCard({ title, value, season, holder }) {
     return (
         <div className="record-card">
             <h4>{title}</h4>
             <div className="record-value">{value}</div>
+            {holder && <div className="record-holder">{holder}</div>}
             <div className="record-season">Season {season}</div>
         </div>
     );

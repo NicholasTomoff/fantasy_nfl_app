@@ -9,17 +9,28 @@ from app.schemas import StreakHistoryOut
 
 router = APIRouter(prefix="/streak-history", tags=["Streak History"])
 
+# (schema field, label column, id column) -- a stored label always wins, because
+# it can express things a user id cannot: ties, shared records, and players who
+# never had an account. The id lookup is the fallback for older generated rows.
+_NAME_FIELDS = [
+    ("champion_name", "champion_label", "champion_id"),
+    ("runner_up_name", "runner_up_label", "runner_up_id"),
+    ("third_place_name", "third_place_label", "third_place_id"),
+    ("best_triple_start_name", "best_triple_start_label", "best_triple_start_user_id"),
+    ("longest_triple_name", "longest_triple_label", "longest_triple_user_id"),
+    ("most_triples_name", "most_triples_label", "most_triples_user_id"),
+    ("longest_qb_name", "longest_qb_label", None),
+    ("longest_rb_name", "longest_rb_label", None),
+    ("longest_wr_name", "longest_wr_label", None),
+]
+
 
 async def _with_names(rows, db: AsyncSession) -> List[StreakHistoryOut]:
-    """
-    Attach champion/runner-up/third names. The table stores user ids; the page
-    displays names, so resolve them here in a single lookup rather than per row.
-    """
     ids = {
-        uid
+        getattr(r, id_col)
         for r in rows
-        for uid in (r.champion_id, r.runner_up_id, r.third_place_id)
-        if uid is not None
+        for _, _, id_col in _NAME_FIELDS
+        if id_col and getattr(r, id_col) is not None
     }
 
     names = {}
@@ -27,15 +38,16 @@ async def _with_names(rows, db: AsyncSession) -> List[StreakHistoryOut]:
         result = await db.execute(
             select(User.id, User.name, User.email).where(User.id.in_(ids))
         )
-        # fall back to email when a user has no display name set
         names = {uid: (name or email) for uid, name, email in result.all()}
 
     out = []
     for r in rows:
         item = StreakHistoryOut.model_validate(r)
-        item.champion_name = names.get(r.champion_id)
-        item.runner_up_name = names.get(r.runner_up_id)
-        item.third_place_name = names.get(r.third_place_id)
+        for field, label_col, id_col in _NAME_FIELDS:
+            label = getattr(r, label_col, None)
+            if not label and id_col:
+                label = names.get(getattr(r, id_col))
+            setattr(item, field, label)
         out.append(item)
     return out
 
