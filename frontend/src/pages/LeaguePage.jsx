@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Banner from "@/components/Banner";
 import SeasonCheckIn from "@/components/SeasonCheckIn";
+import MemorialBanner from "@/components/MemorialBanner";
 import { toast } from "sonner";
 import { Copy } from "lucide-react";
 import { apiFetch } from "@/services/api";
@@ -289,6 +290,8 @@ const LeaguePage = () => {
                                 />
                             </div>
                         )}
+
+                        <MemorialBanner leagueId={leagueId} seasonYear={season} />
 
                         {/* Per-season "are you in?" check-in */}
                         <SeasonCheckIn leagueId={leagueId} seasonYear={season} />
