@@ -10,6 +10,7 @@ import { getLeagueDetails, joinLeague, generateInviteLink } from "@/services/api
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Banner from "@/components/Banner";
+import SeasonCheckIn from "@/components/SeasonCheckIn";
 import { toast } from "sonner";
 import { Copy } from "lucide-react";
 import { apiFetch } from "@/services/api";
@@ -276,6 +277,9 @@ const LeaguePage = () => {
                                 />
                             </div>
                         )}
+
+                        {/* Per-season "are you in?" check-in */}
+                        <SeasonCheckIn leagueId={activeLeagueId} seasonYear={season} />
 
                         {/* Lower box: Join button left, Top 3 users left-aligned, View Standings right-aligned */}
                         <div className="bg-blue-500/30 rounded-xl p-4 mt-4">

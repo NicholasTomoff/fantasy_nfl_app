@@ -89,15 +89,17 @@ async def season_readiness(year: int, db: AsyncSession = Depends(get_db)):
             )
         )).scalar_one()
 
-        checkin = {}
-        for st in ("in", "out", "pending"):
-            checkin[st] = (await db.execute(
-                select(func.count(LeagueSeasonMember.id)).filter(
-                    LeagueSeasonMember.league_id == lg.id,
-                    LeagueSeasonMember.season_year == year,
-                    LeagueSeasonMember.status == st,
-                )
-            )).scalar_one()
+        checkin = {"in": 0, "out": 0, "pending": 0}
+        rows = (await db.execute(
+            select(LeagueSeasonMember.status, func.count(LeagueSeasonMember.id))
+            .filter(
+                LeagueSeasonMember.league_id == lg.id,
+                LeagueSeasonMember.season_year == year,
+            )
+            .group_by(LeagueSeasonMember.status)
+        )).all()
+        for st, n in rows:
+            checkin[st] = n
         season_opened = sum(checkin.values()) > 0
         if not season_opened:
             issues.append(

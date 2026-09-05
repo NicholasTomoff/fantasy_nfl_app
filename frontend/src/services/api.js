@@ -65,6 +65,40 @@ export const joinLeague = async (id) => {
   return response.data;
 };
 
+// -------------------- SEASON CHECK-IN --------------------
+// league_members stays the permanent roster (history is preserved even for
+// members who sit a season out); these endpoints drive per-season "are you in?".
+
+export const getSeasonRoster = async (leagueId, seasonYear) => {
+  const response = await axiosInstance.get(
+    `/api/leagues/${leagueId}/season/${seasonYear}/roster`
+  );
+  return response.data;
+};
+
+export const setMySeasonStatus = async (leagueId, seasonYear, status) => {
+  const response = await axiosInstance.post(
+    `/api/leagues/${leagueId}/season/${seasonYear}/me`,
+    { status }
+  );
+  return response.data;
+};
+
+export const setMemberSeasonStatus = async (leagueId, seasonYear, userId, status) => {
+  const response = await axiosInstance.post(
+    `/api/leagues/${leagueId}/season/${seasonYear}/member/${userId}/status`,
+    { status }
+  );
+  return response.data;
+};
+
+export const openSeason = async (leagueId, seasonYear) => {
+  const response = await axiosInstance.post(
+    `/api/leagues/${leagueId}/season/${seasonYear}/open`
+  );
+  return response.data;
+};
+
 export const generateInviteLink = async (id) => {
   try {
     const response = await axiosInstance.post(`/api/invites/generate-invite/${id}`);

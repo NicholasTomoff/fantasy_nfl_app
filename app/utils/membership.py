@@ -12,6 +12,7 @@ Everything that iterates players for a season (scoring, standings) should go
 through here rather than reading league_members directly.
 """
 
+from sqlalchemy import and_
 from sqlalchemy.future import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -29,25 +30,30 @@ async def get_active_member_emails(
     """
     Emails of the members playing this league in this season.
 
-    Falls back to the full roster when the season has no check-in rows at all,
-    so behaviour is unchanged for seasons that were never explicitly opened.
+    One query: outer-join the roster to this season's check-in rows. A member
+    with no row for the season (either because the season was never opened, or
+    because they joined after it was) reads as NULL and counts as active -- so
+    behaviour is unchanged until someone is explicitly marked out.
     """
     stmt = (
-        select(User.email)
-        .join(LeagueSeasonMember, LeagueSeasonMember.user_id == User.id)
-        .filter(
-            LeagueSeasonMember.league_id == league_id,
-            LeagueSeasonMember.season_year == season_year,
+        select(User.email, LeagueSeasonMember.status)
+        .select_from(LeagueMember)
+        .join(User, User.id == LeagueMember.user_id)
+        .outerjoin(
+            LeagueSeasonMember,
+            and_(
+                LeagueSeasonMember.user_id == LeagueMember.user_id,
+                LeagueSeasonMember.league_id == LeagueMember.league_id,
+                LeagueSeasonMember.season_year == season_year,
+            ),
         )
+        .filter(LeagueMember.league_id == league_id)
     )
-    rows = (await db.execute(stmt)).scalars().all()
-
-    if not rows:
-        # Season never opened -- fall back to the permanent roster.
-        return await get_roster_emails(db, league_id)
-
-    stmt = stmt.filter(LeagueSeasonMember.status.in_(ACTIVE_STATUSES))
-    return set((await db.execute(stmt)).scalars().all())
+    rows = (await db.execute(stmt)).all()
+    return {
+        email for email, status in rows
+        if status is None or status in ACTIVE_STATUSES
+    }
 
 
 async def get_roster_emails(db: AsyncSession, league_id: int) -> set[str]:
