@@ -1,0 +1,11 @@
+fastapi[standard]
+uvicorn
+sqlalchemy[asyncio]
+asyncpg
+requests
+pydantic[email]
+bcrypt>=4.0.0,<5
+passlib[bcrypt]>=1.7.4,<2
+python-dotenv
+python-jose
+httpx

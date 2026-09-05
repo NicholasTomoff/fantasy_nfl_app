@@ -1,0 +1,36 @@
+name: Fly Deploy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    concurrency: deploy-group
+    steps:
+      - uses: actions/checkout@v4
+
+      # Step 0: Clean any lingering Python cache locally
+      - name: Clean old .pyc files
+        run: find . -name "*.pyc" -delete
+
+      # Step 1: Setup Flyctl
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+
+      # Step 2: Build frontend
+      - run: |
+          cd frontend
+          npm ci
+          npm run build
+
+      # Step 3: Force clean deploy of backend
+      - run: |
+          # Ensure any old bytecode or previous image artifacts are gone
+          find . -name "*.pyc" -delete
+          flyctl deploy --remote-only --depot=true --build-arg FORCE_REBUILD=true
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+

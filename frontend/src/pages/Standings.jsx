@@ -1,0 +1,348 @@
+import React, { useEffect, useState } from "react";
+import { FaCheck, FaTimes } from "react-icons/fa";
+import { useUser } from "../context/UserContext";
+import { apiFetch } from "@/services/api";
+import { useSeason } from "@/context/SeasonContext";
+import { useLeague } from "@/context/LeagueContext";
+
+// force rebuild for tie logic display
+const renderStreakIcons = (count) => {
+  if (count === 0) {
+    return (
+      <span className="text-red-600 font-bold flex items-center justify-center gap-1">
+        <FaTimes /> 0
+      </span>
+    );
+  }
+  return (
+    <span className="text-green-600 font-bold flex items-center justify-center gap-1">
+      {Array.from({ length: count }, (_, i) => (
+        <FaCheck key={i} />
+      ))}
+      {count}
+    </span>
+  );
+};
+
+const renderTripleStreakIcons = (points) => {
+  const count = Math.floor(points / 5);
+  if (count === 0) {
+    return (
+      <span className="text-red-600 font-bold flex items-center justify-center gap-1">
+        <FaTimes /> 0
+      </span>
+    );
+  }
+  return (
+    <span className="text-green-600 font-bold flex items-center justify-center gap-1">
+      {Array.from({ length: count }, (_, i) => (
+        <FaCheck key={i} />
+      ))}
+      {count}
+    </span>
+  );
+};
+
+const Standings = () => {
+  const [standings, setStandings] = useState([]);
+  const [allSeasons, setAllSeasons] = useState([]);
+  const { season, setSeason, currentWeek, setCurrentWeek } = useSeason();
+  const { activeLeagueId, selectedSeason } = useLeague();
+  const [leagueName, setLeagueName] = useState("");
+  const [currentFinalizedWeek, setCurrentFinalizedWeek] = useState(null);
+
+
+  // Fetch all seasons once
+  useEffect(() => {
+    const fetchSeasons = async () => {
+      try {
+        const res = await apiFetch("/api/seasons/all");
+        const data = await res.json();
+        setAllSeasons(data);
+
+        const current = data.find((s) => s.is_current);
+        const initialSeason = current?.year || data[0]?.year;
+        if (!season) {
+          setSeason(initialSeason);
+        }
+      } catch (err) {
+        console.error("Failed to fetch seasons", err);
+      }
+    };
+    fetchSeasons();
+  }, [season, setSeason]);
+
+  // Fetch league name
+  useEffect(() => {
+    if (!activeLeagueId) return;
+
+    const fetchLeagueName = async () => {
+      try {
+        const res = await apiFetch(`/api/leagues/${activeLeagueId}`);
+        const data = await res.json();
+        setLeagueName(data.name);
+      } catch (err) {
+        console.error("Failed to fetch league name:", err);
+      }
+    };
+    fetchLeagueName();
+  }, [activeLeagueId]);
+
+  // Fetch current week
+  useEffect(() => {
+    if (!season) return;
+
+    const fetchCurrentWeek = async () => {
+      try {
+        const res = await apiFetch(`/api/weeks/current?season=${season}`);
+        const data = await res.json();
+        setCurrentWeek(data.week);
+      } catch (err) {
+        console.error("Failed to fetch current week", err);
+      }
+    };
+    fetchCurrentWeek();
+  }, [season]);
+
+  // Fetch current finalized week
+  useEffect(() => {
+    if (!season) return;
+
+    const fetchCurrentFinalizedWeek = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const res = await apiFetch(
+          `/api/weeks/finalized?season=${season}`,
+          {
+            headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+          }
+        );
+        const data = await res.json();
+        setCurrentFinalizedWeek(data.week);
+      } catch (err) {
+        console.error("Failed to fetch current finalized week", err);
+      }
+    };
+    fetchCurrentFinalizedWeek();
+  }, [season]);
+
+  const [maxPointsByUser, setMaxPointsByUser] = useState({});
+
+  // Fetch max points possible
+  useEffect(() => {
+    if (!activeLeagueId || !season || currentFinalizedWeek === null) return;
+
+    const token = localStorage.getItem("token");
+
+    const fetchProjectedPoints = async () => {
+      try {
+        const res = await apiFetch(
+          `/league/${activeLeagueId}/projected-max-points?season=${season}&currentFinalizedWeek=${currentFinalizedWeek}`,
+          {
+            headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+          }
+        );
+
+        if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
+
+        const data = await res.json();
+
+        // data.members is the array we want
+        if (data.members && Array.isArray(data.members)) {
+          const userMap = {};
+          data.members.forEach((member) => {
+            userMap[member.user_email] = member.projected_final_total;
+          });
+          setMaxPointsByUser(userMap);
+        } else {
+          console.warn("No members array found in projected points data");
+        }
+      } catch (err) {
+        console.error("Failed to fetch projected max points:", err);
+      }
+    };
+
+    fetchProjectedPoints();
+  }, [activeLeagueId, season, currentFinalizedWeek]);
+
+
+
+  // Fetch standings
+  useEffect(() => {
+    if (!activeLeagueId || !season || !currentWeek || currentFinalizedWeek === null) return;
+
+    const token = localStorage.getItem("token");
+
+    // Determine which week to use for picks display:
+    // If currentWeek is 1 (season start), finalizedWeek should be 0 (no finalized picks yet)
+    // If currentWeek > 1 and the first game of the current week hasn't started yet, show finalized week picks
+    // Otherwise show currentWeek picks
+
+    // For simplicity here we use currentWeek to fetch standings
+    // But picks will switch in the backend or here before rendering
+
+    apiFetch(
+      `/api/standings?week=${currentFinalizedWeek}&league_id=${activeLeagueId}&season=${season}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+      })
+      .then((data) => {
+        // Adjust picks based on game start times here if needed
+        setStandings(data);
+      })
+      .catch((err) => console.error("Failed to load standings:", err));
+  }, [activeLeagueId, season, currentWeek, currentFinalizedWeek]);
+
+  if (!activeLeagueId) {
+    return (
+      <p className="text-center p-6">
+        Please select a league to view standings.
+      </p>
+    );
+  }
+
+  // Compute ranks before rendering
+  const standingsWithRanks = (() => {
+    let lastPoints = null;
+    let lastRank = 0;
+    let skip = 1;
+
+    return standings
+      .sort((a, b) => b.total_points - a.total_points)
+      .map((entry) => {
+        const pts = entry.total_points ?? 0;
+        let rank;
+        if (pts === lastPoints) {
+          rank = lastRank; // tie, same rank as previous
+        } else {
+          rank = skip;
+          lastRank = rank;
+        }
+        lastPoints = pts;
+        skip += 1;
+        return { ...entry, rank };
+      });
+  })();
+
+
+  return (
+    <div className="max-w-6xl mx-auto p-4 sm:p-6">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-4">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center sm:text-left">
+          Standings{leagueName ? `: ${leagueName}` : ""}
+        </h2>
+
+        <div className="flex items-center gap-2">
+          <label htmlFor="season" className="text-sm font-medium text-gray-700">
+            Season:
+          </label>
+          <select
+            value={season ?? ""}
+            onChange={(e) => setSeason(parseInt(e.target.value))}
+            className="bg-gray-700 text-white px-3 py-1 rounded border"
+          >
+            {allSeasons.map((s) => (
+              <option key={s.year} value={s.year}>
+                {s.year} Season
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div className="flex justify-between items-center text-gray-500 mb-4 px-2">
+        <p className="text-sm">
+          Finalized Through: <span className="font-medium">Week {currentFinalizedWeek !== null ? currentFinalizedWeek : "..."}</span>
+        </p>
+        <p className="text-sm">
+          Current Week: <span className="font-medium">Week {currentWeek !== null ? currentWeek : "..."}</span>
+        </p>
+      </div>
+
+      <div className="overflow-x-auto">
+        <table className="min-w-[900px] sm:min-w-full border-collapse border text-xs sm:text-sm table-auto">
+          <thead className="bg-blue-600 text-white select-none">
+            <tr>
+              <th className="border p-2 whitespace-nowrap">Rank</th>
+              <th className="border p-2 sticky left-0 bg-blue-600 z-10 w-40 text-left">
+                Player Name
+              </th>
+              <th className="border p-2 text-center text-yellow-300 text-base font-extrabold">
+                Total Points
+              </th>
+              <th className="border p-2 text-center">Triple Streak</th>
+              <th className="border p-2 text-center">Weekly Points</th>
+              <th className="border p-2 text-center">QB Streak</th>
+              <th className="border p-2 text-center">RB Streak</th>
+              <th className="border p-2 text-center">WR Streak</th>
+              <th className="border p-2" colSpan={3}>Finalized Picks for Standings</th>
+              <th className="border p-2 text-center text-green-400 font-bold">
+                Max Total Points Possible
+              </th>
+            </tr>
+            <tr className="bg-blue-500 text-white">
+              <th colSpan={8}></th>
+              <th className="border p-2 w-32 text-left">QB</th>
+              <th className="border p-2 w-32 text-left">RB</th>
+              <th className="border p-2 w-32 text-left">WR</th>
+              <th colSpan={1}></th>
+            </tr>
+          </thead>
+          <tbody>
+            {standingsWithRanks.map((entry, index) => (
+              <tr
+                key={index}
+                className="text-center group hover:bg-black"
+              >
+                <td className="border p-2 group-hover:text-white">{entry.rank}</td>
+                <td className="border p-2 font-semibold text-left text-white bg-gray-800 sticky left-0 z-[5]">
+                  {entry.user_name}
+                </td>
+                <td className="border p-2 text-center text-yellow-300 text-lg font-extrabold group-hover:text-white">
+                  {entry.total_points}
+                </td>
+                <td className="border p-2 group-hover:text-white">
+                  {renderTripleStreakIcons(entry.triple_streak)}
+                </td>
+                <td className="border p-2 text-center group-hover:text-white">
+                  {entry.weekly_points}
+                </td>
+                <td className="border p-2 group-hover:text-white">
+                  {renderStreakIcons(entry.streaks.QB)}
+                </td>
+                <td className="border p-2 group-hover:text-white">
+                  {renderStreakIcons(entry.streaks.RB)}
+                </td>
+                <td className="border p-2 group-hover:text-white">
+                  {renderStreakIcons(entry.streaks.WR)}
+                </td>
+                <td className="border p-2 text-left group-hover:text-white">
+                  {entry.picks.QB}
+                </td>
+                <td className="border p-2 text-left group-hover:text-white">
+                  {entry.picks.RB}
+                </td>
+                <td className="border p-2 text-left group-hover:text-white">
+                  {entry.picks.WR}
+                </td>
+                <td className="border p-2 text-center text-green-400 group-hover:text-white font-bold">
+                  {maxPointsByUser[entry.user_email] ?? "-"}
+                </td>
+
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
+export default Standings;

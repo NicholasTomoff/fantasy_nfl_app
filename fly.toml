@@ -1,0 +1,29 @@
+app = 'fantasy-nfl-app'
+primary_region = 'dfw'
+
+[build]
+builder = ""
+
+[env]
+PORT = "8080"
+
+[processes]
+app = "uvicorn app.main:app --host 0.0.0.0 --port 8080"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+  processes = ["app"]
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+[[vm]]
+  memory = '512mb'
+  cpu_kind = 'shared'
+  cpus = 1

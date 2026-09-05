@@ -1,0 +1,467 @@
+from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.future import select
+from sqlalchemy.orm import joinedload, selectinload
+from sqlalchemy.exc import SQLAlchemyError
+
+from typing import List, Optional
+from datetime import timezone, datetime
+
+from app import models, schemas
+from app.database import get_db
+from app.auth import get_current_user  # Auth dependency we built
+import logging
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+
+router = APIRouter(
+    prefix="/api/leagues",
+    tags=["leagues"],
+)
+
+def ensure_naive_utc(dt: Optional[datetime]) -> Optional[datetime]:
+    """
+    Return a naive UTC datetime (no tzinfo). If dt is None -> None.
+    If dt is timezone-aware -> convert to UTC and strip tzinfo.
+    If dt is naive -> assume it's already UTC and return as-is.
+    """
+    if dt is None:
+        return None
+    if dt.tzinfo is None:
+        return dt  # assume naive UTC already
+    # convert to UTC then strip tzinfo
+    return dt.astimezone(timezone.utc).replace(tzinfo=None)
+
+# --------- Create New League ---------
+@router.post("", response_model=schemas.League)
+async def create_league(league_in: schemas.LeagueCreate, db: AsyncSession = Depends(get_db), current_user: models.User = Depends(get_current_user), ):
+    # Check if league name already exists
+    result = await db.execute(select(models.League).where(models.League.name == league_in.name))
+    existing = result.scalar_one_or_none()
+    if existing:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="League with this name already exists.",
+        )
+
+    league = models.League(
+        name=league_in.name,
+        min_players=league_in.min_players,
+        season_year=league_in.season_year,
+        created_by_user_id=current_user.id,
+    )
+    await db.add(league)
+    await db.commit()
+    await db.refresh(league)
+    return league
+
+# --------- Get Info about Leagues for the Logged in User ---------
+@router.get("", response_model=List[schemas.League])
+async def get_leagues(db: AsyncSession = Depends(get_db), current_user: models.User = Depends(get_current_user),):
+    if not current_user:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Unauthorized")
+
+    stmt = (
+        select(models.League)
+        .where(models.League.members.any(models.LeagueMember.user_id == current_user.id))
+        .options(
+            selectinload(models.League.members).selectinload(models.LeagueMember.user),
+            selectinload(models.League.host)
+        )
+    )
+
+    result = await db.execute(stmt)
+    leagues = result.scalars().unique().all()
+
+    return leagues
+
+# --------- Get Info about All Leagues ---------
+@router.get("/all", response_model=List[schemas.League])
+async def get_all_leagues(db: AsyncSession = Depends(get_db)):
+    result = await db.execute(
+        select(models.League).options(
+            joinedload(models.League.members).joinedload(models.LeagueMember.user),
+            joinedload(models.League.host)  # Optional: load host info
+        )
+    )
+    leagues = result.scalars().unique().all()
+    return leagues
+
+# --------- Get Info about All Members of a League ---------
+@router.get("/{league_id}/members", response_model=List[schemas.UserSummary])
+async def get_league_members(league_id: int, db: AsyncSession = Depends(get_db)):
+    result = await db.execute(
+        select(models.League)
+        .where(models.League.id == league_id)
+        .options(
+            joinedload(models.League.members).joinedload(models.LeagueMember.user)
+        )
+    )
+    league =  result.scalars().unique().one_or_none()
+    if not league:
+        raise HTTPException(status_code=404, detail="League not found")
+
+    users = [member.user for member in league.members]
+    return users
+
+# --------- Insert User into League ---------
+@router.post("/{league_id}/join", response_model=schemas.LeagueMemberResponse)
+async def join_league(league_id: int, db: AsyncSession = Depends(get_db), current_user: models.User = Depends(get_current_user),):
+    result = await db.execute(
+        select(models.League).where(models.League.id == league_id)
+    )
+    league = result.scalar_one_or_none()
+    if not league:
+        raise HTTPException(status_code=404, detail="League not found")
+
+    result = await db.execute(
+        select(models.LeagueMember).where(
+            models.LeagueMember.league_id == league_id,
+            models.LeagueMember.user_id == current_user.id,
+        )
+    )
+    existing_member = result.scalar_one_or_none()
+    if existing_member:
+        raise HTTPException(status_code=400, detail="User already joined this league")
+
+    new_member = models.LeagueMember(league_id=league_id, user_id=current_user.id)
+    await db.add(new_member)
+    await db.commit()
+    await db.refresh(new_member)
+
+    return {"league_id": league_id, "user_id": current_user.id, "joined": True}
+
+# --------- Get Info about League from league_id ---------
+@router.get("/{league_id}", response_model=schemas.League)
+async def get_league_by_id(league_id: int, db: AsyncSession = Depends(get_db)):
+    result = await db.execute(
+        select(models.League)
+        .where(models.League.id == league_id)
+        .options(
+            joinedload(models.League.members).joinedload(models.LeagueMember.user)
+        )
+    )
+    league = result.scalars().unique().one_or_none()
+    if not league:
+        raise HTTPException(status_code=404, detail="League not found")
+
+    return league
+
+# ---------------- Get league finance info ----------------
+@router.get("/{league_id}/season/{season_year}/finance",
+            response_model=schemas.LeagueSeasonFinanceOut)
+async def get_league_finance(league_id: int, season_year: int, db: AsyncSession = Depends(get_db),):
+    try:
+        logger.info(f"🔍 GET FINANCE: league={league_id}, season_year={season_year}")
+
+        # ---------------- LOAD SEASON ----------------
+        logger.info("➡️ Querying Season row...")
+        season_result = await db.execute(
+            select(models.Season).filter_by(year=season_year)
+        )
+        season = season_result.scalars().unique().one_or_none()
+        logger.info(f"Season result: {season}")
+
+        if not season:
+            logger.info("⚠️ No season found, returning empty finance response.")
+            return schemas.LeagueSeasonFinanceOut(
+                id=0,
+                league_id=league_id,
+                season_year=season.year,
+                entry_fee=None,
+                total_pot=0,
+                payouts={},
+                member_payments=[]
+            )
+
+        # ---------------- LOAD LEAGUE + MEMBERS (use same pattern as get_league_members) ----------------
+        logger.info("➡️ Querying League + members (with user) ...")
+        league_result = await db.execute(
+            select(models.League)
+            .where(models.League.id == league_id)
+            .options(
+                joinedload(models.League.members).joinedload(models.LeagueMember.user)
+            )
+        )
+        league = league_result.scalars().unique().one_or_none()
+        logger.info(f"League result: {league}")
+
+        if not league:
+            logger.info("⚠️ League not found, returning empty finance response.")
+            return schemas.LeagueSeasonFinanceOut(
+                id=0,
+                league_id=league_id,
+                season_year=season.year,
+                entry_fee=None,
+                total_pot=0,
+                payouts={},
+                member_payments=[]
+            )
+
+        # ---------------- LOAD FINANCE ----------------
+        logger.info("➡️ Querying LeagueSeasonFinance row...")
+        finance_result = await db.execute(
+            select(models.LeagueSeasonFinance)
+            .options(
+                joinedload(models.LeagueSeasonFinance.member_payments)
+                .joinedload(models.LeagueSeasonMemberPayment.user)
+            )
+            .filter_by(league_id=league_id, season_id=season.id)
+        )
+        finance = finance_result.scalars().unique().one_or_none()
+        logger.info(f"Finance result: {finance}")
+
+        # If finance exists -> use it (and return actual member_payments from DB)
+        if finance:
+            # Recalculate total pot if needed
+            if finance.entry_fee is not None:
+                member_count = len(league.members)  # use actual members, not member_payments
+                finance.total_pot = finance.entry_fee * member_count
+
+            # Build member payments list: use existing payments, but fill in missing users
+            member_payments_out = []
+            league_member_map = {m.user.id: m.user for m in league.members if m.user}
+            finance_user_ids = {mp.user_id for mp in finance.member_payments}
+
+            # Existing payments
+            for mp in finance.member_payments:
+                member_payments_out.append(
+                    schemas.LeagueSeasonMemberPaymentOut(
+                        id=mp.id,
+                        season_finance_id=mp.season_finance_id,
+                        user_id=mp.user_id,
+                        user_name=mp.user.name if mp.user else league_member_map.get(mp.user_id).name if mp.user_id in league_member_map else None,
+                        paid=mp.paid,
+                        paid_date=mp.paid_date
+                    )
+                )
+
+            # Add placeholders for league members without payments
+            for user_id, user in league_member_map.items():
+                if user_id not in finance_user_ids:
+                    member_payments_out.append(
+                        schemas.LeagueSeasonMemberPaymentOut(
+                            id=0,
+                            season_finance_id=finance.id,
+                            user_id=user.id,
+                            user_name=user.name,
+                            paid=False,
+                            paid_date=None
+                        )
+                    )
+
+            return schemas.LeagueSeasonFinanceOut(
+                id=finance.id,
+                league_id=finance.league_id,
+                season_year=season.year,
+                entry_fee=finance.entry_fee,
+                total_pot=finance.total_pot,
+                payouts=finance.payouts or {},
+                member_payments=member_payments_out
+            )
+
+    except SQLAlchemyError:
+        logger.exception("❌ SQLAlchemy database error occurred!")
+        raise HTTPException(status_code=500, detail="Database query failed")
+
+    except Exception as e:
+        logger.exception("❌ Unexpected server error occurred!")
+        raise HTTPException(status_code=500, detail=str(e))
+
+# ---------------- Post update entry fee ----------------
+@router.post("/{league_id}/season/{season_year}/finance/entry_fee", response_model=schemas.LeagueSeasonFinanceOut)
+async def update_entry_fee(league_id: int, season_year: int, payload: schemas.LeagueSeasonFinanceEntryFeeUpdate, db: AsyncSession = Depends(get_db),):
+    # ---------------- LOAD SEASON ----------------
+    season_result = await db.execute(select(models.Season).filter_by(year=season_year))
+    season = season_result.scalars().unique().one_or_none()
+    if not season:
+        raise HTTPException(status_code=404, detail="Season not found")
+
+    # ---------------- LOAD LEAGUE WITH MEMBERS ----------------
+    league_result = await db.execute(
+        select(models.League)
+        .where(models.League.id == league_id)
+        .options(joinedload(models.League.members).joinedload(models.LeagueMember.user))
+    )
+    league = league_result.scalars().unique().one_or_none()
+    if not league:
+        raise HTTPException(status_code=404, detail="League not found")
+
+    # Get member count and log
+    members = league.members
+    member_count = len(members)
+    logger.info(f"League has {league_id} - {member_count} members")
+
+    # ---------------- LOAD OR CREATE FINANCE ----------------
+    finance_result = await db.execute(
+        select(models.LeagueSeasonFinance)
+        .filter_by(league_id=league_id, season_id=season.id)
+        .options(joinedload(models.LeagueSeasonFinance.member_payments).joinedload(models.LeagueSeasonMemberPayment.user))
+    )
+    finance = finance_result.scalars().unique().one_or_none()
+
+    if not finance:
+        logger.info("No finance row exists, creating new")
+        finance = models.LeagueSeasonFinance(
+            league_id=league_id,
+            season_id=season.id,
+            entry_fee=float(payload.entry_fee),
+            total_pot=float(payload.entry_fee) * member_count,
+            payouts={}
+        )
+        db.add(finance)
+    else:
+        logger.info(f"Finance exists (id={finance.id}), updating entry fee and total pot")
+        finance.entry_fee = float(payload.entry_fee)
+        finance.total_pot = finance.entry_fee * member_count
+
+    await db.commit()
+    await db.refresh(finance)
+    logger.info(f"Finance updated: entry_fee={finance.entry_fee}, total_pot={finance.total_pot}")
+
+    # ---------------- BUILD MEMBER PAYMENTS ----------------
+    member_payments_out = []
+    for mp in finance.member_payments:
+        member_payments_out.append(
+            schemas.LeagueSeasonMemberPaymentOut(
+                id=mp.id,
+                season_finance_id=mp.season_finance_id,
+                user_id=mp.user_id,
+                user_name=mp.user.name if mp.user else None,
+                paid=mp.paid,
+                paid_date=mp.paid_date
+            )
+        )
+
+    # ---------------- RETURN ----------------
+    return schemas.LeagueSeasonFinanceOut(
+        id=finance.id,
+        league_id=finance.league_id,
+        season_year=season.year,
+        entry_fee=finance.entry_fee,
+        total_pot=finance.total_pot,
+        payouts=finance.payouts or {},
+        member_payments=member_payments_out
+    )
+
+# ---------------- Post league payout info ----------------
+@router.post("/{league_id}/season/{season_year}/finance/payouts", response_model=schemas.LeagueSeasonFinanceOut)
+async def update_payouts(league_id: int, season_year: int, payload: schemas.LeagueSeasonFinancePayoutUpdate, db: AsyncSession = Depends(get_db),):
+    # Get Season
+    season_result = await db.execute(select(models.Season).filter_by(year=season_year))
+    season = season_result.scalars().unique().one_or_none()
+    if not season:
+        raise HTTPException(status_code=404, detail="Season not found")
+
+    # Get Finance row
+    finance_result = await db.execute(
+        select(models.LeagueSeasonFinance)
+        .options(joinedload(models.LeagueSeasonFinance.member_payments).joinedload(models.LeagueSeasonMemberPayment.user))
+        .filter_by(league_id=league_id, season_id=season.id)
+    )
+    finance = finance_result.scalars().unique().one_or_none()
+    if not finance:
+        raise HTTPException(status_code=404, detail="Finance record not found")
+
+    # Update payouts
+    finance.payouts = payload.payouts
+    await db.commit()
+    await db.refresh(finance)
+
+    # Convert to Pydantic
+    return schemas.LeagueSeasonFinanceOut(
+        id=finance.id,
+        league_id=finance.league_id,
+        season_year=season.year,
+        entry_fee=finance.entry_fee,
+        total_pot=finance.total_pot,
+        payouts=finance.payouts or {},
+        member_payments=[
+            schemas.LeagueSeasonMemberPaymentOut(
+                id=mp.id,
+                season_finance_id=mp.season_finance_id,  # <-- REQUIRED FIELD
+                user_id=mp.user_id,
+                user_name=mp.user.name if mp.user else None,
+                paid=mp.paid,
+                paid_date=mp.paid_date
+            )
+            for mp in finance.member_payments
+        ]
+    )
+
+# ---------------- Post user payment for league entry fee ----------------
+@router.post("/{league_id}/season/{season_year}/member/{user_id}/payment",
+             response_model=schemas.LeagueSeasonFinanceOut)
+async def toggle_member_payment(league_id: int, season_year: int, user_id: int, payload: schemas.LeagueSeasonMemberPaymentUpdate, db: AsyncSession = Depends(get_db),):
+    # Get Season
+    season_result = await db.execute(select(models.Season).filter_by(year=season_year))
+    season = season_result.scalars().unique().one_or_none()
+    if not season:
+        raise HTTPException(status_code=404, detail="Season not found")
+
+    # Get Finance row
+    finance_result = await db.execute(
+        select(models.LeagueSeasonFinance)
+        .options(
+            joinedload(models.LeagueSeasonFinance.member_payments)
+            .joinedload(models.LeagueSeasonMemberPayment.user)
+        )
+        .filter_by(league_id=league_id, season_id=season.id)
+    )
+    finance = finance_result.scalars().unique().one_or_none()
+    if not finance:
+        raise HTTPException(status_code=404, detail="Finance record not found")
+
+    # Find existing member payment if it exists
+    member_payment = next((m for m in finance.member_payments
+                           if m.user_id == user_id), None)
+
+    # If no existing member payment → create it
+    if not member_payment:
+        member_payment = models.LeagueSeasonMemberPayment(
+            season_finance_id=finance.id,
+            user_id=user_id,
+            paid=False,
+            paid_date=None
+        )
+        db.add(member_payment)
+        await db.flush()       # get IDs populated
+        await db.refresh(member_payment)
+        finance.member_payments.append(member_payment)
+
+    # --- Update payment status ---
+    member_payment.paid = payload.paid
+
+    if payload.paid:
+        member_payment.paid_date = ensure_naive_utc(payload.paid_date) or datetime.utcnow()
+    else:
+        member_payment.paid_date = None
+
+    # Total pot update (optional — entry fee logic handled elsewhere)
+    # if finance.entry_fee is not None:
+    #     finance.total_pot = finance.entry_fee * len(finance.member_payments)
+
+    await db.commit()
+    await db.refresh(finance)
+
+    # --- Return proper schema (FIXED missing season_finance_id) ---
+    return schemas.LeagueSeasonFinanceOut(
+        id=finance.id,
+        league_id=finance.league_id,
+        season_year=season.year,
+        entry_fee=finance.entry_fee,
+        total_pot=finance.total_pot,
+        payouts=finance.payouts or {},
+        member_payments=[
+            schemas.LeagueSeasonMemberPaymentOut(
+                id=mp.id,
+                season_finance_id=mp.season_finance_id,  # <-- REQUIRED FIELD
+                user_id=mp.user_id,
+                user_name=mp.user.name if mp.user else None,
+                paid=mp.paid,
+                paid_date=mp.paid_date
+            )
+            for mp in finance.member_payments
+        ]
+    )

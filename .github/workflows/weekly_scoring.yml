@@ -1,0 +1,76 @@
+name: Weekly Scoring Trigger
+
+on:
+  schedule:
+    - cron: '0 14 * * 2'  # Tuesdays 2 PM UTC
+  workflow_dispatch:
+    inputs:
+      week:
+        description: 'Optional week number (e.g. 18)'
+        required: false
+        default: ''
+      season:
+        description: 'Optional season (e.g. 2024)'
+        required: false
+        default: ''
+
+jobs:
+  trigger_scoring:
+    runs-on: ubuntu-latest
+    env:
+      RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+    steps:
+      - name: Install Flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - name: Wake Fly backend (force start)
+        run: |
+          echo "🚀 Starting Fly.io machines..."
+          flyctl machines start --app fantasy-nfl-app || true
+
+      - name: Wait for backend root endpoint to be ready
+        run: |
+          echo "⏳ Checking backend health..."
+          URL="${{ secrets.BACKEND_URL }}/"
+          MAX_RETRIES=40
+          RETRY_DELAY=5
+
+          for i in $(seq 1 $MAX_RETRIES); do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+            if [ "$STATUS" = "200" ]; then
+              echo "✅ Backend responded"
+              break
+            else
+              echo "⚠️ Attempt $i/$MAX_RETRIES: backend not ready (status $STATUS). Retrying..."
+              sleep $RETRY_DELAY
+            fi
+
+            if [ "$i" -eq "$MAX_RETRIES" ]; then
+              echo "❌ Backend never woke up"
+              exit 1
+            fi
+          done
+
+      - name: Build scoring URL
+        id: set_url
+        run: |
+          url="${{ secrets.BACKEND_URL }}/admin/run-weekly"
+          if [[ "${{ github.event.inputs.week }}" != "" ]] && [[ "${{ github.event.inputs.season }}" != "" ]]; then
+            url="${url}?week_number=${{ github.event.inputs.week }}&season=${{ github.event.inputs.season }}"
+          fi
+          echo "api_url=$url" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger weekly scoring API
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: ${{ steps.set_url.outputs.api_url }}
+          method: POST
+          customHeaders: '{"Content-Type": "application/json"}'
+          timeout: 600000  # 10 minutes
+
+      - name: Confirm run
+        run: |
+          echo "✅ Weekly scoring triggered"
+          echo "${{ steps.set_url.outputs.api_url }}"

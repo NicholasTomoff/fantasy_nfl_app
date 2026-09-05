@@ -1,0 +1,20 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input, select, textarea {
+  @apply w-full p-2 mb-4 rounded bg-gray-800 text-white border border-gray-600;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af; /* Tailwind's placeholder-gray-400 */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.5); /* Tailwind yellow-400 */
+}

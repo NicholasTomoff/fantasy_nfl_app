@@ -1,0 +1,2840 @@
+team_id,team_name,player_id,player_name,position
+1,Las Vegas Raiders,3,Ameer Abdullah,RB
+1,Las Vegas Raiders,5,Brittain Brown,RB
+1,Las Vegas Raiders,7,Sincere McCormick,RB
+1,Las Vegas Raiders,8,Zamir White,RB
+1,Las Vegas Raiders,10,Davante Adams,WR
+1,Las Vegas Raiders,16,DJ Turner,WR
+1,Las Vegas Raiders,26,Dylan Parham,G
+1,Las Vegas Raiders,30,Kolton Miller,OT
+1,Las Vegas Raiders,34,Maxx Crosby,DE
+1,Las Vegas Raiders,38,Malcolm Koonce,DE
+1,Las Vegas Raiders,40,Matthew Butler,DT
+1,Las Vegas Raiders,47,Divine Deablo,LB
+1,Las Vegas Raiders,49,Luke Masterson,LB
+1,Las Vegas Raiders,53,Nate Hobbs,CB
+1,Las Vegas Raiders,56,Sam Webb,CB
+1,Las Vegas Raiders,61,Tre'von Moehrig,S
+1,Las Vegas Raiders,62,Isaiah Pola-Mao,S
+1,Las Vegas Raiders,65,Daniel Carlson,PK
+1,Las Vegas Raiders,66,AJ Cole,P
+1,Las Vegas Raiders,114,K'Lavon Chaisson,DE
+1,Las Vegas Raiders,152,Jakobi Meyers,WR
+1,Las Vegas Raiders,160,Kristian Wilkerson,WR
+1,Las Vegas Raiders,197,Jack Jones,CB
+1,Las Vegas Raiders,268,Elerson Smith,LB
+1,Las Vegas Raiders,274,Darnay Holmes,CB
+1,Las Vegas Raiders,289,Anthony Brown,QB
+1,Las Vegas Raiders,528,Desmond Ridder,QB
+1,Las Vegas Raiders,626,Harrison Bryant,TE
+1,Las Vegas Raiders,720,Zach Carter,DT
+1,Las Vegas Raiders,831,Gardner Minshew,QB
+1,Las Vegas Raiders,869,Janarius Robinson,DE
+1,Las Vegas Raiders,896,Marcus Epps,S
+1,Las Vegas Raiders,1121,Nathan Peterman,QB
+1,Las Vegas Raiders,1273,Dax Milne,WR
+1,Las Vegas Raiders,1352,Terrace Marshall Jr.,WR
+1,Las Vegas Raiders,1386,Marquan McCall,DT
+1,Las Vegas Raiders,1581,Zach Gentry,TE
+1,Las Vegas Raiders,1614,Robert Spillane,LB
+1,Las Vegas Raiders,1819,John Jenkins,DT
+1,Las Vegas Raiders,1821,Christian Wilkins,DT
+1,Las Vegas Raiders,2053,Kana'i Mauga,LB
+1,Las Vegas Raiders,2074,Jacob Bobenmoyer,LS
+1,Las Vegas Raiders,2162,Jalen Guyton,WR
+1,Las Vegas Raiders,2313,Alexander Mattison,RB
+1,Las Vegas Raiders,2519,Cole Fotheringham,TE
+1,Las Vegas Raiders,2549,Alex Bachman,WR
+1,Las Vegas Raiders,2632,Cornell Armstrong,CB
+1,Las Vegas Raiders,2765,Charles Snowden,DE
+1,Las Vegas Raiders,3167,Adam Butler,DT
+1,Las Vegas Raiders,6839,Phalen Sanford,S
+1,Las Vegas Raiders,7250,Jackson Mitchell,LB
+1,Las Vegas Raiders,7595,Amari Gainer,LB
+1,Las Vegas Raiders,9038,Thomas Harper,S
+1,Las Vegas Raiders,9270,M.J. Devonshire,CB
+1,Las Vegas Raiders,9891,Ramel Keyton,WR
+1,Las Vegas Raiders,10779,Aidan O'Connell,QB
+1,Las Vegas Raiders,11899,Nesta Jade Silvera,DT
+1,Las Vegas Raiders,14173,Byron Young,DT
+1,Las Vegas Raiders,14306,Tommy Eichenberg,LB
+1,Las Vegas Raiders,14380,Michael Mayer,TE
+1,Las Vegas Raiders,14497,Brock Bowers,TE
+1,Las Vegas Raiders,14573,Christopher Smith,S
+1,Las Vegas Raiders,14653,Jackson PowersJohnson,G
+1,Las Vegas Raiders,14928,Amari Burney,LB
+1,Las Vegas Raiders,15404,Jonah Laulu,DT
+1,Las Vegas Raiders,15423,DaShaun White,LB
+1,Las Vegas Raiders,15925,Terrell Bynum,WR
+1,Las Vegas Raiders,16617,Tre Tucker,WR
+1,Las Vegas Raiders,16695,Ja'quan Sheppard,CB
+1,Las Vegas Raiders,17828,Noah Shannon,DT
+1,Las Vegas Raiders,18070,Jakorian Bennett,CB
+1,Las Vegas Raiders,19167,Trey Taylor,S
+1,Las Vegas Raiders,20653,Carter Bradley,QB
+1,Las Vegas Raiders,21596,John Samuel Shenker,TE
+1,Las Vegas Raiders,22350,Andre Carter II,DE
+1,Las Vegas Raiders,23372,Lideatrick Griffin,WR
+1,Las Vegas Raiders,23441,Decamerion Richardson,CB
+1,Las Vegas Raiders,24026,Kyu Blu Kelly,CB
+1,Las Vegas Raiders,24227,Tyree Wilson,DE
+1,Las Vegas Raiders,24253,Rayshad Williams,CB
+1,Las Vegas Raiders,25142,Ron Stone Jr.,DE
+1,Las Vegas Raiders,25397,Jaydon Grant,S
+1,Las Vegas Raiders,27100,Chris Collier,RB
+1,Las Vegas Raiders,31335,Dylan Laube,RB
+1,Las Vegas Raiders,36070,Tyreik McAllister,WR
+1,Las Vegas Raiders,48402,Demarcus Governor,CB
+2,Jacksonville Jaguars,68,C.J. Beathard,QB
+2,Jacksonville Jaguars,69,Trevor Lawrence,QB
+2,Jacksonville Jaguars,70,E.J. Perry,QB
+2,Jacksonville Jaguars,72,Travis Etienne Jr.,RB
+2,Jacksonville Jaguars,79,Tim Jones,WR
+2,Jacksonville Jaguars,82,Christian Kirk,WR
+2,Jacksonville Jaguars,85,Seth Williams,WR
+2,Jacksonville Jaguars,87,Evan Engram,TE
+2,Jacksonville Jaguars,88,Luke Farrell,TE
+2,Jacksonville Jaguars,106,Roy Robertson-Harris,DT
+2,Jacksonville Jaguars,111,DaVon Hamilton,DT
+2,Jacksonville Jaguars,113,Josh Allen,DE
+2,Jacksonville Jaguars,115,Caleb Johnson,LB
+2,Jacksonville Jaguars,116,Devin Lloyd,LB
+2,Jacksonville Jaguars,117,Chad Muma,LB
+2,Jacksonville Jaguars,118,Foyesade Oluokun,LB
+2,Jacksonville Jaguars,121,Travon Walker,DE
+2,Jacksonville Jaguars,122,Montaric Brown,CB
+2,Jacksonville Jaguars,123,Tyson Campbell,CB
+2,Jacksonville Jaguars,130,Andre Cisco,S
+2,Jacksonville Jaguars,134,Daniel Thomas,S
+2,Jacksonville Jaguars,135,Andrew Wingard,S
+2,Jacksonville Jaguars,138,Logan Cooke,P
+2,Jacksonville Jaguars,139,Ross Matiscik,LS
+2,Jacksonville Jaguars,141,Mac Jones,QB
+2,Jacksonville Jaguars,221,Gary Brightwell,RB
+2,Jacksonville Jaguars,302,Devin Duvernay,WR
+2,Jacksonville Jaguars,463,Josh Reynolds,WR
+2,Jacksonville Jaguars,505,Anthony Pittman,LB
+2,Jacksonville Jaguars,513,Amani Oruwariye,CB
+2,Jacksonville Jaguars,614,D'Ernest Johnson,RB
+2,Jacksonville Jaguars,735,Tre Flowers,CB
+2,Jacksonville Jaguars,915,Denzel Mims,WR
+2,Jacksonville Jaguars,948,Jonathan Marshall,DT
+2,Jacksonville Jaguars,1003,Blake Hance,G
+2,Jacksonville Jaguars,1012,Arik Armstead,DE
+2,Jacksonville Jaguars,1067,Josiah Deguara,TE
+2,Jacksonville Jaguars,1110,Adrian Amos,S
+2,Jacksonville Jaguars,1114,Darnell Savage,S
+2,Jacksonville Jaguars,1169,Trevis Gipson,LB
+2,Jacksonville Jaguars,1425,Gabe Davis,WR
+2,Jacksonville Jaguars,1437,Mitch Morse,C
+2,Jacksonville Jaguars,1624,Terrell Edmunds,S
+2,Jacksonville Jaguars,1677,Tanner Muse,LB
+2,Jacksonville Jaguars,1886,Rasheem Green,DE
+2,Jacksonville Jaguars,2058,Ronald Darby,CB
+2,Jacksonville Jaguars,2188,Joe Gaziano,DE
+2,Jacksonville Jaguars,2244,Austin Trammell,WR
+2,Jacksonville Jaguars,2344,Esezi Otomewo,DT
+2,Jacksonville Jaguars,2531,Jeremiah Ledbetter,DT
+2,Jacksonville Jaguars,2649,Raymond Johnson III,DE
+2,Jacksonville Jaguars,3266,Tevaughn Campbell,CB
+2,Jacksonville Jaguars,4163,Breeland Speaks,DE
+2,Jacksonville Jaguars,7609,Jarrian Jones,CB
+2,Jacksonville Jaguars,8991,Tyler Lacy,DT
+2,Jacksonville Jaguars,9273,Erick Hallett II,S
+2,Jacksonville Jaguars,9349,Jordan Jefferson,DT
+2,Jacksonville Jaguars,10915,Parker Washington,WR
+2,Jacksonville Jaguars,10921,Brenton Strange,TE
+2,Jacksonville Jaguars,11547,DJ Coleman,DE
+2,Jacksonville Jaguars,12287,Elijah Cooks,WR
+2,Jacksonville Jaguars,14640,Steven Jones,G
+2,Jacksonville Jaguars,14825,Antonio Johnson,S
+2,Jacksonville Jaguars,14932,Ventrell Miller,LB
+2,Jacksonville Jaguars,15585,Brevin Easton,WR
+2,Jacksonville Jaguars,16582,Cam Little,PK
+2,Jacksonville Jaguars,17043,Deantre Prince,CB
+2,Jacksonville Jaguars,17211,Joshua Cephus,WR
+2,Jacksonville Jaguars,18416,Christian Braswell,CB
+2,Jacksonville Jaguars,18530,Andrew Parker,LB
+2,Jacksonville Jaguars,21566,Tank Bigsby,RB
+2,Jacksonville Jaguars,23488,Joseph Scates,WR
+2,Jacksonville Jaguars,24200,Myles Cole,DE
+2,Jacksonville Jaguars,24381,Keilan Robinson,RB
+2,Jacksonville Jaguars,24799,Yasir Abdullah,LB
+2,Jacksonville Jaguars,24994,Shawn Bowman,TE
+2,Jacksonville Jaguars,25771,Brian Thomas Jr.,WR
+2,Jacksonville Jaguars,25813,Maason Smith,DT
+2,Jacksonville Jaguars,29376,Jalen Jackson,RB
+3,New England Patriots,73,JaMycal Hasty,RB
+3,New England Patriots,142,Bailey Zappe,QB
+3,New England Patriots,144,Kevin Harris,RB
+3,New England Patriots,145,Rhamondre Stevenson,RB
+3,New England Patriots,149,Kendrick Bourne,WR
+3,New England Patriots,157,Tyquan Thornton,WR
+3,New England Patriots,161,Hunter Henry,TE
+3,New England Patriots,169,Mike Onwenu,OT
+3,New England Patriots,178,Jeremiah Pharms Jr.,DT
+3,New England Patriots,179,Deatrich Wise Jr.,DE
+3,New England Patriots,180,Christian Barmore,DT
+3,New England Patriots,182,Daniel Ekuale,DT
+3,New England Patriots,183,Davon Godchaux,DT
+3,New England Patriots,185,Sam Roberts,DT
+3,New England Patriots,186,Ja'Whaun Bentley,LB
+3,New England Patriots,187,Anfernee Jennings,LB
+3,New England Patriots,193,Jahlani Tavai,LB
+3,New England Patriots,194,Josh Uche,LB
+3,New England Patriots,198,Jonathan Jones,CB
+3,New England Patriots,199,Marcus Jones,CB
+3,New England Patriots,201,Shaun Wade,CB
+3,New England Patriots,203,Joshuah Bledsoe,S
+3,New England Patriots,205,Kyle Dugger,S
+3,New England Patriots,208,Jabrill Peppers,S
+3,New England Patriots,210,Brenden Schooler,S
+3,New England Patriots,215,Joe Cardona,LS
+3,New England Patriots,272,Oshane Ximines,LB
+3,New England Patriots,385,Austin Hooper,TE
+3,New England Patriots,425,Monty Rice,LB
+3,New England Patriots,598,Jaylinn Hawkins,S
+3,New England Patriots,605,Jacoby Brissett,QB
+3,New England Patriots,665,Sione Takitaki,LB
+3,New England Patriots,700,Mitchell Wilcox,TE
+3,New England Patriots,701,Ben Brown,C
+3,New England Patriots,819,Marco Wilson,CB
+3,New England Patriots,880,Christian Elliss,LB
+3,New England Patriots,1096,Kobe Jones,LB
+3,New England Patriots,1191,A.J. Thomas,S
+3,New England Patriots,1262,Antonio Gibson,RB
+3,New England Patriots,1269,Alex Erickson,WR
+3,New England Patriots,1300,Will Bradley-King,LB
+3,New England Patriots,1336,Joey Slye,PK
+3,New England Patriots,1370,Michael Jordan,G
+3,New England Patriots,1465,Joe Giles-Harris,LB
+3,New England Patriots,1524,Yannick Ngakoue,LB
+3,New England Patriots,1531,Eric Johnson,DT
+3,New England Patriots,1732,Nick Leverett,G
+3,New England Patriots,1817,Josiah Bronson,DT
+3,New England Patriots,1932,Kawaan Baker,WR
+3,New England Patriots,2043,Mike Purcell,DT
+3,New England Patriots,2122,Trysten Hill,DT
+3,New England Patriots,2322,K.J. Osborn,WR
+3,New England Patriots,2324,Jalen Reagor,WR
+3,New England Patriots,2341,Vederian Lowe,OT
+3,New England Patriots,6801,Ochaun Mathis,LB
+3,New England Patriots,7994,Drake Maye,QB
+3,New England Patriots,8120,Terrell Jennings,RB
+3,New England Patriots,9246,John Morgan III,DE
+3,New England Patriots,9874,Joe Milton III,QB
+3,New England Patriots,10123,Javon Baker,WR
+3,New England Patriots,10971,Curtis Jacobs,LB
+3,New England Patriots,14305,Steele Chambers,LB
+3,New England Patriots,14695,Christian Gonzalez,CB
+3,New England Patriots,16490,Matt Landers,WR
+3,New England Patriots,17037,Miles Battle,CB
+3,New England Patriots,17178,Dell Pettus,S
+3,New England Patriots,17464,Demontrey Jacobs,OT
+3,New England Patriots,18088,Chad Ryland,PK
+3,New England Patriots,19614,Azizi Hearn,CB
+3,New England Patriots,22546,Demario Douglas,WR
+3,New England Patriots,23614,Jaheim Bell,TE
+3,New England Patriots,23671,Marcellas Dial,CB
+3,New England Patriots,25305,Deshaun Fenwick,RB
+3,New England Patriots,25394,Alex Austin,CB
+3,New England Patriots,25554,Ja'Lynn Polk,WR
+3,New England Patriots,25759,Kayshon Boutte,WR
+3,New England Patriots,25812,Jaquelin Roy,DT
+3,New England Patriots,25933,Keion White,DE
+3,New England Patriots,27153,Titus Leo,LB
+3,New England Patriots,27415,Mikey Victor,CB
+3,New England Patriots,31180,Marte Mapu,S
+3,New England Patriots,33901,Isaiah Bolden,CB
+3,New England Patriots,34086,Truman Jones,DE
+3,New England Patriots,36261,Bryce Baringer,P
+3,New England Patriots,36360,La'Michael Pettway,TE
+3,New England Patriots,39835,JaQuae Jackson,WR
+3,New England Patriots,48404,Jotham Russell,DE
+3,New England Patriots,48415,David Wallis,WR
+3,New England Patriots,48416,Liam Fornadel,G
+3,New England Patriots,48459,Christian McCarroll,LB
+4,New York Giants,9,Jakob Johnson,FB
+4,New York Giants,24,Jermaine Eluemunor,G
+4,New York Giants,89,Chris Manhertz,TE
+4,New York Giants,120,Ty Summers,LB
+4,New York Giants,126,Tre Herndon,CB
+4,New York Giants,216,Daniel Jones,QB
+4,New York Giants,231,Wan'Dale Robinson,WR
+4,New York Giants,234,Darius Slayton,WR
+4,New York Giants,236,Daniel Bellinger,TE
+4,New York Giants,241,Joshua Ezeudu,G
+4,New York Giants,251,Andrew Thomas,OT
+4,New York Giants,253,Kayvon Thibodeaux,LB
+4,New York Giants,256,D.J. Davidson,DT
+4,New York Giants,258,Dexter Lawrence,DT
+4,New York Giants,259,Darrian Beavers,LB
+4,New York Giants,264,Tomon Fox,LB
+4,New York Giants,265,Micah McFadden,LB
+4,New York Giants,266,Azeez Ojulari,LB
+4,New York Giants,273,Cor'Dale Flott,CB
+4,New York Giants,275,Adoree' Jackson,CB
+4,New York Giants,277,Nick McCloud,CB
+4,New York Giants,279,Jason Pinnock,S
+4,New York Giants,282,Dane Belton,S
+4,New York Giants,286,Graham Gano,PK
+4,New York Giants,287,Jamie Gillan,P
+4,New York Giants,288,Casey Kreiter,LS
+4,New York Giants,448,Tim Boyle,QB
+4,New York Giants,570,Timmy Horne,DT
+4,New York Giants,807,Isaiah Simmons,LB
+4,New York Giants,847,Tyree Jackson,TE
+4,New York Giants,849,Jack Stoll,TE
+4,New York Giants,882,Patrick Johnson,LB
+4,New York Giants,887,Mario Goodrich,CB
+4,New York Giants,1134,Ihmir Smith-Marsette,WR
+4,New York Giants,1166,Armon Watts,DT
+4,New York Giants,1167,Matthew Adams,LB
+4,New York Giants,1243,Benton Whitley,LB
+4,New York Giants,1326,Christian Holmes,CB
+4,New York Giants,1378,Brian Burns,LB
+4,New York Giants,1421,Devin Singletary,RB
+4,New York Giants,1428,Isaiah Hodgins,WR
+4,New York Giants,1430,Isaiah McKenzie,WR
+4,New York Giants,1441,Greg Van Roten,G
+4,New York Giants,1450,Boogie Basham,DE
+4,New York Giants,1460,Jordan Phillips,DT
+4,New York Giants,1538,Bobby Okereke,LB
+4,New York Giants,1559,Matt Haack,P
+4,New York Giants,1572,Miles Boykin,WR
+4,New York Giants,1576,Gunner Olszewski,WR
+4,New York Giants,1633,Drew Lock,QB
+4,New York Giants,1735,Aaron Stinnie,G
+4,New York Giants,1750,Rakeem Nunez-Roches,DT
+4,New York Giants,2087,Dennis Houston,WR
+4,New York Giants,2154,Joshua Kelley,RB
+4,New York Giants,2220,Raheem Layne,S
+4,New York Giants,2242,Allen Robinson II,WR
+4,New York Giants,2274,Elijah Garcia,DE
+4,New York Giants,2295,David Long Jr.,CB
+4,New York Giants,2337,Austin Schlottmann,C
+4,New York Giants,2371,Duke Shelley,CB
+4,New York Giants,2378,Greg Joseph,PK
+4,New York Giants,2656,Breon Borders,CB
+4,New York Giants,2926,Greg Stroman Jr.,CB
+4,New York Giants,7279,Tommy DeVito,QB
+4,New York Giants,9307,Bryce FordWheaton,WR
+4,New York Giants,9889,Jalin Hyatt,WR
+4,New York Giants,9986,Dee Williams,CB
+4,New York Giants,10212,Divaad Wilson,CB
+4,New York Giants,10623,Dyontae Johnson,LB
+4,New York Giants,10802,Tyrone Tracy,RB
+4,New York Giants,10918,Theo Johnson,TE
+4,New York Giants,10977,Jonathan Sutherland,S
+4,New York Giants,11775,Kyler Baugh,DT
+4,New York Giants,11818,Tyler Nubin,S
+4,New York Giants,13031,Tre Hawkins III,CB
+4,New York Giants,14654,Jordon Riley,DT
+4,New York Giants,14656,Casey Rogers,DT
+4,New York Giants,14860,Lorenzo Lingard,RB
+4,New York Giants,15074,Clayton Isbell,S
+4,New York Giants,15347,Eric Gray,RB
+4,New York Giants,15857,Cory Durden,DT
+4,New York Giants,16808,Andru Phillips,CB
+4,New York Giants,17392,Art Green,CB
+4,New York Giants,17398,Gervarrius Owens,S
+4,New York Giants,18069,Deonte Banks,CB
+4,New York Giants,18437,Jude McAtamney,PK
+4,New York Giants,19390,Anthony Johnson Jr.,S
+4,New York Giants,19600,Darius Muasau,LB
+4,New York Giants,19616,Alex Johnson,CB
+4,New York Giants,20732,Trey Kiser,LB
+4,New York Giants,23594,Dante Miller,RB
+4,New York Giants,23888,Elijah Chatman,DT
+4,New York Giants,24447,Ovie Oghoufo,DE
+4,New York Giants,24804,K.J. Cloyd,LB
+4,New York Giants,25767,Malik Nabers,WR
+4,New York Giants,27547,Ayir Asante,WR
+4,New York Giants,47021,John Jiles,WR
+5,Baltimore Ravens,148,Nelson Agholor,WR
+5,Baltimore Ravens,159,Scotty Washington,TE
+5,Baltimore Ravens,291,Lamar Jackson,QB
+5,Baltimore Ravens,297,Justice Hill,RB
+5,Baltimore Ravens,299,Patrick Ricard,FB
+5,Baltimore Ravens,300,Rashod Bateman,WR
+5,Baltimore Ravens,307,Tylan Wallace,WR
+5,Baltimore Ravens,309,Mark Andrews,TE
+5,Baltimore Ravens,311,Charlie Kolar,TE
+5,Baltimore Ravens,312,Isaiah Likely,TE
+5,Baltimore Ravens,315,Tyler Linderbaum,C
+5,Baltimore Ravens,316,Ben Cleveland,G
+5,Baltimore Ravens,318,Patrick Mekari,G
+5,Baltimore Ravens,325,Ronnie Stanley,OT
+5,Baltimore Ravens,326,Brent Urban,DE
+5,Baltimore Ravens,328,Travis Jones,DT
+5,Baltimore Ravens,330,Justin Madubuike,DT
+5,Baltimore Ravens,332,Michael Pierce,DT
+5,Baltimore Ravens,333,Broderick Washington,DT
+5,Baltimore Ravens,338,Malik Harrison,LB
+5,Baltimore Ravens,343,David Ojabo,LB
+5,Baltimore Ravens,344,Odafe Oweh,LB
+5,Baltimore Ravens,348,Josh Ross,LB
+5,Baltimore Ravens,349,Kristian Welch,LB
+5,Baltimore Ravens,350,Jalyn Armour-Davis,CB
+5,Baltimore Ravens,353,Marlon Humphrey,CB
+5,Baltimore Ravens,356,Brandon Stephens,CB
+5,Baltimore Ravens,357,Damarion Williams,CB
+5,Baltimore Ravens,358,Daryl Worley,CB
+5,Baltimore Ravens,360,Kyle Hamilton,S
+5,Baltimore Ravens,362,Ar'Darius Washington,S
+5,Baltimore Ravens,363,Marcus Williams,S
+5,Baltimore Ravens,364,Justin Tucker,PK
+5,Baltimore Ravens,365,Jordan Stout,P
+5,Baltimore Ravens,373,Derrick Henry,RB
+5,Baltimore Ravens,498,Chris Board,LB
+5,Baltimore Ravens,591,Ka'dar Hollman,CB
+5,Baltimore Ravens,615,John Kelly Jr.,RB
+5,Baltimore Ravens,724,Josh Tupou,DT
+5,Baltimore Ravens,815,Christian Matthew,CB
+5,Baltimore Ravens,816,Trayvon Mullen,CB
+5,Baltimore Ravens,1173,Roquan Smith,LB
+5,Baltimore Ravens,1190,Eddie Jackson,S
+5,Baltimore Ravens,1479,Tre'Davious White,CB
+5,Baltimore Ravens,1574,Diontae Johnson,WR
+5,Baltimore Ravens,1575,Anthony Miller,WR
+5,Baltimore Ravens,1579,Steven Sims,WR
+5,Baltimore Ravens,1600,Chris Wormley,DE
+5,Baltimore Ravens,1617,Arthur Maulet,CB
+5,Baltimore Ravens,1717,Russell Gage,WR
+5,Baltimore Ravens,1752,Deadrin Senat,DT
+5,Baltimore Ravens,1908,Desmond King II,CB
+5,Baltimore Ravens,1934,Deonte Harty,WR
+5,Baltimore Ravens,2208,Kyle Van Noy,LB
+5,Baltimore Ravens,2360,William Kwenkeu,LB
+5,Baltimore Ravens,2695,Josh Johnson,QB
+5,Baltimore Ravens,2720,Keith Kirkwood,WR
+5,Baltimore Ravens,10878,Sanoussi Kane,S
+5,Baltimore Ravens,10946,Adisa Isaac,LB
+5,Baltimore Ravens,11835,Emory Jones,QB
+5,Baltimore Ravens,13464,Yvandy Rigby,LB
+5,Baltimore Ravens,14538,Tramel Walthour,DE
+5,Baltimore Ravens,15681,Keaton Mitchell,RB
+5,Baltimore Ravens,15791,Devin Leary,QB
+5,Baltimore Ravens,16972,Dayton Wade,WR
+5,Baltimore Ravens,17013,Tavius Robinson,LB
+5,Baltimore Ravens,17835,Joe Evans,LB
+5,Baltimore Ravens,18072,Beau Brade,S
+5,Baltimore Ravens,18222,Zay Flowers,WR
+5,Baltimore Ravens,18339,Sean Ryan,WR
+5,Baltimore Ravens,18341,Isaiah Washington,WR
+5,Baltimore Ravens,18403,Deion Jennings,LB
+5,Baltimore Ravens,19400,T.J. Tampa,CB
+5,Baltimore Ravens,20085,Rasheen Ali,RB
+5,Baltimore Ravens,24728,Malik Cunningham,WR
+5,Baltimore Ravens,25389,Riley Sharp,TE
+5,Baltimore Ravens,25395,Ryan Cooper Jr.,CB
+5,Baltimore Ravens,25580,Roger Rosengarten,OT
+5,Baltimore Ravens,25669,Devontez Walker,WR
+5,Baltimore Ravens,26074,Trenton Simpson,LB
+5,Baltimore Ravens,26084,Nate Wiggins,CB
+5,Baltimore Ravens,26140,Qadir Ismail,TE
+5,Baltimore Ravens,31656,Owen Wright,RB
+5,Baltimore Ravens,47200,Team,
+5,Baltimore Ravens,48406,C.J. Ravenell,DE
+6,Tennessee Titans,105,Arden Key,LB
+6,Tennessee Titans,191,Raekwon McMillan,LB
+6,Tennessee Titans,211,Nick Folk,PK
+6,Tennessee Titans,358,Daryl Worley,CB
+6,Tennessee Titans,368,Malik Willis,QB
+6,Tennessee Titans,371,Julius Chestnut,RB
+6,Tennessee Titans,372,Hassan Haskins,RB
+6,Tennessee Titans,376,Treylon Burks,WR
+6,Tennessee Titans,380,Mason Kinsey,WR
+6,Tennessee Titans,382,Kyle Philips,WR
+6,Tennessee Titans,383,Nick Westbrook-Ikhine,WR
+6,Tennessee Titans,387,Thomas Odukoya,TE
+6,Tennessee Titans,388,Chigoziem Okonkwo,TE
+6,Tennessee Titans,402,Dillon Radunz,OT
+6,Tennessee Titans,412,Jeffery Simmons,DT
+6,Tennessee Titans,415,Chance Campbell,LB
+6,Tennessee Titans,419,Jack Gibbens,LB
+6,Tennessee Titans,422,Harold Landry III,LB
+6,Tennessee Titans,427,Rashad Weaver,LB
+6,Tennessee Titans,428,Tre Avery,CB
+6,Tennessee Titans,430,Caleb Farley,CB
+6,Tennessee Titans,434,Roger McCreary,CB
+6,Tennessee Titans,436,Elijah Molden,CB
+6,Tennessee Titans,440,Amani Hooker,S
+6,Tennessee Titans,446,Ryan Stonehouse,P
+6,Tennessee Titans,447,Morgan Cox,LS
+6,Tennessee Titans,543,Calvin Ridley,WR
+6,Tennessee Titans,566,Abdullah Anderson,DT
+6,Tennessee Titans,567,Marlon Davidson,DT
+6,Tennessee Titans,689,Tyler Boyd,WR
+6,Tennessee Titans,733,Chidobe Awuzie,CB
+6,Tennessee Titans,766,DeAndre Hopkins,WR
+6,Tennessee Titans,964,Justin Hardee,CB
+6,Tennessee Titans,1005,Daniel Brunskill,OT
+6,Tennessee Titans,1248,L'Jarius Sneed,CB
+6,Tennessee Titans,1543,Darrell Baker Jr.,CB
+6,Tennessee Titans,1563,Mason Rudolph,QB
+6,Tennessee Titans,1693,Jamal Adams,S
+6,Tennessee Titans,1695,Quandre Diggs,S
+6,Tennessee Titans,1822,Jerome Baker,LB
+6,Tennessee Titans,1947,Nick Vannett,TE
+6,Tennessee Titans,2022,Lloyd Cushenberry III,C
+6,Tennessee Titans,2082,Tony Pollard,RB
+6,Tennessee Titans,2120,Quinton Bohanna,DT
+6,Tennessee Titans,2128,Luke Gifford,LB
+6,Tennessee Titans,2154,Joshua Kelley,RB
+6,Tennessee Titans,2192,Sebastian Joseph-Day,DT
+6,Tennessee Titans,2201,Kenneth Murray Jr.,LB
+6,Tennessee Titans,2284,Ernest Jones,LB
+6,Tennessee Titans,2347,James Lynch,DT
+6,Tennessee Titans,2559,Shyheim Carter,S
+6,Tennessee Titans,2674,Tay Martin,WR
+6,Tennessee Titans,2862,Mike Brown,S
+6,Tennessee Titans,3459,Matthew Wright,PK
+6,Tennessee Titans,3991,Shane Ray,LB
+6,Tennessee Titans,6480,Brayden Narveson,PK
+6,Tennessee Titans,6641,Peter Skoronski,OT
+6,Tennessee Titans,8070,Cedric Gray,LB
+6,Tennessee Titans,9880,Jabari Small,RB
+6,Tennessee Titans,10995,Keaton Ellis,S
+6,Tennessee Titans,11789,Thomas Rush,LB
+6,Tennessee Titans,12575,Kendell Brooks,S
+6,Tennessee Titans,12898,TK McLendon Jr.,DE
+6,Tennessee Titans,12909,Matthew Jackson,CB
+6,Tennessee Titans,13421,David MartinRobinson,TE
+6,Tennessee Titans,14150,JC Latham,OT
+6,Tennessee Titans,14481,Kearis Jackson,WR
+6,Tennessee Titans,15175,Jaylen Harrell,LB
+6,Tennessee Titans,15780,Julius Wood,S
+6,Tennessee Titans,16130,James Williams,LB
+6,Tennessee Titans,16624,Josh Whyle,TE
+6,Tennessee Titans,16707,Will Levis,QB
+6,Tennessee Titans,17017,Isaiah Iton,DT
+6,Tennessee Titans,17058,Otis Reese,LB
+6,Tennessee Titans,17640,Gabe JeudLally,CB
+6,Tennessee Titans,17791,Steven Stilianos,TE
+6,Tennessee Titans,18016,Jaelyn Duncan,OT
+6,Tennessee Titans,19187,Sam Schnee,WR
+6,Tennessee Titans,21972,Khalid Duke,LB
+6,Tennessee Titans,22015,Ty Zentner,P
+6,Tennessee Titans,22656,Tyjae Spears,RB
+6,Tennessee Titans,22663,Jha'Quan Jackson,WR
+6,Tennessee Titans,22972,Eric Garror,CB
+6,Tennessee Titans,24433,Keondre Coburn,DT
+6,Tennessee Titans,24439,T'Vondre Sweat,DT
+6,Tennessee Titans,24687,Mikel Jones,LB
+6,Tennessee Titans,24817,Jarvis Brownlee,CB
+6,Tennessee Titans,25803,Ali Gaye,LB
+6,Tennessee Titans,28968,Bryce Oliver,WR
+6,Tennessee Titans,29657,Robert Javier,CB
+6,Tennessee Titans,36278,Caleb Murphy,LB
+6,Tennessee Titans,36280,Anthony Kendall,CB
+6,Tennessee Titans,48313,Tay Gowan,CB
+7,Detroit Lions,52,Javelin Guidry,CB
+7,Detroit Lions,54,Amik Robertson,CB
+7,Detroit Lions,320,Kevin Zeitler,G
+7,Detroit Lions,423,David Long Jr.,LB
+7,Detroit Lions,449,Jared Goff,QB
+7,Detroit Lions,450,Nate Sudfeld,QB
+7,Detroit Lions,453,Jermar Jefferson,RB
+7,Detroit Lions,454,Craig Reynolds,RB
+7,Detroit Lions,458,Maurice Alexander,WR
+7,Detroit Lions,461,Tom Kennedy,WR
+7,Detroit Lions,462,Kalif Raymond,WR
+7,Detroit Lions,464,Amon-Ra St. Brown,WR
+7,Detroit Lions,465,Jameson Williams,WR
+7,Detroit Lions,468,James Mitchell,TE
+7,Detroit Lions,469,Brock Wright,TE
+7,Detroit Lions,470,Shane Zylstra,TE
+7,Detroit Lions,473,Frank Ragnow,C
+7,Detroit Lions,479,Taylor Decker,OT
+7,Detroit Lions,484,Penei Sewell,OT
+7,Detroit Lions,485,Dan Skipper,OT
+7,Detroit Lions,490,Aidan Hutchinson,DE
+7,Detroit Lions,491,Levi Onwuzurike,DE
+7,Detroit Lions,492,Josh Paschal,DE
+7,Detroit Lions,495,Alim McNeill,DT
+7,Detroit Lions,496,Alex Anzalone,LB
+7,Detroit Lions,497,Derrick Barnes,LB
+7,Detroit Lions,502,James Houston,DE
+7,Detroit Lions,505,Anthony Pittman,LB
+7,Detroit Lions,506,Malcolm Rodriguez,LB
+7,Detroit Lions,511,Ifeatu Melifonwu,S
+7,Detroit Lions,520,Kerby Joseph,S
+7,Detroit Lions,524,Jack Fox,P
+7,Detroit Lions,548,Parker Hesse,TE
+7,Detroit Lions,621,Donovan Peoples-Jones,WR
+7,Detroit Lions,650,Isaiah Thomas,DE
+7,Detroit Lions,722,DJ Reader,DT
+7,Detroit Lions,805,Ben Niemann,LB
+7,Detroit Lions,809,Ezekiel Turner,LB
+7,Detroit Lions,909,Zonovan Knight,RB
+7,Detroit Lions,953,Kwon Alexander,LB
+7,Detroit Lions,1126,David Montgomery,RB
+7,Detroit Lions,1161,Al-Quadin Muhammad,LB
+7,Detroit Lions,1186,Kindle Vildor,CB
+7,Detroit Lions,1205,Daurice Fountain,WR
+7,Detroit Lions,1299,David Bada,DE
+7,Detroit Lions,1330,Rachad Wildgoose,CB
+7,Detroit Lions,1667,Myles Adams,DE
+7,Detroit Lions,1693,Jamal Adams,S
+7,Detroit Lions,1747,Patrick O'Connor,DE
+7,Detroit Lions,1767,Carlton Davis III,CB
+7,Detroit Lions,1781,Teddy Bridgewater,QB
+7,Detroit Lions,1904,Jalen Reeves-Maybin,LB
+7,Detroit Lions,1963,Marcus Davenport,DE
+7,Detroit Lions,2010,Tim Patrick,WR
+7,Detroit Lions,2057,Essang Bassey,CB
+7,Detroit Lions,2096,Sean McKeon,TE
+7,Detroit Lions,2130,Malik Jefferson,LB
+7,Detroit Lions,2231,Jake Funk,RB
+7,Detroit Lions,2242,Allen Robinson II,WR
+7,Detroit Lions,2277,Jonah Williams,DE
+7,Detroit Lions,2361,Za'Darius Smith,DE
+7,Detroit Lions,2530,Kyle Peko,DT
+7,Detroit Lions,2570,Khalil Dorsey,CB
+7,Detroit Lions,2845,Kaden Davis,WR
+7,Detroit Lions,2866,Iggy Iyiegbuniwe,LB
+7,Detroit Lions,2973,Jake Fromm,QB
+7,Detroit Lions,3021,C.J. Moore,S
+7,Detroit Lions,4259,Matt Betts,DE
+7,Detroit Lions,6433,Brodric Martin,DT
+7,Detroit Lions,7309,Isaiah Williams,WR
+7,Detroit Lions,8008,Antoine Green,WR
+7,Detroit Lions,9498,Chelen Garnes,S
+7,Detroit Lions,9872,Hendon Hooker,QB
+7,Detroit Lions,10101,Loren Strickland,S
+7,Detroit Lions,11594,Ennis Rakestraw Jr.,CB
+7,Detroit Lions,12150,Morice Norris,CB
+7,Detroit Lions,13235,Nate Lynn,DE
+7,Detroit Lions,13292,Jalon Calhoun,WR
+7,Detroit Lions,14098,Jahmyr Gibbs,RB
+7,Detroit Lions,14193,Terrion Arnold,CB
+7,Detroit Lions,14195,Brian Branch,S
+7,Detroit Lions,14420,Chris Smith,DT
+7,Detroit Lions,14447,Brandon Joseph,S
+7,Detroit Lions,15080,Sione Vaki,RB
+7,Detroit Lions,16074,Mitchell Agude,LB
+7,Detroit Lions,16580,Jake Bates,PK
+7,Detroit Lions,17786,Sam LaPorta,TE
+7,Detroit Lions,17837,Jack Campbell,LB
+7,Detroit Lions,20160,Abraham Beauplan,LB
+7,Detroit Lions,20176,Steven Gilmore,CB
+7,Detroit Lions,21410,Isaac Ukwu,DE
+7,Detroit Lions,25265,Hogan Hatten,LS
+7,Detroit Lions,25799,Mekhi Wingo,DT
+7,Detroit Lions,26847,DaRon Gilbert,LB
+7,Detroit Lions,36281,Trevor Nowaske,LB
+8,Atlanta Falcons,137,Riley Patterson,PK
+8,Atlanta Falcons,188,Matthew Judon,LB
+8,Atlanta Falcons,507,Josh Woods,LB
+8,Atlanta Falcons,508,Mike Hughes,CB
+8,Atlanta Falcons,529,Tyler Allgeier,RB
+8,Atlanta Falcons,535,Josh Ali,WR
+8,Atlanta Falcons,541,KhaDarel Hodge,WR
+8,Atlanta Falcons,542,Drake London,WR
+8,Atlanta Falcons,547,John FitzPatrick,TE
+8,Atlanta Falcons,549,Kyle Pitts,TE
+8,Atlanta Falcons,551,Drew Dalman,C
+8,Atlanta Falcons,555,Chris Lindstrom,G
+8,Atlanta Falcons,560,Jake Matthews,OT
+8,Atlanta Falcons,564,Arnold Ebiketie,LB
+8,Atlanta Falcons,565,Grady Jarrett,DE
+8,Atlanta Falcons,569,Ta'Quon Graham,DT
+8,Atlanta Falcons,575,Troy Andersen,LB
+8,Atlanta Falcons,578,Lorenzo Carter,LB
+8,Atlanta Falcons,582,Nathan Landman,LB
+8,Atlanta Falcons,583,DeAngelo Malone,LB
+8,Atlanta Falcons,586,Dee Alford,CB
+8,Atlanta Falcons,594,A.J. Terrell,CB
+8,Atlanta Falcons,595,Avery Williams,RB
+8,Atlanta Falcons,596,Richie Grant,S
+8,Atlanta Falcons,601,Younghoe Koo,PK
+8,Atlanta Falcons,602,Bradley Pinion,P
+8,Atlanta Falcons,604,Liam McCullough,LS
+8,Atlanta Falcons,657,Tommy Togiai,DT
+8,Atlanta Falcons,717,Khalid Kareem,LB
+8,Atlanta Falcons,741,Jessie Bates III,S
+8,Atlanta Falcons,814,Antonio Hamilton,CB
+8,Atlanta Falcons,939,Bradlee Anae,DE
+8,Atlanta Falcons,990,Ray-Ray McCloud III,WR
+8,Atlanta Falcons,994,Ross Dwelley,TE
+8,Atlanta Falcons,999,Charlie Woerner,TE
+8,Atlanta Falcons,1109,Micah Abernathy,S
+8,Atlanta Falcons,1131,Darnell Mooney,WR
+8,Atlanta Falcons,1178,Dane Cruikshank,S
+8,Atlanta Falcons,1259,Taylor Heinicke,QB
+8,Atlanta Falcons,1303,James Smith-Williams,DE
+8,Atlanta Falcons,1316,Milo Eifler,LB
+8,Atlanta Falcons,1457,Prince Emili,DT
+8,Atlanta Falcons,1889,Demone Harris,DE
+8,Atlanta Falcons,1971,David Onyemata,DT
+8,Atlanta Falcons,1972,Kentavius Street,DT
+8,Atlanta Falcons,1977,Kaden Elliss,LB
+8,Atlanta Falcons,2069,Justin Simmons,S
+8,Atlanta Falcons,2092,James Washington,WR
+8,Atlanta Falcons,2308,Kirk Cousins,QB
+8,Atlanta Falcons,2618,Austin Mack,WR
+8,Atlanta Falcons,2684,Spencer Brown,RB
+8,Atlanta Falcons,2828,Storey Jackson,LB
+8,Atlanta Falcons,2870,LaCale London,DE
+8,Atlanta Falcons,3131,Chris Blair,WR
+8,Atlanta Falcons,3329,Jordan Thomas,TE
+8,Atlanta Falcons,3399,Eddie Goldman,DT
+8,Atlanta Falcons,3439,Kevin King,CB
+8,Atlanta Falcons,4107,Lukas Denis,S
+8,Atlanta Falcons,7308,Casey Washington,WR
+8,Atlanta Falcons,10002,John Paddock,QB
+8,Atlanta Falcons,12730,Dylan Drummond,WR
+8,Atlanta Falcons,14100,Jase McClellan,RB
+8,Atlanta Falcons,14292,Zach Harrison,DE
+8,Atlanta Falcons,14422,JD Bertrand,LB
+8,Atlanta Falcons,14534,Zion Logue,DT
+8,Atlanta Falcons,14660,Brandon Dorlus,DT
+8,Atlanta Falcons,15068,Clark Phillips III,CB
+8,Atlanta Falcons,17378,Donavan Mutin,LB
+8,Atlanta Falcons,18953,Anthony Johnson,CB
+8,Atlanta Falcons,19654,Odieu Hiliare,WR
+8,Atlanta Falcons,19768,Jesse Matthews,WR
+8,Atlanta Falcons,22502,Natrone Brooks,CB
+8,Atlanta Falcons,23016,Carlos Washington Jr.,RB
+8,Atlanta Falcons,23618,Austin Stogner,TE
+8,Atlanta Falcons,23624,Jovaughn Gwyn,G
+8,Atlanta Falcons,24044,Ryan Sanborn,P
+8,Atlanta Falcons,24380,Bijan Robinson,RB
+8,Atlanta Falcons,24653,Matthew Bergeron,G
+8,Atlanta Falcons,25532,Michael Penix Jr.,QB
+8,Atlanta Falcons,25599,Bralen Trice,LB
+8,Atlanta Falcons,26054,Ruke Orhorhoro,DT
+8,Atlanta Falcons,30460,William Hooper,CB
+8,Atlanta Falcons,30799,Jayden Price,CB
+8,Atlanta Falcons,36255,Nathan Rourke,QB
+8,Atlanta Falcons,48384,Tre Tarpley III,S
+8,Atlanta Falcons,48408,Kehinde Oginni Hassan,DE
+8,Atlanta Falcons,48410,Trey Vaval,CB
+9,Cleveland Browns,137,Riley Patterson,PK
+9,Cleveland Browns,142,Bailey Zappe,QB
+9,Cleveland Browns,146,Pierre Strong Jr.,RB
+9,Cleveland Browns,221,Gary Brightwell,RB
+9,Cleveland Browns,235,Kadarius Toney,WR
+9,Cleveland Browns,268,Elerson Smith,LB
+9,Cleveland Browns,290,Tyler Huntley,QB
+9,Cleveland Browns,304,James Proche II,WR
+9,Cleveland Browns,390,Geoff Swaim,TE
+9,Cleveland Browns,587,Mike Ford,CB
+9,Cleveland Browns,609,Deshaun Watson,QB
+9,Cleveland Browns,610,Nick Chubb,RB
+9,Cleveland Browns,612,Jerome Ford,RB
+9,Cleveland Browns,615,John Kelly Jr.,RB
+9,Cleveland Browns,617,David Bell,WR
+9,Cleveland Browns,618,Amari Cooper,WR
+9,Cleveland Browns,625,Michael Woods II,WR
+9,Cleveland Browns,629,Zaire Mitchell-Paden,TE
+9,Cleveland Browns,630,David Njoku,TE
+9,Cleveland Browns,633,Ethan Pocic,C
+9,Cleveland Browns,634,Joel Bitonio,G
+9,Cleveland Browns,640,Jack Conklin,OT
+9,Cleveland Browns,648,Myles Garrett,DE
+9,Cleveland Browns,650,Isaiah Thomas,DE
+9,Cleveland Browns,653,Alex Wright,DE
+9,Cleveland Browns,660,Tony Fields II,LB
+9,Cleveland Browns,663,Jeremiah Owusu-Koramoah,LB
+9,Cleveland Browns,667,Martin Emerson Jr.,CB
+9,Cleveland Browns,671,Greg Newsome II,CB
+9,Cleveland Browns,672,Denzel Ward,CB
+9,Cleveland Browns,674,D'Anthony Bell,S
+9,Cleveland Browns,675,Grant Delpit,S
+9,Cleveland Browns,679,Cade York,PK
+9,Cleveland Browns,680,Corey Bojorquez,P
+9,Cleveland Browns,681,Charley Hughlett,LS
+9,Cleveland Browns,704,Hakeem Adeniji,OT
+9,Cleveland Browns,808,Cameron Thomas,DE
+9,Cleveland Browns,916,Elijah Moore,WR
+9,Cleveland Browns,964,Justin Hardee,CB
+9,Cleveland Browns,1022,Maurice Hurst,DT
+9,Cleveland Browns,1254,Juan Thornhill,S
+9,Cleveland Browns,1319,Khaleke Hudson,LB
+9,Cleveland Browns,1345,D'Onta Foreman,RB
+9,Cleveland Browns,1349,Giovanni Ricci,TE
+9,Cleveland Browns,1534,Chris Williams,DT
+9,Cleveland Browns,1544,Tony Brown,CB
+9,Cleveland Browns,1555,Rodney McLeod,S
+9,Cleveland Browns,1605,Devin Bush,LB
+9,Cleveland Browns,1662,Shelby Harris,DT
+9,Cleveland Browns,1669,Quinton Jefferson,DT
+9,Cleveland Browns,1715,Jaelon Darden,WR
+9,Cleveland Browns,1867,Jordan Akins,TE
+9,Cleveland Browns,1902,Ogbonnia Okoronkwo,DE
+9,Cleveland Browns,1925,Jameis Winston,QB
+9,Cleveland Browns,2009,Jerry Jeudy,WR
+9,Cleveland Browns,2059,Faion Hicks,CB
+9,Cleveland Browns,2142,Tyler Coyle,S
+9,Cleveland Browns,2223,Dustin Hopkins,PK
+9,Cleveland Browns,2350,Dalvin Tomlinson,DT
+9,Cleveland Browns,2356,Jordan Hicks,LB
+9,Cleveland Browns,2361,Za'Darius Smith,DE
+9,Cleveland Browns,2845,Kaden Davis,WR
+9,Cleveland Browns,2859,T.Y. McGill,DT
+9,Cleveland Browns,2869,Sam Kamara,DE
+9,Cleveland Browns,3017,Brady Breeze,S
+9,Cleveland Browns,6460,Kahlef Hailassie,CB
+9,Cleveland Browns,6691,Cameron Mitchell,CB
+9,Cleveland Browns,6864,Aidan Robbins,RB
+9,Cleveland Browns,7435,Treyton Welch,TE
+9,Cleveland Browns,9442,Blake Whiteheart,TE
+9,Cleveland Browns,9896,Cedric Tillman,WR
+9,Cleveland Browns,11557,Isaiah McGuire,DE
+9,Cleveland Browns,11919,Chris Edmonds,S
+9,Cleveland Browns,12364,Chase Williams,S
+9,Cleveland Browns,14298,Michael Hall Jr.,DT
+9,Cleveland Browns,14331,Ronnie Hickman,S
+9,Cleveland Browns,15052,Mohamoud Diabate,LB
+9,Cleveland Browns,16100,Caleb Johnson,LB
+9,Cleveland Browns,16490,Matt Landers,WR
+9,Cleveland Browns,16645,Jowon Briggs,DT
+9,Cleveland Browns,16737,Brenden Bates,TE
+9,Cleveland Browns,19528,Dorian ThompsonRobinson,QB
+9,Cleveland Browns,22110,Myles Harden,CB
+9,Cleveland Browns,22871,Jacob Kibodi,RB
+9,Cleveland Browns,23432,Nathaniel Watson,LB
+9,Cleveland Browns,23599,Ahmarean Brown,WR
+9,Cleveland Browns,23722,Jamari Thrash,WR
+9,Cleveland Browns,25593,Jeremiah Martin,DE
+9,Cleveland Browns,28062,Winston Reid,LB
+9,Cleveland Browns,34769,Jacob Saylors,RB
+9,Cleveland Browns,36252,Lucas Havrisik,PK
+9,Cleveland Browns,36307,Rex Sunahara,LS
+9,Cleveland Browns,48456,Landon Honeycutt,LB
+9,Cleveland Browns,48460,Marvin Moody,LB
+10,Cincinnati Bengals,84,Kendric Pryor,WR
+10,Cincinnati Bengals,176,Lawrence Guy,DT
+10,Cincinnati Bengals,237,Tanner Hudson,TE
+10,Cincinnati Bengals,361,Geno Stone,S
+10,Cincinnati Bengals,369,Logan Woodside,QB
+10,Cincinnati Bengals,429,Nate Brooks,CB
+10,Cincinnati Bengals,679,Cade York,PK
+10,Cincinnati Bengals,683,Joe Burrow,QB
+10,Cincinnati Bengals,684,Chris Evans,RB
+10,Cincinnati Bengals,688,Trayveon Williams,RB
+10,Cincinnati Bengals,690,Ja'Marr Chase,WR
+10,Cincinnati Bengals,691,Tee Higgins,WR
+10,Cincinnati Bengals,692,Kwamie Lassiter II,WR
+10,Cincinnati Bengals,699,Drew Sample,TE
+10,Cincinnati Bengals,702,Trey Hill,C
+10,Cincinnati Bengals,705,Alex Cappa,G
+10,Cincinnati Bengals,712,Cordell Volson,G
+10,Cincinnati Bengals,714,Jeff Gunter,DE
+10,Cincinnati Bengals,715,Trey Hendrickson,DE
+10,Cincinnati Bengals,716,Sam Hubbard,DE
+10,Cincinnati Bengals,718,Joseph Ossai,DE
+10,Cincinnati Bengals,720,Zach Carter,DT
+10,Cincinnati Bengals,721,BJ Hill,DT
+10,Cincinnati Bengals,723,Jay Tufele,DT
+10,Cincinnati Bengals,725,Joe Bachie,LB
+10,Cincinnati Bengals,727,Akeem Davis-Gaither,LB
+10,Cincinnati Bengals,730,Germaine Pratt,LB
+10,Cincinnati Bengals,731,Logan Wilson,LB
+10,Cincinnati Bengals,734,Jalen Davis,CB
+10,Cincinnati Bengals,736,Allan George,CB
+10,Cincinnati Bengals,737,Mike Hilton,CB
+10,Cincinnati Bengals,738,Cam Taylor-Britt,CB
+10,Cincinnati Bengals,740,Tycen Anderson,S
+10,Cincinnati Bengals,742,Vonn Bell,S
+10,Cincinnati Bengals,744,Dax Hill,CB
+10,Cincinnati Bengals,747,Evan McPherson,PK
+10,Cincinnati Bengals,749,Cal Adomitis,LS
+10,Cincinnati Bengals,819,Marco Wilson,CB
+10,Cincinnati Bengals,949,Sheldon Rankins,DT
+10,Cincinnati Bengals,1125,Khalil Herbert,RB
+10,Cincinnati Bengals,1420,Zack Moss,RB
+10,Cincinnati Bengals,1799,Mike Gesicki,TE
+10,Cincinnati Bengals,2129,Devin Harper,LB
+10,Cincinnati Bengals,2593,Jake Browning,QB
+10,Cincinnati Bengals,2609,Trenton Irwin,WR
+10,Cincinnati Bengals,2794,Carlos Davis,DT
+10,Cincinnati Bengals,3631,Hakeem Butler,WR
+10,Cincinnati Bengals,7287,Chase Brown,RB
+10,Cincinnati Bengals,7309,Isaiah Williams,WR
+10,Cincinnati Bengals,10792,Charlie Jones,WR
+10,Cincinnati Bengals,11016,Rocky Lombardi,QB
+10,Cincinnati Bengals,12496,Elijah Collins,RB
+10,Cincinnati Bengals,12657,Andre Carter,DE
+10,Cincinnati Bengals,13350,Shaka Heyward,LB
+10,Cincinnati Bengals,13800,Aaron Casey,LB
+10,Cincinnati Bengals,14067,Josh Newton,CB
+10,Cincinnati Bengals,14109,Jermaine Burton,WR
+10,Cincinnati Bengals,14194,Jordan Battle,S
+10,Cincinnati Bengals,14520,Amarius Mims,OT
+10,Cincinnati Bengals,14786,McKinnley Jackson,DT
+10,Cincinnati Bengals,15125,Erick All,TE
+10,Cincinnati Bengals,15164,Kris Jenkins,DT
+10,Cincinnati Bengals,15219,DJ Turner,CB
+10,Cincinnati Bengals,15225,Brad Robbins,P
+10,Cincinnati Bengals,16112,DJ Ivey,CB
+10,Cincinnati Bengals,16323,Maema Njongmeta,LB
+10,Cincinnati Bengals,16914,Michael Dowell,LB
+10,Cincinnati Bengals,17011,Cedric Johnson,DE
+10,Cincinnati Bengals,17655,Ryan Rehkow,P
+10,Cincinnati Bengals,19894,Tanner McLachlan,TE
+10,Cincinnati Bengals,21578,Shedrick Jackson,WR
+10,Cincinnati Bengals,22610,Daijahn Anthony,S
+10,Cincinnati Bengals,22739,Lance Robinson,CB
+10,Cincinnati Bengals,25751,Noah Cain,RB
+10,Cincinnati Bengals,26045,Myles Murphy,DE
+10,Cincinnati Bengals,26924,Travis Bell,DT
+10,Cincinnati Bengals,29555,PJ Jules,S
+10,Cincinnati Bengals,34175,Andrei Iosivas,WR
+10,Cincinnati Bengals,36262,Nate Gilliam,C
+10,Cincinnati Bengals,36300,Joshua Pryor,DT
+10,Cincinnati Bengals,39322,Cam Grandy,TE
+10,Cincinnati Bengals,48266,Cole Burgess,WR
+10,Cincinnati Bengals,48411,Justin Blazek,DE
+11,Arizona Cardinals,28,Jackson Barton,OT
+11,Arizona Cardinals,43,Bilal Nichols,DT
+11,Arizona Cardinals,80,Zay Jones,WR
+11,Arizona Cardinals,195,Mack Wilson Sr.,LB
+11,Arizona Cardinals,409,Naquan Jones,DT
+11,Arizona Cardinals,471,Evan Brown,C
+11,Arizona Cardinals,503,Julian Okwara,LB
+11,Arizona Cardinals,515,Bobby Price,CB
+11,Arizona Cardinals,528,Desmond Ridder,QB
+11,Arizona Cardinals,574,Khyiris Tonga,DT
+11,Arizona Cardinals,588,Darren Hall,CB
+11,Arizona Cardinals,616,Daylen Baldwin,WR
+11,Arizona Cardinals,637,Hjalte Froholdt,G
+11,Arizona Cardinals,713,Jonah Williams,OT
+11,Arizona Cardinals,726,Markus Bailey,LB
+11,Arizona Cardinals,754,Kyler Murray,QB
+11,Arizona Cardinals,756,James Conner,RB
+11,Arizona Cardinals,760,Andre Baccellia,WR
+11,Arizona Cardinals,764,Greg Dortch,WR
+11,Arizona Cardinals,773,Trey McBride,TE
+11,Arizona Cardinals,774,Bernhard Seikovits,TE
+11,Arizona Cardinals,799,Zaven Collins,LB
+11,Arizona Cardinals,800,Victor Dimukeje,LB
+11,Arizona Cardinals,801,Dennis Gardeck,LB
+11,Arizona Cardinals,804,Jesse Luketa,LB
+11,Arizona Cardinals,808,Cameron Thomas,DE
+11,Arizona Cardinals,820,Budda Baker,S
+11,Arizona Cardinals,824,Jalen Thompson,S
+11,Arizona Cardinals,826,Matt Prater,PK
+11,Arizona Cardinals,841,Zach Pascal,WR
+11,Arizona Cardinals,885,Kyzir White,LB
+11,Arizona Cardinals,895,Andre Chachere,S
+11,Arizona Cardinals,906,Michael Carter,RB
+11,Arizona Cardinals,1089,Krys Barnes,LB
+11,Arizona Cardinals,1159,Angelo Blackson,DE
+11,Arizona Cardinals,1164,Justin Jones,DT
+11,Arizona Cardinals,1384,Phil Hoskins,DT
+11,Arizona Cardinals,1636,DeeJay Dallas,RB
+11,Arizona Cardinals,1661,L.J. Collier,DE
+11,Arizona Cardinals,1681,Tyreke Smith,LB
+11,Arizona Cardinals,1694,Joey Blount,S
+11,Arizona Cardinals,1772,Sean Murphy-Bunting,CB
+11,Arizona Cardinals,1846,Verone McKinley III,S
+11,Arizona Cardinals,1866,Chris Moore,WR
+11,Arizona Cardinals,1895,Roy Lopez,DT
+11,Arizona Cardinals,1927,Tony Jones Jr.,RB
+11,Arizona Cardinals,1997,Blake Gillikin,P
+11,Arizona Cardinals,2047,Baron Browning,LB
+11,Arizona Cardinals,2062,Michael Ojemudia,CB
+11,Arizona Cardinals,2173,Sage Surratt,TE
+11,Arizona Cardinals,2200,Tyreek Maddox-Williams,LB
+11,Arizona Cardinals,2267,T.J. Carter,DE
+11,Arizona Cardinals,2316,Dan Chisena,WR
+11,Arizona Cardinals,2355,Chris Garrett,LB
+11,Arizona Cardinals,2653,Delonte Hood,CB
+11,Arizona Cardinals,2810,Ben Stille,DE
+11,Arizona Cardinals,3277,Michael Palardy,P
+11,Arizona Cardinals,6762,Travis Vokolek,TE
+11,Arizona Cardinals,7318,Tip Reiman,TE
+11,Arizona Cardinals,7515,Trey Benson,RB
+11,Arizona Cardinals,8055,Myles Murphy,DE
+11,Arizona Cardinals,9356,Dante Stills,DT
+11,Arizona Cardinals,9442,Blake Whiteheart,TE
+11,Arizona Cardinals,10212,Divaad Wilson,CB
+11,Arizona Cardinals,11266,Tejhaun Palmer,WR
+11,Arizona Cardinals,11343,Starling Thomas V,CB
+11,Arizona Cardinals,11560,Darius Robinson,DE
+11,Arizona Cardinals,13966,Emari Demercado,RB
+11,Arizona Cardinals,14251,Marvin Harrison Jr.,WR
+11,Arizona Cardinals,15429,Jaden Davis,CB
+11,Arizona Cardinals,17311,Clayton Tune,QB
+11,Arizona Cardinals,17448,Xavier Weaver,WR
+11,Arizona Cardinals,18088,Chad Ryland,PK
+11,Arizona Cardinals,18300,Elijah Jones,CB
+11,Arizona Cardinals,18428,Max Melton,CB
+11,Arizona Cardinals,21641,Owen Pappoe,LB
+11,Arizona Cardinals,23957,Elijah Higgins,TE
+11,Arizona Cardinals,23966,Michael Wilson,WR
+11,Arizona Cardinals,24248,Dadrion TaylorDemerson,S
+11,Arizona Cardinals,24716,Garrett Williams,CB
+11,Arizona Cardinals,24819,Kei'Trel Clark,CB
+11,Arizona Cardinals,25865,Hassan Hall,RB
+11,Arizona Cardinals,26049,Xavier Thomas,LB
+11,Arizona Cardinals,36281,Trevor Nowaske,LB
+12,Philadelphia Eagles,219,Saquon Barkley,RB
+12,Philadelphia Eagles,238,Nick Gates,C
+12,Philadelphia Eagles,501,Charles Harris,DE
+12,Philadelphia Eagles,503,Julian Okwara,LB
+12,Philadelphia Eagles,708,Max Scharping,G
+12,Philadelphia Eagles,830,Jalen Hurts,QB
+12,Philadelphia Eagles,833,Kenneth Gainwell,RB
+12,Philadelphia Eagles,838,A.J. Brown,WR
+12,Philadelphia Eagles,840,Britain Covey,WR
+12,Philadelphia Eagles,842,DeVonta Smith,WR
+12,Philadelphia Eagles,845,Grant Calcaterra,TE
+12,Philadelphia Eagles,846,Dallas Goedert,TE
+12,Philadelphia Eagles,849,Jack Stoll,TE
+12,Philadelphia Eagles,852,Cam Jurgens,C
+12,Philadelphia Eagles,861,Lane Johnson,OT
+12,Philadelphia Eagles,862,Jordan Mailata,OT
+12,Philadelphia Eagles,866,Brandon Graham,DE
+12,Philadelphia Eagles,867,Tarron Jackson,DE
+12,Philadelphia Eagles,870,Josh Sweat,LB
+12,Philadelphia Eagles,872,Jordan Davis,DT
+12,Philadelphia Eagles,874,Marlon Tuipulotu,DT
+12,Philadelphia Eagles,875,Milton Williams,DT
+12,Philadelphia Eagles,878,Nakobe Dean,LB
+12,Philadelphia Eagles,882,Patrick Johnson,LB
+12,Philadelphia Eagles,886,James Bradberry,CB
+12,Philadelphia Eagles,888,Josh Jobe,CB
+12,Philadelphia Eagles,889,Avonte Maddox,CB
+12,Philadelphia Eagles,891,Zech McPhearson,CB
+12,Philadelphia Eagles,893,Darius Slay,CB
+12,Philadelphia Eagles,894,Reed Blankenship,S
+12,Philadelphia Eagles,897,C.J. Gardner-Johnson,S
+12,Philadelphia Eagles,899,Jake Elliott,PK
+12,Philadelphia Eagles,901,Rick Lovato,LS
+12,Philadelphia Eagles,923,C.J. Uzomah,TE
+12,Philadelphia Eagles,943,Bryce Huff,DE
+12,Philadelphia Eagles,974,Braden Mann,P
+12,Philadelphia Eagles,981,Tyrion Davis-Price,RB
+12,Philadelphia Eagles,1027,Oren Burks,LB
+12,Philadelphia Eagles,1170,Nicholas Morrow,LB
+12,Philadelphia Eagles,1268,Jahan Dotson,WR
+12,Philadelphia Eagles,1278,Armani Rogers,TE
+12,Philadelphia Eagles,1392,Brandon Smith,LB
+12,Philadelphia Eagles,1495,Parris Campbell,WR
+12,Philadelphia Eagles,1549,Isaiah Rodgers,CB
+12,Philadelphia Eagles,1562,Kenny Pickett,QB
+12,Philadelphia Eagles,1738,Fred Johnson,OT
+12,Philadelphia Eagles,1764,Devin White,LB
+12,Philadelphia Eagles,1892,Thomas Booker IV,DT
+12,Philadelphia Eagles,1974,Zack Baun,LB
+12,Philadelphia Eagles,2019,Albert Okwuegbunam,TE
+12,Philadelphia Eagles,2075,Will Grier,QB
+12,Philadelphia Eagles,2247,Jacob Harris,WR
+12,Philadelphia Eagles,2285,Terrell Lewis,LB
+12,Philadelphia Eagles,2369,Parry Nickerson,CB
+12,Philadelphia Eagles,2817,Tristin McCollum,S
+12,Philadelphia Eagles,2841,Tyler Hall,CB
+12,Philadelphia Eagles,3460,John Ross,WR
+12,Philadelphia Eagles,6801,Ochaun Mathis,LB
+12,Philadelphia Eagles,7368,Sydney Brown,S
+12,Philadelphia Eagles,7533,Johnny Wilson,WR
+12,Philadelphia Eagles,9062,Lew Nichols III,RB
+12,Philadelphia Eagles,10619,Dallas Gant,LB
+12,Philadelphia Eagles,10638,Quinyon Mitchell,CB
+12,Philadelphia Eagles,10963,PJ Mustipher,DT
+12,Philadelphia Eagles,11635,Griffin Hebert,WR
+12,Philadelphia Eagles,12572,Ben VanSumeren,LB
+12,Philadelphia Eagles,14211,Eli Ricks,CB
+12,Philadelphia Eagles,14472,Kendall Milton,RB
+12,Philadelphia Eagles,14531,Jalen Carter,DT
+12,Philadelphia Eagles,14556,Nolan Smith,LB
+12,Philadelphia Eagles,14571,Kelee Ringo,CB
+12,Philadelphia Eagles,14745,Ainias Smith,WR
+12,Philadelphia Eagles,15513,Gabe Hall,DT
+12,Philadelphia Eagles,15842,Dylan McMahon,C
+12,Philadelphia Eagles,17856,Cooper DeJean,CB
+12,Philadelphia Eagles,20193,Andre Sam,S
+12,Philadelphia Eagles,23940,Tanner McKee,QB
+12,Philadelphia Eagles,24436,Moro Ojomo,DT
+12,Philadelphia Eagles,25878,E.J. Jenkins,TE
+12,Philadelphia Eagles,25986,Will Shipley,RB
+12,Philadelphia Eagles,25997,Joseph Ngata,WR
+12,Philadelphia Eagles,26075,Jeremiah Trotter Jr.,LB
+12,Philadelphia Eagles,33981,Jalyx Hunt,LB
+12,Philadelphia Eagles,36285,Austin Watkins Jr.,WR
+12,Philadelphia Eagles,47043,Shon Stephens,CB
+12,Philadelphia Eagles,48417,Kevin Foelsch,TE
+13,New York Jets,10,Davante Adams,WR
+13,New York Jets,27,John Simpson,G
+13,New York Jets,137,Riley Patterson,PK
+13,New York Jets,200,Jalen Mills,S
+13,New York Jets,217,Tyrod Taylor,QB
+13,New York Jets,359,Chuck Clark,S
+13,New York Jets,489,Bruce Hector,DT
+13,New York Jets,523,Austin Seibert,PK
+13,New York Jets,545,Anthony Firkser,TE
+13,New York Jets,593,Isaiah Oliver,CB
+13,New York Jets,795,Leki Fotu,DT
+13,New York Jets,883,Haason Reddick,DE
+13,New York Jets,907,Breece Hall,RB
+13,New York Jets,913,Irvin Charles,WR
+13,New York Jets,919,Garrett Wilson,WR
+13,New York Jets,921,Tyler Conklin,TE
+13,New York Jets,922,Jeremy Ruckert,TE
+13,New York Jets,924,Kenny Yeboah,TE
+13,New York Jets,929,Alijah Vera-Tucker,G
+13,New York Jets,940,Micheal Clemons,DE
+13,New York Jets,944,Jermaine Johnson,LB
+13,New York Jets,947,Solomon Thomas,DE
+13,New York Jets,951,Tanzel Smart,DT
+13,New York Jets,952,Quinnen Williams,DT
+13,New York Jets,955,C.J. Mosley,LB
+13,New York Jets,957,Jamien Sherwood,LB
+13,New York Jets,958,Chazz Surratt,LB
+13,New York Jets,959,Quincy Williams,LB
+13,New York Jets,960,Michael Carter II,CB
+13,New York Jets,961,Brandin Echols,CB
+13,New York Jets,962,Sauce Gardner,CB
+13,New York Jets,967,D.J. Reed,CB
+13,New York Jets,968,Tony Adams,S
+13,New York Jets,969,Ashtyn Davis,S
+13,New York Jets,973,Greg Zuerlein,PK
+13,New York Jets,975,Thomas Hennessy,LS
+13,New York Jets,1023,Javon Kinlaw,DT
+13,New York Jets,1050,Aaron Rodgers,QB
+13,New York Jets,1059,Allen Lazard,WR
+13,New York Jets,1491,Deon Jackson,RB
+13,New York Jets,1823,Sam Eguavoen,LB
+13,New York Jets,1849,Thomas Morstead,P
+13,New York Jets,1910,Kendall Sheffield,CB
+13,New York Jets,2089,Brandon Smith,WR
+13,New York Jets,2166,Mike Williams,WR
+13,New York Jets,2240,Lance McCutcheon,WR
+13,New York Jets,2268,Takkarist McKinley,DE
+13,New York Jets,2314,Kene Nwangwu,RB
+13,New York Jets,2351,Jaylen Twyman,DT
+13,New York Jets,2378,Greg Joseph,PK
+13,New York Jets,2566,Jalyn Holmes,DT
+13,New York Jets,2581,Tre Swilling,CB
+13,New York Jets,2624,Marcelino McCrary-Ball,LB
+13,New York Jets,2838,Anthony Hines III,LB
+13,New York Jets,6389,Malachi Corley,WR
+13,New York Jets,7239,Eric Watts,DE
+13,New York Jets,7399,Andrew Peasley,QB
+13,New York Jets,9180,Israel Abanikanda,RB
+13,New York Jets,9229,Carter Warren,OT
+13,New York Jets,11349,Jaylen Key,S
+13,New York Jets,11843,Xazavian Valladay,RB
+13,New York Jets,12358,Nehemiah Shelton,CB
+13,New York Jets,12673,Zaire Barnes,LB
+13,New York Jets,12975,Zack Kuntz,TE
+13,New York Jets,14113,Tyler Harrell,WR
+13,New York Jets,15182,Braiden McGregor,DE
+13,New York Jets,15698,Isaiah Winstead,WR
+13,New York Jets,16090,Leonard Taylor,DT
+13,New York Jets,16107,Al Blades Jr.,S
+13,New York Jets,16252,Braelon Allen,RB
+13,New York Jets,16299,Joe Tippmann,C
+13,New York Jets,17527,Spencer Shrader,PK
+13,New York Jets,17888,Isaiah Davis,RB
+13,New York Jets,18372,Willie Tyler III,OT
+13,New York Jets,19363,Will McDonald IV,DE
+13,New York Jets,20514,Jackson Sirmon,LB
+13,New York Jets,20686,Lincoln Sefcik,TE
+13,New York Jets,21665,Anders Carlson,PK
+13,New York Jets,21897,Adrian Martinez,QB
+13,New York Jets,22426,Jason Brownlee,WR
+13,New York Jets,22736,Jarius Monroe,S
+13,New York Jets,22903,Neal Johnson,TE
+13,New York Jets,25829,Jarrick BernardConverse,CB
+13,New York Jets,28326,Xavier Gipson,WR
+13,New York Jets,30455,Shemar Bartholomew,CB
+13,New York Jets,33787,Brandon Codrington,CB
+13,New York Jets,48413,Qwan'tez Stiggers,CB
+14,San Francisco 49ers,57,Rock Ya-Sin,CB
+14,San Francisco 49ers,96,Ben Bartch,G
+14,San Francisco 49ers,220,Matt Breida,RB
+14,San Francisco 49ers,255,Nick Williams,DT
+14,San Francisco 49ers,277,Nick McCloud,CB
+14,San Francisco 49ers,411,Sam Okuayinonu,DT
+14,San Francisco 49ers,510,Chase Lucas,CB
+14,San Francisco 49ers,521,Tracy Walker III,S
+14,San Francisco 49ers,539,Frank Darby,WR
+14,San Francisco 49ers,606,Joshua Dobbs,QB
+14,San Francisco 49ers,655,Jordan Elliott,DT
+14,San Francisco 49ers,682,Brandon Allen,QB
+14,San Francisco 49ers,694,Trent Taylor,WR
+14,San Francisco 49ers,809,Ezekiel Turner,LB
+14,San Francisco 49ers,873,Javon Hargrave,DT
+14,San Francisco 49ers,979,Brock Purdy,QB
+14,San Francisco 49ers,983,Jordan Mason,RB
+14,San Francisco 49ers,986,Kyle Juszczyk,FB
+14,San Francisco 49ers,987,Brandon Aiyuk,WR
+14,San Francisco 49ers,988,Danny Gray,WR
+14,San Francisco 49ers,989,Jauan Jennings,WR
+14,San Francisco 49ers,991,Deebo Samuel,WR
+14,San Francisco 49ers,996,George Kittle,TE
+14,San Francisco 49ers,1000,Jake Brendel,C
+14,San Francisco 49ers,1002,Aaron Banks,G
+14,San Francisco 49ers,1010,Trent Williams,OT
+14,San Francisco 49ers,1011,Nick Zakelj,OT
+14,San Francisco 49ers,1013,Nick Bosa,DE
+14,San Francisco 49ers,1020,Kalia Davis,DT
+14,San Francisco 49ers,1021,Kevin Givens,DT
+14,San Francisco 49ers,1028,Demetrius Flannigan-Fowles,LB
+14,San Francisco 49ers,1029,Dre Greenlaw,LB
+14,San Francisco 49ers,1031,Curtis Robinson,LB
+14,San Francisco 49ers,1032,Fred Warner,LB
+14,San Francisco 49ers,1034,Deommodore Lenoir,CB
+14,San Francisco 49ers,1036,Ambry Thomas,CB
+14,San Francisco 49ers,1038,Charvarius Ward,CB
+14,San Francisco 49ers,1040,Samuel Womack III,CB
+14,San Francisco 49ers,1041,Tashaun Gipson Sr.,S
+14,San Francisco 49ers,1042,Talanoa Hufanga,S
+14,San Francisco 49ers,1044,George Odum,S
+14,San Francisco 49ers,1046,Mitch Wishnowsky,P
+14,San Francisco 49ers,1055,Patrick Taylor,RB
+14,San Francisco 49ers,1090,De'Vondre Campbell,LB
+14,San Francisco 49ers,1093,Jonathan Garvin,DE
+14,San Francisco 49ers,1118,Pat O'Donnell,P
+14,San Francisco 49ers,1140,Jake Tonges,TE
+14,San Francisco 49ers,1348,Christian McCaffrey,RB
+14,San Francisco 49ers,1379,Yetur Gross-Matos,DE
+14,San Francisco 49ers,1631,Pressley Harvin III,P
+14,San Francisco 49ers,1712,Ke'Shawn Vaughn,RB
+14,San Francisco 49ers,1748,Khalil Davis,DT
+14,San Francisco 49ers,1861,Chris Conley,WR
+14,San Francisco 49ers,1881,Charlie Heck,OT
+14,San Francisco 49ers,1893,Maliek Collins,DT
+14,San Francisco 49ers,1914,Isaac Yiadom,CB
+14,San Francisco 49ers,2020,Eric Saubert,TE
+14,San Francisco 49ers,2278,Leonard Floyd,DE
+14,San Francisco 49ers,2589,Jontre Kirklin,WR
+14,San Francisco 49ers,2667,Tayler Hawkins,S
+14,San Francisco 49ers,2671,Alex Barrett,DE
+14,San Francisco 49ers,2674,Tay Martin,WR
+14,San Francisco 49ers,2859,T.Y. McGill,DT
+14,San Francisco 49ers,3459,Matthew Wright,PK
+14,San Francisco 49ers,7591,Tatum Bethune,LB
+14,San Francisco 49ers,7607,Renardo Green,CB
+14,San Francisco 49ers,7798,Evan Anderson,DT
+14,San Francisco 49ers,8906,Jaylen Mahoney,S
+14,San Francisco 49ers,9508,Malik Mustapha,S
+14,San Francisco 49ers,10853,Jalen Graham,LB
+14,San Francisco 49ers,10992,Ji'Ayir Brown,S
+14,San Francisco 49ers,11499,Cody Schrader,RB
+14,San Francisco 49ers,13549,Dominick Puni,G
+14,San Francisco 49ers,14058,Dee Winters,LB
+14,San Francisco 49ers,14132,Cameron Latu,TE
+14,San Francisco 49ers,14543,Robert Beal Jr.,DE
+14,San Francisco 49ers,14873,Ricky Pearsall,WR
+14,San Francisco 49ers,15108,Ronnie Bell,WR
+14,San Francisco 49ers,15224,Jake Moody,PK
+14,San Francisco 49ers,15374,Brayden Willis,TE
+14,San Francisco 49ers,16255,Isaac Guerendo,RB
+14,San Francisco 49ers,17135,Shakel Brown,DT
+14,San Francisco 49ers,19878,Jacob Cowing,WR
+14,San Francisco 49ers,20741,Darrell Luter Jr.,CB
+14,San Francisco 49ers,21665,Anders Carlson,PK
+14,San Francisco 49ers,23811,Tanner Mordecai,QB
+14,San Francisco 49ers,35399,Sebastian Gutierrez,OT
+14,San Francisco 49ers,41967,Mason Pline,TE
+15,Green Bay Packers,6,Josh Jacobs,RB
+15,Green Bay Packers,285,Xavier McKinney,S
+15,Green Bay Packers,349,Kristian Welch,LB
+15,Green Bay Packers,368,Malik Willis,QB
+15,Green Bay Packers,547,John FitzPatrick,TE
+15,Green Bay Packers,1049,Jordan Love,QB
+15,Green Bay Packers,1051,AJ Dillon,RB
+15,Green Bay Packers,1057,Romeo Doubs,WR
+15,Green Bay Packers,1061,Samori Toure,WR
+15,Green Bay Packers,1063,Christian Watson,WR
+15,Green Bay Packers,1071,Josh Myers,C
+15,Green Bay Packers,1072,Elgton Jenkins,G
+15,Green Bay Packers,1079,Sean Rhyan,G
+15,Green Bay Packers,1082,Kenny Clark,DT
+15,Green Bay Packers,1083,Jonathan Ford,DT
+15,Green Bay Packers,1086,T.J. Slaton,DT
+15,Green Bay Packers,1088,Devonte Wyatt,DT
+15,Green Bay Packers,1091,Kingsley Enagbare,DE
+15,Green Bay Packers,1094,Rashan Gary,DE
+15,Green Bay Packers,1097,Isaiah McDuffie,LB
+15,Green Bay Packers,1098,Preston Smith,LB
+15,Green Bay Packers,1100,Quay Walker,LB
+15,Green Bay Packers,1102,Jaire Alexander,CB
+15,Green Bay Packers,1106,Keisean Nixon,CB
+15,Green Bay Packers,1107,Eric Stokes,CB
+15,Green Bay Packers,1391,Arron Mosby,DE
+15,Green Bay Packers,1982,Eric Wilson,LB
+15,Green Bay Packers,2016,Andrew Beck,FB
+15,Green Bay Packers,2072,Brandon McManus,PK
+15,Green Bay Packers,2142,Tyler Coyle,S
+15,Green Bay Packers,2297,Robert Rochell,CB
+15,Green Bay Packers,2306,Matthew Orzech,LS
+15,Green Bay Packers,2378,Greg Joseph,PK
+15,Green Bay Packers,2545,Nate McCrary,RB
+15,Green Bay Packers,2628,Corey Ballentine,CB
+15,Green Bay Packers,2735,Bo Melton,WR
+15,Green Bay Packers,2892,Zayne Anderson,S
+15,Green Bay Packers,6480,Brayden Narveson,PK
+15,Green Bay Packers,7882,Grant DuBose,WR
+15,Green Bay Packers,9092,Joel Wilson,TE
+15,Green Bay Packers,9231,Deslin Alexandre,DE
+15,Green Bay Packers,9703,Zach Morton,DE
+15,Green Bay Packers,10890,Sean Clifford,QB
+15,Green Bay Packers,10986,Kalen King,CB
+15,Green Bay Packers,11080,James Ester,DT
+15,Green Bay Packers,11572,Ty'Ron Hopper,LB
+15,Green Bay Packers,11869,Messiah Swinson,TE
+15,Green Bay Packers,12029,Alonzo Davis,CB
+15,Green Bay Packers,12155,Evan Williams,S
+15,Green Bay Packers,12515,Jayden Reed,WR
+15,Green Bay Packers,13322,Jacob Monk,C
+15,Green Bay Packers,14561,Javon Bullard,S
+15,Green Bay Packers,14803,Edgerrin Cooper,LB
+15,Green Bay Packers,14809,Chris Russell Jr.,LB
+15,Green Bay Packers,14930,Brenton Cox Jr.,DE
+15,Green Bay Packers,15200,Gemon Green,CB
+15,Green Bay Packers,15490,Ben Sims,TE
+15,Green Bay Packers,15586,Julian Hicks,WR
+15,Green Bay Packers,15980,Ralen Goforth,LB
+15,Green Bay Packers,16814,Carrington Valentine,CB
+15,Green Bay Packers,16960,Malik Heath,WR
+15,Green Bay Packers,17539,Christopher Brooks,RB
+15,Green Bay Packers,17830,Lukas Van Ness,DE
+15,Green Bay Packers,17908,Tucker Kraft,TE
+15,Green Bay Packers,18476,Henry Pearson,FB
+15,Green Bay Packers,18877,Dontayvion Wicks,WR
+15,Green Bay Packers,19276,Benny Sapp III,S
+15,Green Bay Packers,19313,Dimitri Stanley,WR
+15,Green Bay Packers,19390,Anthony Johnson Jr.,S
+15,Green Bay Packers,19690,Karl Brooks,DE
+15,Green Bay Packers,19802,Keshawn Banks,LB
+15,Green Bay Packers,19963,Christian Young,LB
+15,Green Bay Packers,20678,Jalen Wayne,WR
+15,Green Bay Packers,21626,Colby Wooden,DT
+15,Green Bay Packers,21665,Anders Carlson,PK
+15,Green Bay Packers,22645,Michael Pratt,QB
+15,Green Bay Packers,22767,Ellis Merriweather,RB
+15,Green Bay Packers,23591,MarShawn Lloyd,RB
+15,Green Bay Packers,23751,Travis Glover,OT
+15,Green Bay Packers,25331,Luke Musgrave,TE
+15,Green Bay Packers,25405,Kitan Oladapo,S
+15,Green Bay Packers,30167,Brevin Allen,DE
+15,Green Bay Packers,30765,Spencer Waege,DE
+15,Green Bay Packers,34963,Jarveon Howard,RB
+15,Green Bay Packers,36292,Emanuel Wilson,RB
+15,Green Bay Packers,36293,Kenneth Odumegwu,LB
+15,Green Bay Packers,36294,Daniel Whelan,P
+15,Green Bay Packers,48463,Keonte Schad,DT
+16,Chicago Bears,39,Andrew Billings,DT
+16,Chicago Bears,227,Collin Johnson,WR
+16,Chicago Bears,408,DeMarcus Walker,DE
+16,Chicago Bears,439,Kevin Byard,S
+16,Chicago Bears,455,D'Andre Swift,RB
+16,Chicago Bears,525,Scott Daly,LS
+16,Chicago Bears,611,Demetric Felton Jr.,RB
+16,Chicago Bears,717,Khalid Kareem,LB
+16,Chicago Bears,879,T.J. Edwards,LB
+16,Chicago Bears,946,Jacob Martin,DE
+16,Chicago Bears,1043,Tarvarius Moore,S
+16,Chicago Bears,1068,Marcedes Lewis,TE
+16,Chicago Bears,1083,Jonathan Ford,DT
+16,Chicago Bears,1124,Darrynton Evans,RB
+16,Chicago Bears,1125,Khalil Herbert,RB
+16,Chicago Bears,1127,Khari Blasingame,FB
+16,Chicago Bears,1130,Velus Jones Jr.,WR
+16,Chicago Bears,1132,Dante Pettis,WR
+16,Chicago Bears,1136,Nsimba Webster,WR
+16,Chicago Bears,1139,Cole Kmet,TE
+16,Chicago Bears,1151,Larry Borom,OT
+16,Chicago Bears,1153,Teven Jenkins,G
+16,Chicago Bears,1162,Dominique Robinson,DE
+16,Chicago Bears,1172,Jack Sanborn,LB
+16,Chicago Bears,1176,Javin White,LB
+16,Chicago Bears,1177,Josh Blackwell,CB
+16,Chicago Bears,1179,Kyler Gordon,CB
+16,Chicago Bears,1183,Jaylon Johnson,CB
+16,Chicago Bears,1184,Jaylon Jones,CB
+16,Chicago Bears,1187,Jaquan Brisker,S
+16,Chicago Bears,1188,Elijah Hicks,S
+16,Chicago Bears,1192,Cairo Santos,PK
+16,Chicago Bears,1304,Montez Sweat,DE
+16,Chicago Bears,1353,DJ Moore,WR
+16,Chicago Bears,1436,Tommy Sweeney,TE
+16,Chicago Bears,1464,Tremaine Edmunds,LB
+16,Chicago Bears,1518,Matt Pryor,G
+16,Chicago Bears,1530,Byron Cowart,DT
+16,Chicago Bears,1534,Chris Williams,DT
+16,Chicago Bears,1637,Travis Homer,RB
+16,Chicago Bears,1665,Darrell Taylor,DE
+16,Chicago Bears,1794,Freddie Swain,WR
+16,Chicago Bears,1885,Michael Dwumfour,DT
+16,Chicago Bears,1917,Jonathan Owens,S
+16,Chicago Bears,1999,Brett Rypien,QB
+16,Chicago Bears,2073,Corliss Waitman,P
+16,Chicago Bears,2159,Keenan Allen,WR
+16,Chicago Bears,2161,DeAndre Carter,WR
+16,Chicago Bears,2167,Gerald Everett,TE
+16,Chicago Bears,2203,Amen Ogbongbemiga,LB
+16,Chicago Bears,2252,Coleman Shelton,C
+16,Chicago Bears,2280,Daniel Hardy,DE
+16,Chicago Bears,2578,Adrian Colbert,S
+16,Chicago Bears,2926,Greg Stroman Jr.,CB
+16,Chicago Bears,3109,Stephen Carlson,TE
+16,Chicago Bears,6377,Austin Reed,QB
+16,Chicago Bears,7346,Keith Randolph Jr.,DT
+16,Chicago Bears,7990,Cameron Lyons,LS
+16,Chicago Bears,9906,Jerome Carvin,G
+16,Chicago Bears,9924,Darnell Wright,OT
+16,Chicago Bears,11778,Austin Booker,DE
+16,Chicago Bears,11821,Terell Smith,CB
+16,Chicago Bears,11932,Ro Torrence,CB
+16,Chicago Bears,12559,Dashaun Mallory,DT
+16,Chicago Bears,14680,Noah Sewell,LB
+16,Chicago Bears,14914,Gervon Dexter Sr.,DT
+16,Chicago Bears,15916,Caleb Williams,QB
+16,Chicago Bears,15928,John Jackson III,WR
+16,Chicago Bears,16114,Tyrique Stevenson,CB
+16,Chicago Bears,16613,Tyler Scott,WR
+16,Chicago Bears,16737,Brenden Bates,TE
+16,Chicago Bears,17171,Reddy Steward,CB
+16,Chicago Bears,17878,Tory Taylor,P
+16,Chicago Bears,19596,Carl Jones Jr.,LB
+16,Chicago Bears,21401,Jamree Kromah,DE
+16,Chicago Bears,22891,Peter LeBlanc,WR
+16,Chicago Bears,23212,Leon Jones,CB
+16,Chicago Bears,23557,Quindell Johnson,S
+16,Chicago Bears,23644,Zacch Pickens,DT
+16,Chicago Bears,24202,Jaylon Hutchings,DT
+16,Chicago Bears,24378,Roschon Johnson,RB
+16,Chicago Bears,25270,Paul Moala,LB
+16,Chicago Bears,25552,Rome Odunze,WR
+16,Chicago Bears,25815,Micah Baskerville,LB
+16,Chicago Bears,28221,Ian Wheeler,RB
+16,Chicago Bears,36295,Tyson Bagent,QB
+16,Chicago Bears,48386,Douglas Coleman III,S
+17,Kansas City Chiefs,41,Neil Farrell Jr.,DT
+17,Kansas City Chiefs,100,Jawaan Taylor,OT
+17,Kansas City Chiefs,131,Tyree Gillespie,S
+17,Kansas City Chiefs,194,Josh Uche,LB
+17,Kansas City Chiefs,235,Kadarius Toney,WR
+17,Kansas City Chiefs,545,Anthony Firkser,TE
+17,Kansas City Chiefs,568,Matt Dickerson,DE
+17,Kansas City Chiefs,613,Kareem Hunt,RB
+17,Kansas City Chiefs,687,Samaje Perine,RB
+17,Kansas City Chiefs,757,Keaontay Ingram,RB
+17,Kansas City Chiefs,763,Marquise Brown,WR
+17,Kansas City Chiefs,766,DeAndre Hopkins,WR
+17,Kansas City Chiefs,829,Ian Book,QB
+17,Kansas City Chiefs,874,Marlon Tuipulotu,DT
+17,Kansas City Chiefs,1017,Charles Omenihu,DE
+17,Kansas City Chiefs,1165,Mike Pennel Jr.,DT
+17,Kansas City Chiefs,1197,Patrick Mahomes,QB
+17,Kansas City Chiefs,1198,Chris Oladokun,QB
+17,Kansas City Chiefs,1199,Clyde Edwards-Helaire,RB
+17,Kansas City Chiefs,1202,Isiah Pacheco,RB
+17,Kansas City Chiefs,1206,Mecole Hardman,WR
+17,Kansas City Chiefs,1207,Skyy Moore,WR
+17,Kansas City Chiefs,1208,Justyn Ross,WR
+17,Kansas City Chiefs,1209,JuJu Smith-Schuster,WR
+17,Kansas City Chiefs,1211,Justin Watson,WR
+17,Kansas City Chiefs,1213,Jody Fortson,TE
+17,Kansas City Chiefs,1214,Noah Gray,TE
+17,Kansas City Chiefs,1215,Travis Kelce,TE
+17,Kansas City Chiefs,1216,Creed Humphrey,C
+17,Kansas City Chiefs,1218,Trey Smith,G
+17,Kansas City Chiefs,1219,Joe Thuney,G
+17,Kansas City Chiefs,1227,Mike Danna,DE
+17,Kansas City Chiefs,1229,Malik Herring,DE
+17,Kansas City Chiefs,1231,George Karlaftis,DE
+17,Kansas City Chiefs,1232,Chris Jones,DT
+17,Kansas City Chiefs,1233,Derrick Nnadi,DT
+17,Kansas City Chiefs,1235,Tershawn Wharton,DT
+17,Kansas City Chiefs,1236,Nick Bolton,LB
+17,Kansas City Chiefs,1237,Leo Chenal,LB
+17,Kansas City Chiefs,1238,Cole Christiansen,LB
+17,Kansas City Chiefs,1239,Jack Cochrane,LB
+17,Kansas City Chiefs,1247,Trent McDuffie,CB
+17,Kansas City Chiefs,1249,Jaylen Watson,CB
+17,Kansas City Chiefs,1250,Joshua Williams,CB
+17,Kansas City Chiefs,1251,Deon Bush,S
+17,Kansas City Chiefs,1252,Bryan Cook,S
+17,Kansas City Chiefs,1253,Justin Reid,S
+17,Kansas City Chiefs,1256,Harrison Butker,PK
+17,Kansas City Chiefs,1258,James Winchester,LS
+17,Kansas City Chiefs,1261,Carson Wentz,QB
+17,Kansas City Chiefs,1402,Keith Taylor Jr.,CB
+17,Kansas City Chiefs,2015,Montrell Washington,WR
+17,Kansas City Chiefs,2095,Peyton Hendershot,TE
+17,Kansas City Chiefs,2137,Kelvin Joseph,CB
+17,Kansas City Chiefs,2207,Drue Tranquill,LB
+17,Kansas City Chiefs,2330,Irv Smith Jr.,TE
+17,Kansas City Chiefs,2719,Cornell Powell,WR
+17,Kansas City Chiefs,2813,Owen Carney,LB
+17,Kansas City Chiefs,2851,Matt Araiza,P
+17,Kansas City Chiefs,2857,Blake Lynch,LB
+17,Kansas City Chiefs,2893,Nazeeh Johnson,S
+17,Kansas City Chiefs,3459,Matthew Wright,PK
+17,Kansas City Chiefs,7588,Fabien Lovett,DT
+17,Kansas City Chiefs,9972,Kamal Hadden,CB
+17,Kansas City Chiefs,10009,Carson Steele,RB
+17,Kansas City Chiefs,10086,Nic Jones,CB
+17,Kansas City Chiefs,10971,Curtis Jacobs,LB
+17,Kansas City Chiefs,12084,Nikko Remigio,WR
+17,Kansas City Chiefs,13157,Chamarri Conner,S
+17,Kansas City Chiefs,13805,Cam Jones,LB
+17,Kansas City Chiefs,13964,Emani Bailey,RB
+17,Kansas City Chiefs,14002,Geor'Quarius Spivey,TE
+17,Kansas City Chiefs,14004,Jared Wiley,TE
+17,Kansas City Chiefs,14887,Griffin McDowell,OT
+17,Kansas City Chiefs,15386,Wanya Morris,OT
+17,Kansas City Chiefs,17037,Miles Battle,CB
+17,Kansas City Chiefs,17527,Spencer Shrader,PK
+17,Kansas City Chiefs,19951,Christian RolandWallace,CB
+17,Kansas City Chiefs,20327,Deneric Prince,RB
+17,Kansas City Chiefs,21911,Phillip Brooks,WR
+17,Kansas City Chiefs,21959,Felix AnudikeUzomah,DE
+17,Kansas City Chiefs,21985,Ekow BoyeDoe,CB
+17,Kansas City Chiefs,22484,Swayze Bozeman,LB
+17,Kansas City Chiefs,23838,Rashee Rice,WR
+17,Kansas City Chiefs,24167,Baylor Cupp,TE
+17,Kansas City Chiefs,24401,Xavier Worthy,WR
+17,Kansas City Chiefs,25167,Jaden Hicks,S
+17,Kansas City Chiefs,25728,D.J. Miller Jr.,CB
+17,Kansas City Chiefs,27567,C.J. Hanson,G
+17,Kansas City Chiefs,32902,Alex Gubner,DT
+17,Kansas City Chiefs,34086,Truman Jones,DE
+17,Kansas City Chiefs,36266,Mike Caliendo,G
+17,Kansas City Chiefs,48420,Louis Rees-Zammit,WR
+17,Kansas City Chiefs,48421,Kyle Sheets,WR
+18,Washington Commanders,35,Clelin Ferrell,DE
+18,Washington Commanders,137,Riley Patterson,PK
+18,Washington Commanders,181,Carl Davis Jr.,DE
+18,Washington Commanders,355,Kevon Seymour,CB
+18,Washington Commanders,505,Anthony Pittman,LB
+18,Washington Commanders,515,Bobby Price,CB
+18,Washington Commanders,523,Austin Seibert,PK
+18,Washington Commanders,527,Marcus Mariota,QB
+18,Washington Commanders,544,Olamide Zaccheaus,WR
+18,Washington Commanders,585,Mykal Walker,LB
+18,Washington Commanders,679,Cade York,PK
+18,Washington Commanders,729,Keandre Jones,LB
+18,Washington Commanders,753,Trace McSorley,QB
+18,Washington Commanders,772,Zach Ertz,TE
+18,Washington Commanders,1116,Ramiz Ahmed,PK
+18,Washington Commanders,1133,Byron Pringle,WR
+18,Washington Commanders,1217,Nick Allegretti,G
+18,Washington Commanders,1265,Brian Robinson Jr.,RB
+18,Washington Commanders,1267,Dyami Brown,WR
+18,Washington Commanders,1268,Jahan Dotson,WR
+18,Washington Commanders,1271,Terry McLaurin,WR
+18,Washington Commanders,1276,John Bates,TE
+18,Washington Commanders,1280,Cole Turner,TE
+18,Washington Commanders,1301,Efe Obada,DE
+18,Washington Commanders,1302,Benning Potoa'e,DT
+18,Washington Commanders,1308,Jonathan Allen,DT
+18,Washington Commanders,1310,Phidarian Mathis,DT
+18,Washington Commanders,1311,Daron Payne,DT
+18,Washington Commanders,1312,John Ridgeway,DT
+18,Washington Commanders,1315,Jamin Davis,LB
+18,Washington Commanders,1323,Tariq Castro-Fields,CB
+18,Washington Commanders,1329,Benjamin St-Juste,CB
+18,Washington Commanders,1331,Percy Butler,S
+18,Washington Commanders,1333,Darrick Forrest,S
+18,Washington Commanders,1335,Jeremy Reaves,S
+18,Washington Commanders,1337,Tress Way,P
+18,Washington Commanders,1390,Frankie Luvu,LB
+18,Washington Commanders,1407,Jeremy Chinn,S
+18,Washington Commanders,1410,Zane Gonzalez,PK
+18,Washington Commanders,1424,Jamison Crowder,WR
+18,Washington Commanders,1567,Jeremy McNichols,RB
+18,Washington Commanders,1593,Trent Scott,OT
+18,Washington Commanders,1612,Chapelle Russell,LB
+18,Washington Commanders,1618,James Pierre,CB
+18,Washington Commanders,1673,Nick Bellore,LB
+18,Washington Commanders,1836,Noah Igbinoghene,CB
+18,Washington Commanders,1852,Jeff Driskel,QB
+18,Washington Commanders,1986,Marshon Lattimore,CB
+18,Washington Commanders,2083,Noah Brown,WR
+18,Washington Commanders,2098,Tyler Biadasz,C
+18,Washington Commanders,2112,Dorance Armstrong,DE
+18,Washington Commanders,2114,Dante Fowler Jr.,LB
+18,Washington Commanders,2153,Austin Ekeler,RB
+18,Washington Commanders,2210,Michael Davis,CB
+18,Washington Commanders,2281,Justin Hollins,DE
+18,Washington Commanders,2288,Bobby Wagner,LB
+18,Washington Commanders,2378,Greg Joseph,PK
+18,Washington Commanders,2426,Luke McCaffrey,WR
+18,Washington Commanders,2566,Jalyn Holmes,DT
+18,Washington Commanders,2768,Taylor Stallworth,DT
+18,Washington Commanders,3054,Davion Davis,WR
+18,Washington Commanders,3182,Sheldon Day,DT
+18,Washington Commanders,3417,Sheldrick Redwine,S
+18,Washington Commanders,4794,Martavis Bryant,WR
+18,Washington Commanders,7345,Jer'Zhan Newton,DT
+18,Washington Commanders,7376,Jartavius Martin,S
+18,Washington Commanders,9282,A.J. Woods,CB
+18,Washington Commanders,9405,Sam Hartman,QB
+18,Washington Commanders,10913,Mitchell Tinsley,WR
+18,Washington Commanders,12575,Kendell Brooks,S
+18,Washington Commanders,13136,Norell Pollard,DT
+18,Washington Commanders,13459,Jordan Magee,LB
+18,Washington Commanders,14294,Javontae JeanBaptiste,DE
+18,Washington Commanders,14421,Bo Bauer,LB
+18,Washington Commanders,14491,Marcus RosemJacksaint,WR
+18,Washington Commanders,15217,Mike Sainristil,CB
+18,Washington Commanders,15311,Chigozie Anusiem,CB
+18,Washington Commanders,15921,Austin Jones,RB
+18,Washington Commanders,16716,Chris Rodriguez Jr.,RB
+18,Washington Commanders,19396,Ben Nikkel,S
+18,Washington Commanders,19538,Kazmeir Allen,RB
+18,Washington Commanders,19554,Colson Yankoff,TE
+18,Washington Commanders,19875,Michael Wiley,RB
+18,Washington Commanders,19918,Jalen Harris,DE
+18,Washington Commanders,21931,Ben Sinnott,TE
+18,Washington Commanders,22952,Andre Jones,DE
+18,Washington Commanders,23437,Emmanuel Forbes,CB
+18,Washington Commanders,23965,Brycen Tremayne,WR
+18,Washington Commanders,24026,Kyu Blu Kelly,CB
+18,Washington Commanders,24244,Tyler Owens,S
+18,Washington Commanders,25609,Dominique Hampton,S
+18,Washington Commanders,25745,Jayden Daniels,QB
+18,Washington Commanders,26039,K.J. Henry,DE
+18,Washington Commanders,36302,Nick Whiteside,CB
+18,Washington Commanders,36311,Haggai Ndubuisi,DT
+19,Carolina Panthers,17,Jesper Horsted,TE
+19,Carolina Panthers,114,K'Lavon Chaisson,DE
+19,Carolina Panthers,184,LaBryan Ray,DE
+19,Carolina Panthers,185,Sam Roberts,DT
+19,Carolina Panthers,406,Jayden Peevy,DT
+19,Carolina Panthers,430,Caleb Farley,CB
+19,Carolina Panthers,433,Lonnie Johnson,CB
+19,Carolina Panthers,501,Charles Harris,DE
+19,Carolina Panthers,526,Feleipe Franks,TE
+19,Carolina Panthers,647,Jadeveon Clowney,LB
+19,Carolina Panthers,812,Chandler Wooten,LB
+19,Carolina Panthers,834,Miles Sanders,RB
+19,Carolina Panthers,998,Jordan Matthews,TE
+19,Carolina Panthers,1112,Rudy Ford,S
+19,Carolina Panthers,1130,Velus Jones Jr.,WR
+19,Carolina Panthers,1134,Ihmir Smith-Marsette,WR
+19,Carolina Panthers,1182,Lamar Jackson,CB
+19,Carolina Panthers,1244,Dicaprio Bootle,CB
+19,Carolina Panthers,1344,Raheem Blackshear,RB
+19,Carolina Panthers,1346,Chuba Hubbard,RB
+19,Carolina Panthers,1352,Terrace Marshall Jr.,WR
+19,Carolina Panthers,1361,Stephen Sullivan,TE
+19,Carolina Panthers,1362,Ian Thomas,TE
+19,Carolina Panthers,1364,Tommy Tremble,TE
+19,Carolina Panthers,1373,Ikem Ekwonu,OT
+19,Carolina Panthers,1377,Amare Barno,LB
+19,Carolina Panthers,1380,Marquis Haynes Sr.,LB
+19,Carolina Panthers,1383,Derrick Brown,DE
+19,Carolina Panthers,1394,Shaq Thompson,LB
+19,Carolina Panthers,1400,Jaycee Horn,CB
+19,Carolina Panthers,1408,Sam Franklin Jr.,S
+19,Carolina Panthers,1409,Xavier Woods,S
+19,Carolina Panthers,1411,Eddy Pineiro,PK
+19,Carolina Panthers,1412,Johnny Hekker,P
+19,Carolina Panthers,1413,JJ Jansen,LS
+19,Carolina Panthers,1474,Dane Jackson,CB
+19,Carolina Panthers,1502,Mike Strachan,WR
+19,Carolina Panthers,1574,Diontae Johnson,WR
+19,Carolina Panthers,1655,Damien Lewis,G
+19,Carolina Panthers,1680,Jon Rhattigan,LB
+19,Carolina Panthers,1688,Mike Jackson,CB
+19,Carolina Panthers,1723,Deven Thompkins,WR
+19,Carolina Panthers,1759,Cam Gill,LB
+19,Carolina Panthers,1811,Robert Hunt,G
+19,Carolina Panthers,1923,Andy Dalton,QB
+19,Carolina Panthers,1924,Jake Luton,QB
+19,Carolina Panthers,1973,Shy Tuttle,DT
+19,Carolina Panthers,2001,Mike Boone,RB
+19,Carolina Panthers,2041,Jonathan Harris,DE
+19,Carolina Panthers,2044,DeShawn Williams,DT
+19,Carolina Panthers,2052,Josey Jewell,LB
+19,Carolina Panthers,2134,Anthony Brown,CB
+19,Carolina Panthers,2276,A'Shawn Robinson,DE
+19,Carolina Panthers,2292,Troy Hill,CB
+19,Carolina Panthers,2299,Jordan Fuller,S
+19,Carolina Panthers,2302,Nick Scott,S
+19,Carolina Panthers,2316,Dan Chisena,WR
+19,Carolina Panthers,2325,Adam Thielen,WR
+19,Carolina Panthers,2349,T.J. Smith,DT
+19,Carolina Panthers,2362,Luiji Vilain,DE
+19,Carolina Panthers,2363,D.J. Wonnum,LB
+19,Carolina Panthers,2367,Akayleb Evans,CB
+19,Carolina Panthers,2518,Jacob Hollister,TE
+19,Carolina Panthers,2633,Nick Thurman,DT
+19,Carolina Panthers,2786,Chris Wilcox,CB
+19,Carolina Panthers,2818,Tae Davis,LB
+19,Carolina Panthers,3253,Walter Palmore,DT
+19,Carolina Panthers,3288,David Moore,WR
+19,Carolina Panthers,7250,Jackson Mitchell,LB
+19,Carolina Panthers,7583,Derrick McLendon II,LB
+19,Carolina Panthers,7613,Jammie Robinson,S
+19,Carolina Panthers,9119,Thomas Incoom,LB
+19,Carolina Panthers,9948,Aaron Beasley,LB
+19,Carolina Panthers,10498,Kenny Dyson Jr.,LB
+19,Carolina Panthers,11602,Harrison Mevis,PK
+19,Carolina Panthers,12573,Jacoby Windmon,LB
+19,Carolina Panthers,14095,Bryce Young,QB
+19,Carolina Panthers,14674,DJ Johnson,LB
+19,Carolina Panthers,14832,Demani Richardson,S
+19,Carolina Panthers,15074,Clayton Isbell,S
+19,Carolina Panthers,15170,Michael Barrett,LB
+19,Carolina Panthers,15828,Chandler Zavala,G
+19,Carolina Panthers,16789,Trevin Wallace,LB
+19,Carolina Panthers,16964,Jonathan Mingo,WR
+19,Carolina Panthers,21638,Eku Leota,LB
+19,Carolina Panthers,22150,Sam Pinckney,WR
+19,Carolina Panthers,23361,Dillon Johnson,RB
+19,Carolina Panthers,23418,Jaden Crumedy,DT
+19,Carolina Panthers,23602,Xavier Legette,WR
+19,Carolina Panthers,23886,Junior Aho,DT
+19,Carolina Panthers,24377,Jonathon Brooks,RB
+19,Carolina Panthers,24409,Ja'Tavion Sanders,TE
+19,Carolina Panthers,24474,D'Shawn Jamison,CB
+19,Carolina Panthers,25183,Chau SmithWade,CB
+19,Carolina Panthers,25583,Ulumoo Ale,DT
+19,Carolina Panthers,25628,Alex Cook,S
+19,Carolina Panthers,27550,Jalen Coker,WR
+19,Carolina Panthers,30455,Shemar Bartholomew,CB
+19,Carolina Panthers,31654,Jaden Shirden,RB
+19,Carolina Panthers,35006,Claudin Cherelus,LB
+19,Carolina Panthers,35724,Jack Plummer,QB
+20,Buffalo Bills,12,Mack Hollins,WR
+20,Buffalo Bills,108,Dawuane Smoot,DE
+20,Buffalo Bills,289,Anthony Brown,QB
+20,Buffalo Bills,538,Damiere Byrd,WR
+20,Buffalo Bills,580,Deion Jones,LB
+20,Buffalo Bills,618,Amari Cooper,WR
+20,Buffalo Bills,767,Andy Isabella,WR
+20,Buffalo Bills,839,Deon Cain,WR
+20,Buffalo Bills,904,Mike White,QB
+20,Buffalo Bills,908,Ty Johnson,RB
+20,Buffalo Bills,1103,Rasul Douglas,CB
+20,Buffalo Bills,1124,Darrynton Evans,RB
+20,Buffalo Bills,1160,Kingsley Jonathan,DE
+20,Buffalo Bills,1170,Nicholas Morrow,LB
+20,Buffalo Bills,1195,Shane Buechele,QB
+20,Buffalo Bills,1210,Marquez Valdes-Scantling,WR
+20,Buffalo Bills,1274,Curtis Samuel,WR
+20,Buffalo Bills,1306,Casey Toohill,DE
+20,Buffalo Bills,1414,Josh Allen,QB
+20,Buffalo Bills,1417,James Cook,RB
+20,Buffalo Bills,1422,Reggie Gilliam,FB
+20,Buffalo Bills,1431,Khalil Shakir,WR
+20,Buffalo Bills,1433,Zach Davidson,TE
+20,Buffalo Bills,1434,Dawson Knox,TE
+20,Buffalo Bills,1435,Quintin Morris,TE
+20,Buffalo Bills,1442,Alec Anderson,OT
+20,Buffalo Bills,1449,Ryan Van Denmark,OT
+20,Buffalo Bills,1451,AJ Epenesa,DE
+20,Buffalo Bills,1454,Greg Rousseau,DE
+20,Buffalo Bills,1458,DaQuan Jones,DT
+20,Buffalo Bills,1459,Ed Oliver,DT
+20,Buffalo Bills,1460,Jordan Phillips,DT
+20,Buffalo Bills,1462,Terrel Bernard,LB
+20,Buffalo Bills,1467,Matt Milano,LB
+20,Buffalo Bills,1468,Von Miller,LB
+20,Buffalo Bills,1470,Baylon Spector,LB
+20,Buffalo Bills,1471,Christian Benford,CB
+20,Buffalo Bills,1472,Kaiir Elam,CB
+20,Buffalo Bills,1473,Ja'Marcus Ingram,CB
+20,Buffalo Bills,1475,Taron Johnson,CB
+20,Buffalo Bills,1476,Cam Lewis,CB
+20,Buffalo Bills,1480,Damar Hamlin,S
+20,Buffalo Bills,1484,Tyler Bass,PK
+20,Buffalo Bills,1485,Sam Martin,P
+20,Buffalo Bills,1486,Reid Ferguson,LS
+20,Buffalo Bills,1523,Kameron Cline,DE
+20,Buffalo Bills,1564,Mitch Trubisky,QB
+20,Buffalo Bills,1669,Quinton Jefferson,DT
+20,Buffalo Bills,1769,Dee Delaney,CB
+20,Buffalo Bills,1773,Mike Edwards,S
+20,Buffalo Bills,2007,KJ Hamler,WR
+20,Buffalo Bills,2014,Jalen Virgil,WR
+20,Buffalo Bills,2044,DeShawn Williams,DT
+20,Buffalo Bills,2067,Kareem Jackson,S
+20,Buffalo Bills,2169,Tre' McKitty,TE
+20,Buffalo Bills,2191,Austin Johnson,DT
+20,Buffalo Bills,2298,Terrell Burgess,S
+20,Buffalo Bills,2301,Taylor Rapp,S
+20,Buffalo Bills,2696,Ben DiNucci,QB
+20,Buffalo Bills,2830,Kyron Brown,CB
+20,Buffalo Bills,2887,Eli Ankou,DT
+20,Buffalo Bills,8824,Ray Davis,RB
+20,Buffalo Bills,9263,Shayne Simon,LB
+20,Buffalo Bills,9464,Rondell Bothroyd,DE
+20,Buffalo Bills,10503,Joe Andreessen,LB
+20,Buffalo Bills,10842,Branson Deen,DT
+20,Buffalo Bills,10985,Daequan Hardy,CB
+20,Buffalo Bills,12502,Keon Coleman,WR
+20,Buffalo Bills,12691,KeniH Lovely,CB
+20,Buffalo Bills,13340,DeWayne Carter,DT
+20,Buffalo Bills,14252,Xavier Johnson,WR
+20,Buffalo Bills,14534,Zion Logue,DT
+20,Buffalo Bills,14878,Justin Shorter,TE
+20,Buffalo Bills,14909,O'Cyrus Torrence,G
+20,Buffalo Bills,15004,Dalton Kincaid,TE
+20,Buffalo Bills,15072,Cole Bishop,S
+20,Buffalo Bills,16108,Te'Cory Couch,CB
+20,Buffalo Bills,17157,Javon Solomon,DE
+20,Buffalo Bills,19772,Tyrell Shavers,WR
+20,Buffalo Bills,22421,Frank Gore Jr.,RB
+20,Buffalo Bills,22664,Lawrence Keys III,WR
+20,Buffalo Bills,22726,Dorian Williams,LB
+20,Buffalo Bills,24040,Kendall Williamson,S
+20,Buffalo Bills,25617,Edefuan Ulofoshio,LB
+20,Buffalo Bills,33787,Brandon Codrington,CB
+20,Buffalo Bills,48423,Gable Steveson,DT
+21,Indianapolis Colts,104,Adam Gotsis,DT
+21,Indianapolis Colts,158,Laquon Treadwell,WR
+21,Indianapolis Colts,190,Cameron McGrone,LB
+21,Indianapolis Colts,243,Mark Glowinski,G
+21,Indianapolis Colts,611,Demetric Felton Jr.,RB
+21,Indianapolis Colts,654,Taven Bryan,DT
+21,Indianapolis Colts,676,Ronnie Harrison Jr.,S
+21,Indianapolis Colts,735,Tre Flowers,CB
+21,Indianapolis Colts,836,Trey Sermon,RB
+21,Indianapolis Colts,902,Joe Flacco,QB
+21,Indianapolis Colts,1040,Samuel Womack III,CB
+21,Indianapolis Colts,1052,Tyler Goodson,RB
+21,Indianapolis Colts,1064,Juwann Winfree,WR
+21,Indianapolis Colts,1246,Chris Lammons,CB
+21,Indianapolis Colts,1487,Sam Ehlinger,QB
+21,Indianapolis Colts,1494,Jonathan Taylor,RB
+21,Indianapolis Colts,1497,Ashton Dulin,WR
+21,Indianapolis Colts,1498,Ethan Fernea,WR
+21,Indianapolis Colts,1500,Alec Pierce,WR
+21,Indianapolis Colts,1501,Michael Pittman Jr.,WR
+21,Indianapolis Colts,1503,Mo Alie-Cox,TE
+21,Indianapolis Colts,1504,Kylen Granson,TE
+21,Indianapolis Colts,1507,Andrew Ogletree,TE
+21,Indianapolis Colts,1508,Jelani Woods,TE
+21,Indianapolis Colts,1513,Quenton Nelson,G
+21,Indianapolis Colts,1519,Bernhard Raimann,OT
+21,Indianapolis Colts,1526,Dayo Odeyingbo,DE
+21,Indianapolis Colts,1527,Kwity Paye,DE
+21,Indianapolis Colts,1529,DeForest Buckner,DT
+21,Indianapolis Colts,1531,Eric Johnson,DT
+21,Indianapolis Colts,1532,Tyquan Lewis,DE
+21,Indianapolis Colts,1533,Grover Stewart,DT
+21,Indianapolis Colts,1536,Zaire Franklin,LB
+21,Indianapolis Colts,1539,Segun Olubi,LB
+21,Indianapolis Colts,1541,E.J. Speed,LB
+21,Indianapolis Colts,1542,Grant Stuard,LB
+21,Indianapolis Colts,1543,Darrell Baker Jr.,CB
+21,Indianapolis Colts,1545,Marcel Dabo,S
+21,Indianapolis Colts,1546,Dallis Flowers,CB
+21,Indianapolis Colts,1548,Kenny Moore II,CB
+21,Indianapolis Colts,1551,Julian Blackmon,S
+21,Indianapolis Colts,1552,Nick Cross,S
+21,Indianapolis Colts,1553,Trevor Denbow,S
+21,Indianapolis Colts,1556,Rodney Thomas II,S
+21,Indianapolis Colts,1560,Rigoberto Sanchez,P
+21,Indianapolis Colts,1561,Luke Rhodes,LS
+21,Indianapolis Colts,1754,Genard Avery,DE
+21,Indianapolis Colts,1818,Raekwon Davis,DT
+21,Indianapolis Colts,1891,Derek Rivers,DE
+21,Indianapolis Colts,2006,Tyrie Cleveland,WR
+21,Indianapolis Colts,2021,Eric Tomlinson,TE
+21,Indianapolis Colts,2137,Kelvin Joseph,CB
+21,Indianapolis Colts,2304,Matt Gay,PK
+21,Indianapolis Colts,2727,D.J. Montgomery,WR
+21,Indianapolis Colts,3383,Greg Ward,WR
+21,Indianapolis Colts,6605,Evan Hull,RB
+21,Indianapolis Colts,6647,Adetomiwa Adebawore,DT
+21,Indianapolis Colts,6917,Austin Ajiake,LB
+21,Indianapolis Colts,8006,Josh Downs,WR
+21,Indianapolis Colts,8185,Isaiah Land,DE
+21,Indianapolis Colts,8732,Jordan Murray,TE
+21,Indianapolis Colts,9178,Kedon Slovis,QB
+21,Indianapolis Colts,11581,Jaylon Carlies,LB
+21,Indianapolis Colts,12575,Kendell Brooks,S
+21,Indianapolis Colts,12581,Ameer Speed,CB
+21,Indianapolis Colts,13501,Jason Bean,QB
+21,Indianapolis Colts,13588,Craig Young,LB
+21,Indianapolis Colts,14488,Adonai Mitchell,WR
+21,Indianapolis Colts,14826,Jaylon Jones,CB
+21,Indianapolis Colts,14854,Anthony Richardson,QB
+21,Indianapolis Colts,15404,Jonah Laulu,DT
+21,Indianapolis Colts,15821,Trent Pennix,RB
+21,Indianapolis Colts,16050,Will Mallory,TE
+21,Indianapolis Colts,16287,Tanor Bortolini,G
+21,Indianapolis Colts,17527,Spencer Shrader,PK
+21,Indianapolis Colts,19598,Laiatu Latu,DE
+21,Indianapolis Colts,20173,Micah Abraham,CB
+21,Indianapolis Colts,20945,Levi Bell,DE
+21,Indianapolis Colts,21653,Jaylin Simpson,S
+21,Indianapolis Colts,21986,Julius Brents,CB
+21,Indianapolis Colts,24992,Zavier Scott,RB
+21,Indianapolis Colts,25316,Anthony Gould,WR
+21,Indianapolis Colts,27153,Titus Leo,LB
+21,Indianapolis Colts,27598,Liam Anderson,LB
+21,Indianapolis Colts,30810,Michael Tutsie,S
+21,Indianapolis Colts,32264,Clayborne Fields III,CB
+21,Indianapolis Colts,48424,Derek Slywka,WR
+22,Pittsburgh Steelers,51,Anthony Averett,CB
+22,Pittsburgh Steelers,163,Matt Sokol,TE
+22,Pittsburgh Steelers,342,Jeremiah Moon,LB
+22,Pittsburgh Steelers,347,Patrick Queen,LB
+22,Pittsburgh Steelers,377,Dez Fitzpatrick,WR
+22,Pittsburgh Steelers,517,DeShon Elliott,S
+22,Pittsburgh Steelers,532,Cordarrelle Patterson,RB
+22,Pittsburgh Steelers,550,MyCole Pruitt,TE
+22,Pittsburgh Steelers,584,Adetokunbo Ogundeji,LB
+22,Pittsburgh Steelers,668,Thomas Graham Jr.,CB
+22,Pittsburgh Steelers,758,Jonathan Ward,RB
+22,Pittsburgh Steelers,844,Quez Watkins,WR
+22,Pittsburgh Steelers,856,Isaac Seumalo,G
+22,Pittsburgh Steelers,881,Kyron Johnson,LB
+22,Pittsburgh Steelers,912,Tarik Black,WR
+22,Pittsburgh Steelers,1081,Dean Lowry,DT
+22,Pittsburgh Steelers,1098,Preston Smith,LB
+22,Pittsburgh Steelers,1108,Kiondre Thomas,CB
+22,Pittsburgh Steelers,1120,Justin Fields,QB
+22,Pittsburgh Steelers,1401,Donte Jackson,CB
+22,Pittsburgh Steelers,1466,Tyler Matakevich,LB
+22,Pittsburgh Steelers,1477,Kyler McMichael,CB
+22,Pittsburgh Steelers,1565,Najee Harris,RB
+22,Pittsburgh Steelers,1569,Jaylen Warren,RB
+22,Pittsburgh Steelers,1571,Calvin Austin III,WR
+22,Pittsburgh Steelers,1577,George Pickens,WR
+22,Pittsburgh Steelers,1580,Pat Freiermuth,TE
+22,Pittsburgh Steelers,1582,Connor Heyward,TE
+22,Pittsburgh Steelers,1583,Rodney Williams,TE
+22,Pittsburgh Steelers,1595,DeMarvin Leal,DE
+22,Pittsburgh Steelers,1596,Isaiahh Loudermilk,DT
+22,Pittsburgh Steelers,1597,Montravius Adams,DT
+22,Pittsburgh Steelers,1598,Cameron Heyward,DT
+22,Pittsburgh Steelers,1599,Larry Ogunjobi,DT
+22,Pittsburgh Steelers,1606,Alex Highsmith,LB
+22,Pittsburgh Steelers,1611,Mark Robinson,LB
+22,Pittsburgh Steelers,1615,T.J. Watt,LB
+22,Pittsburgh Steelers,1618,James Pierre,CB
+22,Pittsburgh Steelers,1620,Cameron Sutton,CB
+22,Pittsburgh Steelers,1624,Terrell Edmunds,S
+22,Pittsburgh Steelers,1625,Minkah Fitzpatrick,S
+22,Pittsburgh Steelers,1627,Damontae Kazee,S
+22,Pittsburgh Steelers,1628,Miles Killebrew,S
+22,Pittsburgh Steelers,1630,Chris Boswell,PK
+22,Pittsburgh Steelers,1632,Christian Kuntz,LS
+22,Pittsburgh Steelers,1721,Scotty Miller,WR
+22,Pittsburgh Steelers,1751,Willington Previlon,DT
+22,Pittsburgh Steelers,1829,Elandon Roberts,LB
+22,Pittsburgh Steelers,1832,Kalon Barnes,CB
+22,Pittsburgh Steelers,1851,Kyle Allen,QB
+22,Pittsburgh Steelers,1921,Cameron Johnston,P
+22,Pittsburgh Steelers,2000,Russell Wilson,QB
+22,Pittsburgh Steelers,2073,Corliss Waitman,P
+22,Pittsburgh Steelers,2166,Mike Williams,WR
+22,Pittsburgh Steelers,2237,Van Jefferson,WR
+22,Pittsburgh Steelers,2243,Ben Skowronek,WR
+22,Pittsburgh Steelers,2560,Jalen Elliott,S
+22,Pittsburgh Steelers,2568,Zyon Gilbert,CB
+22,Pittsburgh Steelers,2599,La'Mical Perine,RB
+22,Pittsburgh Steelers,2710,Aaron Shampklin,RB
+22,Pittsburgh Steelers,2749,Brandon Johnson,WR
+22,Pittsburgh Steelers,2827,Marquiss Spencer,DE
+22,Pittsburgh Steelers,3459,Matthew Wright,PK
+22,Pittsburgh Steelers,9327,Zach Frazier,C
+22,Pittsburgh Steelers,10113,John Rhys Plumlee,WR
+22,Pittsburgh Steelers,10869,Cory Trice,CB
+22,Pittsburgh Steelers,10988,Joey Porter Jr.,CB
+22,Pittsburgh Steelers,11809,Beanie Bishop,CB
+22,Pittsburgh Steelers,12560,Jacob Slade,DT
+22,Pittsburgh Steelers,12573,Jacoby Windmon,LB
+22,Pittsburgh Steelers,13005,Marcus Haynes,LB
+22,Pittsburgh Steelers,14468,Daijun Edwards,RB
+22,Pittsburgh Steelers,14507,Darnell Washington,TE
+22,Pittsburgh Steelers,14517,Broderick Jones,OT
+22,Pittsburgh Steelers,15195,Julius Welschof,LB
+22,Pittsburgh Steelers,15874,Payton Wilson,LB
+22,Pittsburgh Steelers,16301,Keeanu Benton,DT
+22,Pittsburgh Steelers,16319,Nick Herbig,LB
+22,Pittsburgh Steelers,17721,Luquay Washington,LB
+22,Pittsburgh Steelers,17824,Logan Lee,DT
+22,Pittsburgh Steelers,17918,Mason McCormick,G
+22,Pittsburgh Steelers,17990,Jacob Copeland,WR
+22,Pittsburgh Steelers,18482,Anderson Hardy,OT
+22,Pittsburgh Steelers,21638,Eku Leota,LB
+22,Pittsburgh Steelers,22670,Duece Watts,WR
+22,Pittsburgh Steelers,23686,Darius Rush,CB
+22,Pittsburgh Steelers,24482,Ryan Watts,CB
+22,Pittsburgh Steelers,25377,Jack Colletto,FB
+22,Pittsburgh Steelers,25765,Jaray Jenkins,WR
+22,Pittsburgh Steelers,27775,T.J. Luther,WR
+22,Pittsburgh Steelers,36357,Kyahva Tezino,LB
+23,Seattle Seahawks,42,Johnathan Hankins,DT
+23,Seattle Seahawks,106,Roy Robertson-Harris,DT
+23,Seattle Seahawks,132,Rayshawn Jenkins,S
+23,Seattle Seahawks,254,Leonard Williams,DE
+23,Seattle Seahawks,284,Julian Love,S
+23,Seattle Seahawks,335,Tyus Bowser,LB
+23,Seattle Seahawks,348,Josh Ross,LB
+23,Seattle Seahawks,888,Josh Jobe,CB
+23,Seattle Seahawks,898,K'Von Wallace,S
+23,Seattle Seahawks,928,Laken Tomlinson,G
+23,Seattle Seahawks,1085,Jarran Reed,DT
+23,Seattle Seahawks,1260,Sam Howell,QB
+23,Seattle Seahawks,1343,PJ Walker,QB
+23,Seattle Seahawks,1356,Laviska Shenault Jr.,WR
+23,Seattle Seahawks,1404,Marquise Blair,S
+23,Seattle Seahawks,1463,Tyrel Dodson,LB
+23,Seattle Seahawks,1635,Geno Smith,QB
+23,Seattle Seahawks,1640,Kenneth Walker III,RB
+23,Seattle Seahawks,1641,Dee Eskridge,WR
+23,Seattle Seahawks,1644,Tyler Lockett,WR
+23,Seattle Seahawks,1645,DK Metcalf,WR
+23,Seattle Seahawks,1647,Dareke Young,WR
+23,Seattle Seahawks,1649,Noah Fant,TE
+23,Seattle Seahawks,1658,Stone Forsythe,OT
+23,Seattle Seahawks,1665,Darrell Taylor,DE
+23,Seattle Seahawks,1667,Myles Adams,DE
+23,Seattle Seahawks,1676,Boye Mafe,LB
+23,Seattle Seahawks,1678,Uchenna Nwosu,LB
+23,Seattle Seahawks,1680,Jon Rhattigan,LB
+23,Seattle Seahawks,1682,Tre Brown,CB
+23,Seattle Seahawks,1683,Coby Bryant,CB
+23,Seattle Seahawks,1684,Artie Burns,CB
+23,Seattle Seahawks,1688,Mike Jackson,CB
+23,Seattle Seahawks,1692,Tariq Woolen,CB
+23,Seattle Seahawks,1700,Jason Myers,PK
+23,Seattle Seahawks,1701,Michael Dickson,P
+23,Seattle Seahawks,1715,Jaelon Darden,WR
+23,Seattle Seahawks,1807,Connor Williams,C
+23,Seattle Seahawks,1822,Jerome Baker,LB
+23,Seattle Seahawks,1868,Pharaoh Brown,TE
+23,Seattle Seahawks,2037,Dre'Mont Jones,DE
+23,Seattle Seahawks,2059,Faion Hicks,CB
+23,Seattle Seahawks,2284,Ernest Jones,LB
+23,Seattle Seahawks,2733,Cody White,WR
+23,Seattle Seahawks,2739,Tyler Mabry,TE
+23,Seattle Seahawks,2748,Easop Winston,WR
+23,Seattle Seahawks,2857,Blake Lynch,LB
+23,Seattle Seahawks,7386,Devon Witherspoon,CB
+23,Seattle Seahawks,7480,Easton Gibbs,LB
+23,Seattle Seahawks,8544,Tyrice Knight,LB
+23,Seattle Seahawks,9986,Dee Williams,CB
+23,Seattle Seahawks,10784,Kobe Lewis,RB
+23,Seattle Seahawks,11707,Willie Roberts,CB
+23,Seattle Seahawks,12146,Carlton Johnson,CB
+23,Seattle Seahawks,12281,Kairee Robinson,RB
+23,Seattle Seahawks,13126,Mario Kendricks,DT
+23,Seattle Seahawks,13756,AJ Barner,TE
+23,Seattle Seahawks,13877,Brady Russell,TE
+23,Seattle Seahawks,14255,Jaxon SmithNjigba,WR
+23,Seattle Seahawks,14471,Kenny McIntosh,RB
+23,Seattle Seahawks,15152,Olusegun Oluwatimi,C
+23,Seattle Seahawks,15170,Michael Barrett,LB
+23,Seattle Seahawks,15186,Mike Morris,DE
+23,Seattle Seahawks,15871,Drake Thomas,LB
+23,Seattle Seahawks,17050,AJ Finley,S
+23,Seattle Seahawks,17361,Nelson Ceaser,LB
+23,Seattle Seahawks,19529,Zach Charbonnet,RB
+23,Seattle Seahawks,19540,Jake Bobo,WR
+23,Seattle Seahawks,19912,Kyon Barrs,DT
+23,Seattle Seahawks,20720,Jamie Sheriff,LB
+23,Seattle Seahawks,21636,Derick Hall,LB
+23,Seattle Seahawks,21650,Nehemiah Pritchett,CB
+23,Seattle Seahawks,22216,Lance Boykin,CB
+23,Seattle Seahawks,23292,Sundiata Anderson,LB
+23,Seattle Seahawks,23892,DeVere Levelston,DE
+23,Seattle Seahawks,24435,Byron Murphy II,DT
+23,Seattle Seahawks,24460,Devin Richardson,LB
+23,Seattle Seahawks,24951,Jerrick Reed II,S
+23,Seattle Seahawks,25209,Hayden Hatten,WR
+23,Seattle Seahawks,25429,George Holani,RB
+23,Seattle Seahawks,25565,Jack Westover,TE
+23,Seattle Seahawks,25783,Anthony Bradford,G
+23,Seattle Seahawks,29075,Tyrone Scott,WR
+23,Seattle Seahawks,30686,Ty Okada,S
+23,Seattle Seahawks,30847,McClendon Curtis,OT
+23,Seattle Seahawks,32911,Patrick O'Connell,LB
+23,Seattle Seahawks,48427,D.J. James,CB
+23,Seattle Seahawks,58805,Team,
+24,Tampa Bay Buccaneers,232,Sterling Shepard,WR
+24,Tampa Bay Buccaneers,308,Raleigh Webb,WR
+24,Tampa Bay Buccaneers,580,Deion Jones,LB
+24,Tampa Bay Buccaneers,963,Bryce Hall,CB
+24,Tampa Bay Buccaneers,972,Jordan Whitehead,S
+24,Tampa Bay Buccaneers,1193,Trenton Gill,P
+24,Tampa Bay Buccaneers,1342,Baker Mayfield,QB
+24,Tampa Bay Buccaneers,1455,C.J. Brewer,DT
+24,Tampa Bay Buccaneers,1558,Chase McLaughlin,PK
+24,Tampa Bay Buccaneers,1646,Cody Thompson,WR
+24,Tampa Bay Buccaneers,1697,Ryan Neal,S
+24,Tampa Bay Buccaneers,1707,Kyle Trask,QB
+24,Tampa Bay Buccaneers,1713,Rachaad White,RB
+24,Tampa Bay Buccaneers,1716,Mike Evans,WR
+24,Tampa Bay Buccaneers,1719,Chris Godwin,WR
+24,Tampa Bay Buccaneers,1726,Ko Kieft,TE
+24,Tampa Bay Buccaneers,1727,Cade Otton,TE
+24,Tampa Bay Buccaneers,1729,David Wells,TE
+24,Tampa Bay Buccaneers,1731,Luke Goedeke,OT
+24,Tampa Bay Buccaneers,1739,Justin Skule,OT
+24,Tampa Bay Buccaneers,1743,Tristan Wirfs,OT
+24,Tampa Bay Buccaneers,1744,William Gholston,DE
+24,Tampa Bay Buccaneers,1745,Mike Greene,DE
+24,Tampa Bay Buccaneers,1746,Logan Hall,DE
+24,Tampa Bay Buccaneers,1753,Vita Vea,DT
+24,Tampa Bay Buccaneers,1755,Shaquil Barrett,LB
+24,Tampa Bay Buccaneers,1756,K.J. Britt,LB
+24,Tampa Bay Buccaneers,1757,Lavonte David,LB
+24,Tampa Bay Buccaneers,1761,Anthony Nelson,LB
+24,Tampa Bay Buccaneers,1762,J.J. Russell,LB
+24,Tampa Bay Buccaneers,1763,Joe Tryon-Shoyinka,LB
+24,Tampa Bay Buccaneers,1768,Jamel Dean,CB
+24,Tampa Bay Buccaneers,1771,Zyon McCollum,CB
+24,Tampa Bay Buccaneers,1773,Mike Edwards,S
+24,Tampa Bay Buccaneers,1777,Antoine Winfield Jr.,S
+24,Tampa Bay Buccaneers,1779,Jake Camarda,P
+24,Tampa Bay Buccaneers,1913,Tavierre Thomas,CB
+24,Tampa Bay Buccaneers,2228,John Wolford,QB
+24,Tampa Bay Buccaneers,2266,Earnest Brown IV,DE
+24,Tampa Bay Buccaneers,2273,Greg Gaines,DT
+24,Tampa Bay Buccaneers,2658,Nolan Cooney,P
+24,Tampa Bay Buccaneers,2798,Vi Jones,LB
+24,Tampa Bay Buccaneers,2810,Ben Stille,DE
+24,Tampa Bay Buccaneers,2872,Sal Cannella,TE
+24,Tampa Bay Buccaneers,6746,Trey Palmer,WR
+24,Tampa Bay Buccaneers,7126,Daniel Grzesiak,LB
+24,Tampa Bay Buccaneers,7593,Kalen DeLoach,LB
+24,Tampa Bay Buccaneers,7944,Markees Watts,LB
+24,Tampa Bay Buccaneers,9243,Calijah Kancey,DT
+24,Tampa Bay Buccaneers,9255,SirVocea Dennis,LB
+24,Tampa Bay Buccaneers,10605,Judge Culpepper,DT
+24,Tampa Bay Buccaneers,10637,Chris McDonald,CB
+24,Tampa Bay Buccaneers,10807,Payne Durham,TE
+24,Tampa Bay Buccaneers,12735,Tanner Knue,WR
+24,Tampa Bay Buccaneers,12792,Jose Ramirez,LB
+24,Tampa Bay Buccaneers,13383,Evan Deckers,LS
+24,Tampa Bay Buccaneers,14038,Lwal Uguak,DT
+24,Tampa Bay Buccaneers,14178,Chris Braswell,LB
+24,Tampa Bay Buccaneers,14575,Tykee Smith,S
+24,Tampa Bay Buccaneers,14602,Bucky Irving,RB
+24,Tampa Bay Buccaneers,16400,Tanner Taula,TE
+24,Tampa Bay Buccaneers,16713,Ramon Jefferson,RB
+24,Tampa Bay Buccaneers,17298,Rashad Wisdom,S
+24,Tampa Bay Buccaneers,17496,Antonio Grier,LB
+24,Tampa Bay Buccaneers,17867,Kaevon Merriweather,S
+24,Tampa Bay Buccaneers,17998,Rakim Jarrett,WR
+24,Tampa Bay Buccaneers,18420,Christian Izien,S
+24,Tampa Bay Buccaneers,19040,Tyrek Funderburk,CB
+24,Tampa Bay Buccaneers,19855,Jack Browning,P
+24,Tampa Bay Buccaneers,19876,DJ Williams,RB
+24,Tampa Bay Buccaneers,21999,Josh Hayes,S
+24,Tampa Bay Buccaneers,22436,Latreal Jones,WR
+24,Tampa Bay Buccaneers,23003,Cephus Johnson III,WR
+24,Tampa Bay Buccaneers,23434,Marcus Banks,S
+24,Tampa Bay Buccaneers,24631,Sean Tucker,RB
+24,Tampa Bay Buccaneers,24787,YaYa Diaby,LB
+24,Tampa Bay Buccaneers,25551,Jalen McMillan,WR
+24,Tampa Bay Buccaneers,25558,Devin Culp,TE
+24,Tampa Bay Buccaneers,26264,Ryan Miller,WR
+24,Tampa Bay Buccaneers,27405,Keenan Isaac,CB
+24,Tampa Bay Buccaneers,30752,Cody Mauch,G
+24,Tampa Bay Buccaneers,30896,Jay Person,LB
+24,Tampa Bay Buccaneers,42095,Andrew Hayes,CB
+24,Tampa Bay Buccaneers,46372,Kameron Johnson,WR
+25,Miami Dolphins,41,Neil Farrell Jr.,DT
+25,Miami Dolphins,162,Jonnu Smith,TE
+25,Miami Dolphins,175,Isaiah Wynn,OT
+25,Miami Dolphins,214,Jake Bailey,P
+25,Miami Dolphins,260,Cam Brown,LB
+25,Miami Dolphins,290,Tyler Huntley,QB
+25,Miami Dolphins,327,Calais Campbell,DT
+25,Miami Dolphins,329,Isaiah Mack,DT
+25,Miami Dolphins,335,Tyus Bowser,LB
+25,Miami Dolphins,393,Aaron Brewer,G
+25,Miami Dolphins,405,Da'Shawn Hand,DT
+25,Miami Dolphins,423,David Long Jr.,LB
+25,Miami Dolphins,424,Wyatt Ray,LB
+25,Miami Dolphins,448,Tim Boyle,QB
+25,Miami Dolphins,494,Benito Jones,DT
+25,Miami Dolphins,576,Quinton Bell,LB
+25,Miami Dolphins,620,Mike Harley Jr.,WR
+25,Miami Dolphins,623,Anthony Schwartz,WR
+25,Miami Dolphins,666,Anthony Walker Jr.,LB
+25,Miami Dolphins,706,Jackson Carman,OT
+25,Miami Dolphins,779,Sean Harlow,C
+25,Miami Dolphins,904,Mike White,QB
+25,Miami Dolphins,911,Braxton Berrios,WR
+25,Miami Dolphins,985,Jeff Wilson Jr.,RB
+25,Miami Dolphins,992,Willie Snead IV,WR
+25,Miami Dolphins,1213,Jody Fortson,TE
+25,Miami Dolphins,1270,Kyric McGowan,WR
+25,Miami Dolphins,1325,Kendall Fuller,CB
+25,Miami Dolphins,1350,Robbie Anderson,WR
+25,Miami Dolphins,1463,Tyrel Dodson,LB
+25,Miami Dolphins,1478,Siran Neal,CB
+25,Miami Dolphins,1483,Jordan Poyer,S
+25,Miami Dolphins,1604,David Anenih,LB
+25,Miami Dolphins,1641,Dee Eskridge,WR
+25,Miami Dolphins,1674,Jordyn Brooks,LB
+25,Miami Dolphins,1782,Tua Tagovailoa,QB
+25,Miami Dolphins,1783,Skylar Thompson,QB
+25,Miami Dolphins,1787,Raheem Mostert,RB
+25,Miami Dolphins,1788,Alec Ingold,FB
+25,Miami Dolphins,1790,River Cracraft,WR
+25,Miami Dolphins,1791,Erik Ezukanma,WR
+25,Miami Dolphins,1792,Tyreek Hill,WR
+25,Miami Dolphins,1795,Jaylen Waddle,WR
+25,Miami Dolphins,1798,Tanner Conner,TE
+25,Miami Dolphins,1802,Durham Smythe,TE
+25,Miami Dolphins,1805,Austin Jackson,G
+25,Miami Dolphins,1806,Robert Jones,G
+25,Miami Dolphins,1808,Terron Armstead,OT
+25,Miami Dolphins,1816,Emmanuel Ogbah,LB
+25,Miami Dolphins,1820,Zach Sieler,DT
+25,Miami Dolphins,1827,Jaelan Phillips,LB
+25,Miami Dolphins,1828,Duke Riley,LB
+25,Miami Dolphins,1830,Channing Tindall,LB
+25,Miami Dolphins,1838,Kader Kohou,CB
+25,Miami Dolphins,1839,Nik Needham,CB
+25,Miami Dolphins,1842,Elijah Campbell,S
+25,Miami Dolphins,1844,Jevon Holland,S
+25,Miami Dolphins,1848,Jason Sanders,PK
+25,Miami Dolphins,1850,Blake Ferguson,LS
+25,Miami Dolphins,1993,Marcus Maye,S
+25,Miami Dolphins,2041,Jonathan Harris,DE
+25,Miami Dolphins,2121,Neville Gallimore,DT
+25,Miami Dolphins,2158,Zander Horvath,RB
+25,Miami Dolphins,2296,Jalen Ramsey,CB
+25,Miami Dolphins,2528,Curtis Bolton,LB
+25,Miami Dolphins,2686,Anthony McFarland Jr.,RB
+25,Miami Dolphins,2743,Braylon Sanders,WR
+25,Miami Dolphins,2760,Cameron Goode,LB
+25,Miami Dolphins,3451,Odell Beckham Jr.,WR
+25,Miami Dolphins,6622,Malik Washington,WR
+25,Miami Dolphins,7761,Je'Quan Burton,WR
+25,Miami Dolphins,7882,Grant DuBose,WR
+25,Miami Dolphins,8087,Storm Duck,CB
+25,Miami Dolphins,9884,Jaylen Wright,RB
+25,Miami Dolphins,10948,Chop Robinson,LB
+25,Miami Dolphins,12125,Leonard Payne Jr.,DT
+25,Miami Dolphins,14080,Mark Perry,S
+25,Miami Dolphins,14725,Devon Achane,RB
+25,Miami Dolphins,15288,Mohamed Kamara,LB
+25,Miami Dolphins,15302,Dequan Jackson,LB
+25,Miami Dolphins,15968,Brandon Pili,DT
+25,Miami Dolphins,16281,Hayden Rucci,TE
+25,Miami Dolphins,16446,Zeke Vandenburgh,LB
+25,Miami Dolphins,17539,Christopher Brooks,RB
+25,Miami Dolphins,17901,Jadon Janke,WR
+25,Miami Dolphins,18304,Jason Maitre,CB
+25,Miami Dolphins,19585,Grayson Murphy,LB
+25,Miami Dolphins,19851,Patrick McMorris,S
+25,Miami Dolphins,23687,Cam Smith,CB
+25,Miami Dolphins,24023,Ethan Bonner,CB
+25,Miami Dolphins,30145,Julian Hill,TE
+25,Miami Dolphins,30978,Jordan Colbert,S
+25,Miami Dolphins,48429,Isaiah Johnson,CB
+26,Houston Texans,103,Mario Edwards Jr.,DT
+26,Houston Texans,110,Folorunso Fatukasi,DT
+26,Houston Texans,147,J.J. Taylor,RB
+26,Houston Texans,196,Myles Bryant,CB
+26,Houston Texans,345,Del'Shawn Phillips,LB
+26,Houston Texans,384,Robert Woods,WR
+26,Houston Texans,404,Denico Autry,DE
+26,Houston Texans,433,Lonnie Johnson,CB
+26,Houston Texans,448,Tim Boyle,QB
+26,Houston Texans,459,Quintez Cephus,WR
+26,Houston Texans,512,Jeff Okudah,CB
+26,Houston Texans,587,Mike Ford,CB
+26,Houston Texans,591,Ka'dar Hollman,CB
+26,Houston Texans,657,Tommy Togiai,DT
+26,Houston Texans,664,Jacob Phillips,LB
+26,Houston Texans,686,Joe Mixon,RB
+26,Houston Texans,848,Dalton Keene,TE
+26,Houston Texans,865,Derek Barnett,DE
+26,Houston Texans,910,Nick Bawden,RB
+26,Houston Texans,1026,Azeez Al-Shaair,LB
+26,Houston Texans,1039,Jimmie Ward,S
+26,Houston Texans,1257,Tommy Townsend,P
+26,Houston Texans,1416,Case Keenum,QB
+26,Houston Texans,1426,Stefon Diggs,WR
+26,Houston Texans,1461,Tim Settle,DT
+26,Houston Texans,1574,Diontae Johnson,WR
+26,Houston Texans,1579,Steven Sims,WR
+26,Houston Texans,1585,Kendrick Green,G
+26,Houston Texans,1733,Shaq Mason,G
+26,Houston Texans,1748,Khalil Davis,DT
+26,Houston Texans,1764,Devin White,LB
+26,Houston Texans,1853,Davis Mills,QB
+26,Houston Texans,1858,Dare Ogunbowale,RB
+26,Houston Texans,1859,Dameon Pierce,RB
+26,Houston Texans,1860,Nico Collins,WR
+26,Houston Texans,1865,John Metchie III,WR
+26,Houston Texans,1870,Brevin Jordan,TE
+26,Houston Texans,1871,Teagan Quitoriano,TE
+26,Houston Texans,1882,Tytus Howard,OT
+26,Houston Texans,1888,Troy Hairston,FB
+26,Houston Texans,1890,Jerry Hughes,DE
+26,Houston Texans,1894,Kurt Hinish,DT
+26,Houston Texans,1898,Jake Hansen,LB
+26,Houston Texans,1899,Christian Harris,LB
+26,Houston Texans,1900,Neville Hewitt,LB
+26,Houston Texans,1908,Desmond King II,CB
+26,Houston Texans,1912,Derek Stingley Jr.,CB
+26,Houston Texans,1916,Eric Murray,S
+26,Houston Texans,1918,Jalen Pitre,S
+26,Houston Texans,1919,M.J. Stewart,S
+26,Houston Texans,1920,Ka'imi Fairbairn,PK
+26,Houston Texans,2016,Andrew Beck,FB
+26,Houston Texans,2040,McTelvin Agim,DT
+26,Houston Texans,2097,Dalton Schultz,TE
+26,Houston Texans,2229,Cam Akers,RB
+26,Houston Texans,2243,Ben Skowronek,WR
+26,Houston Texans,2303,Russ Yeast,S
+26,Houston Texans,2330,Irv Smith Jr.,TE
+26,Houston Texans,2357,Danielle Hunter,DE
+26,Houston Texans,2365,Kris Boyd,CB
+26,Houston Texans,2690,Johnny Johnson III,WR
+26,Houston Texans,2809,D'Angelo Ross,CB
+26,Houston Texans,3299,Troy Pride Jr.,CB
+26,Houston Texans,7350,Tarique Barnes,LB
+26,Houston Texans,7996,British Brooks,RB
+26,Houston Texans,9203,Jared Wayne,WR
+26,Houston Texans,9274,Brandon Hill,S
+26,Houston Texans,10937,Juice Scruggs,C
+26,Houston Texans,14030,Dylan Horton,DE
+26,Houston Texans,14175,Will Anderson Jr.,DE
+26,Houston Texans,14190,Henry To'oTo'o,LB
+26,Houston Texans,14232,C.J. Stroud,QB
+26,Houston Texans,14265,Cade Stover,TE
+26,Houston Texans,14394,Blake Fisher,OT
+26,Houston Texans,14568,Kamari Lassiter,CB
+26,Houston Texans,14698,Jamal Hill,LB
+26,Houston Texans,15964,Solomon Byrd,DE
+26,Houston Texans,15996,Calen Bullock,S
+26,Houston Texans,17320,Nathaniel Dell,WR
+26,Houston Texans,17621,Max Tooley,LB
+26,Houston Texans,19308,Xavier Hutchinson,WR
+26,Houston Texans,21614,Kilian Zierer,OT
+26,Houston Texans,21616,Marcus Harris,DT
+26,Houston Texans,24737,Jawhar Jordan,RB
+26,Houston Texans,25803,Ali Gaye,LB
+26,Houston Texans,48414,Malik Fisher,DE
+27,New Orleans Saints,1,Derek Carr,QB
+27,New Orleans Saints,18,Foster Moreau,TE
+27,New Orleans Saints,44,Kendal Vickers,DT
+27,New Orleans Saints,58,Johnathan Abram,S
+27,New Orleans Saints,64,Roderic Teamer,S
+27,New Orleans Saints,74,James Robinson,RB
+27,New Orleans Saints,77,Kevin Austin Jr.,WR
+27,New Orleans Saints,202,Joejuan Williams,CB
+27,New Orleans Saints,244,Shane Lemieux,C
+27,New Orleans Saints,389,Kevin Rader,TE
+27,New Orleans Saints,425,Monty Rice,LB
+27,New Orleans Saints,438,Ugo Amadi,S
+27,New Orleans Saints,456,Jamaal Williams,RB
+27,New Orleans Saints,518,Will Harris,CB
+27,New Orleans Saints,693,Stanley Morgan,WR
+27,New Orleans Saints,890,Mac McCain III,CB
+27,New Orleans Saints,950,Nathan Shepherd,DT
+27,New Orleans Saints,1084,Jack Heflin,DT
+27,New Orleans Saints,1105,Shemar Jean-Charles,CB
+27,New Orleans Saints,1132,Dante Pettis,WR
+27,New Orleans Saints,1135,Equanimeous St. Brown,WR
+27,New Orleans Saints,1199,Clyde Edwards-Helaire,RB
+27,New Orleans Saints,1210,Marquez Valdes-Scantling,WR
+27,New Orleans Saints,1234,Khalen Saunders,DT
+27,New Orleans Saints,1240,Willie Gay,LB
+27,New Orleans Saints,1307,Chase Young,DE
+27,New Orleans Saints,1312,John Ridgeway,DT
+27,New Orleans Saints,1319,Khaleke Hudson,LB
+27,New Orleans Saints,1796,Cedrick Wilson Jr.,WR
+27,New Orleans Saints,1928,Alvin Kamara,RB
+27,New Orleans Saints,1931,Adam Prentice,FB
+27,New Orleans Saints,1933,Marquez Callaway,WR
+27,New Orleans Saints,1937,Chris Olave,WR
+27,New Orleans Saints,1938,Rashid Shaheed,WR
+27,New Orleans Saints,1941,Taysom Hill,TE
+27,New Orleans Saints,1943,Juwan Johnson,TE
+27,New Orleans Saints,1964,Carl Granderson,DE
+27,New Orleans Saints,1965,Cameron Jordan,DE
+27,New Orleans Saints,1966,Tanoh Kpassagnon,DE
+27,New Orleans Saints,1968,Payton Turner,DE
+27,New Orleans Saints,1975,Demario Davis,LB
+27,New Orleans Saints,1976,Andrew Dowell,LB
+27,New Orleans Saints,1979,D'Marco Jackson,LB
+27,New Orleans Saints,1980,Nephi Sewell,LB
+27,New Orleans Saints,1981,Pete Werner,LB
+27,New Orleans Saints,1983,Paulson Adebo,CB
+27,New Orleans Saints,1986,Marshon Lattimore,CB
+27,New Orleans Saints,1988,Alontae Taylor,CB
+27,New Orleans Saints,1991,J.T. Gray,S
+27,New Orleans Saints,1992,Tyrann Mathieu,S
+27,New Orleans Saints,1998,Zach Wood,LS
+27,New Orleans Saints,2728,Michael Jacobson,TE
+27,New Orleans Saints,2729,Samson Nacua,WR
+27,New Orleans Saints,2772,Mike Rose,LB
+27,New Orleans Saints,2922,Niko Lalos,DE
+27,New Orleans Saints,8890,Anfernee Orji,LB
+27,New Orleans Saints,8921,Matt Hayball,P
+27,New Orleans Saints,9195,Bub Means,WR
+27,New Orleans Saints,9428,A.T. Perry,WR
+27,New Orleans Saints,10240,Shaquan Davis,WR
+27,New Orleans Saints,11816,Jordan Howden,S
+27,New Orleans Saints,12057,Jake Haener,QB
+27,New Orleans Saints,12067,Jordan Mims,RB
+27,New Orleans Saints,12875,Josiah Ezirim,OT
+27,New Orleans Saints,13532,Mason Fairchild,TE
+27,New Orleans Saints,13969,Kendre Miller,RB
+27,New Orleans Saints,14072,Millard Bradford,S
+27,New Orleans Saints,14208,KoolAid McKinstry,CB
+27,New Orleans Saints,14411,Isaiah Foskey,DE
+27,New Orleans Saints,14452,Blake Grupe,PK
+27,New Orleans Saints,16133,Lou Hedley,P
+27,New Orleans Saints,17566,Dallin Holker,TE
+27,New Orleans Saints,17966,Isaiah Stalbird,LB
+27,New Orleans Saints,19229,Khristian Boyd,DT
+27,New Orleans Saints,19503,Lawrence Johnson,S
+27,New Orleans Saints,22871,Jacob Kibodi,RB
+27,New Orleans Saints,23585,Spencer Rattler,QB
+27,New Orleans Saints,24454,Jaylan Ford,LB
+27,New Orleans Saints,25165,Kaleb FordDement,CB
+27,New Orleans Saints,25212,Jermaine Jackson,WR
+27,New Orleans Saints,25341,Taliese Fuaga,OT
+27,New Orleans Saints,25412,Rejzohn Wright,CB
+27,New Orleans Saints,26051,Bryan Bresee,DT
+27,New Orleans Saints,34536,Mason Tipton,WR
+27,New Orleans Saints,35225,Camron Peterson,DT
+27,New Orleans Saints,48430,Rico Payton,CB
+27,New Orleans Saints,48431,Charlie Smyth,PK
+28,Denver Broncos,2,Jarrett Stidham,QB
+28,Denver Broncos,151,Lil'Jordan Humphrey,WR
+28,Denver Broncos,233,David Sills V,WR
+28,Denver Broncos,292,Tyler Badie,RB
+28,Denver Broncos,319,Ben Powers,G
+28,Denver Broncos,349,Kristian Welch,LB
+28,Denver Broncos,417,Zach Cunningham,LB
+28,Denver Broncos,463,Josh Reynolds,WR
+28,Denver Broncos,687,Samaje Perine,RB
+28,Denver Broncos,790,Zach Allen,DE
+28,Denver Broncos,905,Zach Wilson,QB
+28,Denver Broncos,942,John Franklin-Myers,DE
+28,Denver Broncos,953,Kwon Alexander,LB
+28,Denver Broncos,1143,Sam Mustipher,C
+28,Denver Broncos,1159,Angelo Blackson,DE
+28,Denver Broncos,1193,Trenton Gill,P
+28,Denver Broncos,1203,Michael Burton,FB
+28,Denver Broncos,1469,Andre Smith,LB
+28,Denver Broncos,1621,Levi Wallace,CB
+28,Denver Broncos,1672,Cody Barton,LB
+28,Denver Broncos,1845,Brandon Jones,S
+28,Denver Broncos,1863,Phillip Dorsett,WR
+28,Denver Broncos,1911,Tremon Smith,CB
+28,Denver Broncos,1944,Lucas Krull,TE
+28,Denver Broncos,1946,Adam Trautman,TE
+28,Denver Broncos,1967,Malcolm Roach,DT
+28,Denver Broncos,1970,Jordan Jackson,DT
+28,Denver Broncos,1996,Wil Lutz,PK
+28,Denver Broncos,2005,Javonte Williams,RB
+28,Denver Broncos,2010,Tim Patrick,WR
+28,Denver Broncos,2013,Courtland Sutton,WR
+28,Denver Broncos,2014,Jalen Virgil,WR
+28,Denver Broncos,2018,Greg Dulcich,TE
+28,Denver Broncos,2023,Luke Wattenberg,C
+28,Denver Broncos,2026,Quinn Meinerz,G
+28,Denver Broncos,2036,Matt Henningsen,DE
+28,Denver Broncos,2039,Eyioma Uwazurike,DE
+28,Denver Broncos,2042,D.J. Jones,DT
+28,Denver Broncos,2046,Nik Bonitto,LB
+28,Denver Broncos,2047,Baron Browning,LB
+28,Denver Broncos,2049,Jonathon Cooper,LB
+28,Denver Broncos,2051,Jonas Griffith,LB
+28,Denver Broncos,2055,Alex Singleton,LB
+28,Denver Broncos,2056,Justin Strnad,LB
+28,Denver Broncos,2060,Damarri Mathis,CB
+28,Denver Broncos,2061,Ja'Quan McMillian,CB
+28,Denver Broncos,2064,Pat Surtain II,CB
+28,Denver Broncos,2068,P.J. Locke,S
+28,Denver Broncos,2160,Michael Bandy,WR
+28,Denver Broncos,2168,Hunter Kampmoyer,TE
+28,Denver Broncos,2274,Elijah Garcia,DE
+28,Denver Broncos,2305,Riley Dixon,P
+28,Denver Broncos,2749,Brandon Johnson,WR
+28,Denver Broncos,2767,Devon Key,S
+28,Denver Broncos,6819,Omar Brown,S
+28,Denver Broncos,6837,Quinton Newsome,CB
+28,Denver Broncos,9119,Thomas Incoom,LB
+28,Denver Broncos,10872,Reese Taylor,CB
+28,Denver Broncos,11579,Kris AbramsDraine,CB
+28,Denver Broncos,12126,Levelle Bailey,LB
+28,Denver Broncos,12956,Blake Watson,RB
+28,Denver Broncos,14335,Tanner McCalister,S
+28,Denver Broncos,14354,Audric Estime,RB
+28,Denver Broncos,14592,Bo Nix,QB
+28,Denver Broncos,14613,Troy Franklin,WR
+28,Denver Broncos,14635,Alex Forsyth,C
+28,Denver Broncos,15000,Devaughn Vele,WR
+28,Denver Broncos,15010,Thomas Yassmin,TE
+28,Denver Broncos,15031,Jonah Elliss,LB
+28,Denver Broncos,15363,Marvin Mims,WR
+28,Denver Broncos,16083,Jordan Miller,DT
+28,Denver Broncos,16555,Drew Sanders,LB
+28,Denver Broncos,16812,Keidron Smith,S
+28,Denver Broncos,17392,Art Green,CB
+28,Denver Broncos,17639,Kaleb Hayes,CB
+28,Denver Broncos,17868,Riley Moss,CB
+28,Denver Broncos,18062,Durell Nchami,DE
+28,Denver Broncos,19133,Alec Mock,LB
+28,Denver Broncos,23613,Nate Adkins,TE
+28,Denver Broncos,25518,JL Skinner,S
+28,Denver Broncos,28956,Jaleel McLaughlin,RB
+28,Denver Broncos,35592,Mitchell Fraboni,LS
+28,Denver Broncos,48432,Dondrea Tillman,LB
+29,Dallas Cowboys,13,Tyron Johnson,WR
+29,Dallas Cowboys,67,Trent Sieg,LS
+29,Dallas Cowboys,71,Snoop Conner,RB
+29,Dallas Cowboys,181,Carl Davis Jr.,DE
+29,Dallas Cowboys,381,Racey McMath,WR
+29,Dallas Cowboys,513,Amani Oruwariye,CB
+29,Dallas Cowboys,632,Brock Hoffman,C
+29,Dallas Cowboys,811,Nick Vigil,LB
+29,Dallas Cowboys,945,Carl Lawson,DE
+29,Dallas Cowboys,978,Trey Lance,QB
+29,Dallas Cowboys,1030,Buddy Johnson,LB
+29,Dallas Cowboys,1161,Al-Quadin Muhammad,LB
+29,Dallas Cowboys,1241,Darius Harris,LB
+29,Dallas Cowboys,1305,Shaka Toney,DE
+29,Dallas Cowboys,1395,Damien Wilson,LB
+29,Dallas Cowboys,1460,Jordan Phillips,DT
+29,Dallas Cowboys,1857,Royce Freeman,RB
+29,Dallas Cowboys,1862,Brandin Cooks,WR
+29,Dallas Cowboys,1969,Albert Huggins,DT
+29,Dallas Cowboys,2076,Dak Prescott,QB
+29,Dallas Cowboys,2077,Cooper Rush,QB
+29,Dallas Cowboys,2078,Malik Davis,RB
+29,Dallas Cowboys,2079,Rico Dowdle,RB
+29,Dallas Cowboys,2080,Ezekiel Elliott,RB
+29,Dallas Cowboys,2088,CeeDee Lamb,WR
+29,Dallas Cowboys,2090,Jalen Tolbert,WR
+29,Dallas Cowboys,2091,KaVontae Turpin,WR
+29,Dallas Cowboys,2094,Jake Ferguson,TE
+29,Dallas Cowboys,2095,Peyton Hendershot,TE
+29,Dallas Cowboys,2107,Dakoda Shepley,OT
+29,Dallas Cowboys,2108,Tyler Smith,G
+29,Dallas Cowboys,2111,Matt Waletzko,OT
+29,Dallas Cowboys,2115,Chauncey Golston,DE
+29,Dallas Cowboys,2116,DeMarcus Lawrence,DE
+29,Dallas Cowboys,2118,Carlos Watkins,DE
+29,Dallas Cowboys,2123,Osa Odighizuwa,DT
+29,Dallas Cowboys,2126,Damone Clark,LB
+29,Dallas Cowboys,2131,Micah Parsons,LB
+29,Dallas Cowboys,2133,DaRon Bland,CB
+29,Dallas Cowboys,2135,Trevon Diggs,CB
+29,Dallas Cowboys,2136,C.J. Goodwin,CB
+29,Dallas Cowboys,2138,Jourdan Lewis,CB
+29,Dallas Cowboys,2141,Markquese Bell,S
+29,Dallas Cowboys,2143,Malik Hooker,S
+29,Dallas Cowboys,2145,Israel Mukuamu,S
+29,Dallas Cowboys,2146,Donovan Wilson,S
+29,Dallas Cowboys,2148,Bryan Anger,P
+29,Dallas Cowboys,2211,Kemon Hall,CB
+29,Dallas Cowboys,2311,Dalvin Cook,RB
+29,Dallas Cowboys,2359,Eric Kendricks,LB
+29,Dallas Cowboys,2364,Andrew Booth Jr.,CB
+29,Dallas Cowboys,2386,Kelvin Harmon,WR
+29,Dallas Cowboys,2637,Willie Harvey Jr.,LB
+29,Dallas Cowboys,2832,Juanyeh Thomas,S
+29,Dallas Cowboys,3299,Troy Pride Jr.,CB
+29,Dallas Cowboys,3433,Linval Joseph,DT
+29,Dallas Cowboys,3588,Deontay Burnett,WR
+29,Dallas Cowboys,8042,Asim Richards,OT
+29,Dallas Cowboys,8451,Emany Johnson,S
+29,Dallas Cowboys,9495,Caelen Carson,CB
+29,Dallas Cowboys,9901,Princeton Fant,TE
+29,Dallas Cowboys,10142,Alec Holler,TE
+29,Dallas Cowboys,10188,Jason Johnson,LB
+29,Dallas Cowboys,11498,Nathaniel Peat,RB
+29,Dallas Cowboys,11756,Brevyn SpannFord,TE
+29,Dallas Cowboys,11854,Cam Johnson,WR
+29,Dallas Cowboys,12081,Jalen MorenoCropper,WR
+29,Dallas Cowboys,12320,Viliami Fehoko,DE
+29,Dallas Cowboys,12664,Marshawn Kneeland,DE
+29,Dallas Cowboys,14426,Marist Liufau,LB
+29,Dallas Cowboys,15135,Luke Schoonmaker,TE
+29,Dallas Cowboys,15166,Mazi Smith,DT
+29,Dallas Cowboys,15381,Tyler Guyton,OT
+29,Dallas Cowboys,15780,Julius Wood,S
+29,Dallas Cowboys,16765,Justin Rogers,DT
+29,Dallas Cowboys,16964,Jonathan Mingo,WR
+29,Dallas Cowboys,18296,Josh DeBerry,CB
+29,Dallas Cowboys,19434,Ryan Flournoy,WR
+29,Dallas Cowboys,21294,Denzel Daxon,DT
+29,Dallas Cowboys,21904,Deuce Vaughn,RB
+29,Dallas Cowboys,21940,Cooper Beebe,G
+29,Dallas Cowboys,22095,Brock Mogensen,LB
+29,Dallas Cowboys,22508,Eric Scott Jr.,CB
+29,Dallas Cowboys,22589,Durrell Johnson,DE
+29,Dallas Cowboys,22895,John Stephens Jr.,TE
+29,Dallas Cowboys,23433,Tyrus Wheat,DE
+29,Dallas Cowboys,23598,Jalen Brooks,WR
+29,Dallas Cowboys,24459,DeMarvion Overshown,LB
+29,Dallas Cowboys,26039,K.J. Henry,DE
+29,Dallas Cowboys,30710,Hunter Luepke,RB
+29,Dallas Cowboys,36312,David Durden,WR
+29,Dallas Cowboys,36313,Brandon Aubrey,PK
+29,Dallas Cowboys,36366,Josh Butler,CB
+29,Dallas Cowboys,44136,Cohl Cabral,C
+29,Dallas Cowboys,48143,Team,
+30,Los Angeles Chargers,50,Denzel Perryman,LB
+30,Los Angeles Chargers,119,Shaquille Quarterman,LB
+30,Los Angeles Chargers,283,Tony Jefferson,S
+30,Los Angeles Chargers,294,J.K. Dobbins,RB
+30,Los Angeles Chargers,296,Gus Edwards,RB
+30,Los Angeles Chargers,372,Hassan Haskins,RB
+30,Los Angeles Chargers,413,Teair Tart,DT
+30,Los Angeles Chargers,418,Bud Dupree,LB
+30,Los Angeles Chargers,431,Kristian Fulton,CB
+30,Los Angeles Chargers,436,Elijah Molden,CB
+30,Los Angeles Chargers,460,DJ Chark,WR
+30,Los Angeles Chargers,546,Tucker Fisk,TE
+30,Los Angeles Chargers,589,Matt Hankins,CB
+30,Los Angeles Chargers,698,Hayden Hurst,TE
+30,Los Angeles Chargers,732,Eli Apple,CB
+30,Los Angeles Chargers,1190,Eddie Jackson,S
+30,Los Angeles Chargers,1244,Dicaprio Bootle,CB
+30,Los Angeles Chargers,1259,Taylor Heinicke,QB
+30,Los Angeles Chargers,1264,Jaret Patterson,RB
+30,Los Angeles Chargers,1365,Bradley Bozeman,C
+30,Los Angeles Chargers,1648,Will Dissly,TE
+30,Los Angeles Chargers,1668,Poona Ford,DT
+30,Los Angeles Chargers,1993,Marcus Maye,S
+30,Los Angeles Chargers,2021,Eric Tomlinson,TE
+30,Los Angeles Chargers,2085,Simi Fehoko,WR
+30,Los Angeles Chargers,2151,Justin Herbert,QB
+30,Los Angeles Chargers,2152,Easton Stick,QB
+30,Los Angeles Chargers,2157,Isaiah Spiller,RB
+30,Los Angeles Chargers,2164,Joshua Palmer,WR
+30,Los Angeles Chargers,2170,Donald Parham Jr.,TE
+30,Los Angeles Chargers,2172,Stone Smartt,TE
+30,Los Angeles Chargers,2185,Rashawn Slater,OT
+30,Los Angeles Chargers,2187,Morgan Fox,DE
+30,Los Angeles Chargers,2194,Otito Ogbonnia,DT
+30,Los Angeles Chargers,2196,Joey Bosa,LB
+30,Los Angeles Chargers,2199,Khalil Mack,LB
+30,Los Angeles Chargers,2202,Nick Niemann,LB
+30,Los Angeles Chargers,2205,Chris Rumph II,LB
+30,Los Angeles Chargers,2206,Ty Shelby,LB
+30,Los Angeles Chargers,2214,Deane Leonard,CB
+30,Los Angeles Chargers,2215,Asante Samuel Jr.,CB
+30,Los Angeles Chargers,2216,Ja'Sir Taylor,CB
+30,Los Angeles Chargers,2218,Alohi Gilman,S
+30,Los Angeles Chargers,2219,Derwin James Jr.,S
+30,Los Angeles Chargers,2222,JT Woods,S
+30,Los Angeles Chargers,2224,JK Scott,P
+30,Los Angeles Chargers,2225,Josh Harris,LS
+30,Los Angeles Chargers,2324,Jalen Reagor,WR
+30,Los Angeles Chargers,2354,Troy Dye,LB
+30,Los Angeles Chargers,2571,Christopher Hinton,DT
+30,Los Angeles Chargers,2786,Chris Wilcox,CB
+30,Los Angeles Chargers,2850,Cameron Dicker,PK
+30,Los Angeles Chargers,4376,Luis Perez,QB
+30,Los Angeles Chargers,4650,Frank Ginda,LB
+30,Los Angeles Chargers,7605,Akeem Dent,S
+30,Los Angeles Chargers,8066,Chris Collins,LB
+30,Los Angeles Chargers,9038,Thomas Harper,S
+30,Los Angeles Chargers,10164,Tre'mon MorrisBrash,LB
+30,Los Angeles Chargers,10186,Jeremiah JeanBaptiste,LB
+30,Los Angeles Chargers,13044,Robert Kennedy III,CB
+30,Los Angeles Chargers,13956,Max Duggan,QB
+30,Los Angeles Chargers,13980,Derius Davis,WR
+30,Los Angeles Chargers,13985,Quentin Johnston,WR
+30,Los Angeles Chargers,14162,Justin Eboigbe,DT
+30,Los Angeles Chargers,14436,Cam Hart,CB
+30,Los Angeles Chargers,14485,Ladd McConkey,WR
+30,Los Angeles Chargers,15115,Cornelius Johnson,WR
+30,Los Angeles Chargers,15173,Junior Colson,LB
+30,Los Angeles Chargers,15691,Jaylen Johnson,WR
+30,Los Angeles Chargers,15852,Savion Jackson,LB
+30,Los Angeles Chargers,15931,Brenden Rice,WR
+30,Los Angeles Chargers,15972,Tuli Tuipulotu,LB
+30,Los Angeles Chargers,15982,Shane Lee,LB
+30,Los Angeles Chargers,17050,AJ Finley,S
+30,Los Angeles Chargers,17083,Kimani Vidal,RB
+30,Los Angeles Chargers,17907,Zach Heins,TE
+30,Los Angeles Chargers,18082,Tarheeb Still,CB
+30,Los Angeles Chargers,18223,Jaelen Gill,WR
+30,Los Angeles Chargers,22186,Jerrod Clark,DT
+30,Los Angeles Chargers,24040,Kendall Williamson,S
+30,Los Angeles Chargers,25155,Daiyan Henley,LB
+30,Los Angeles Chargers,25480,Scott Matlock,DT
+30,Los Angeles Chargers,25887,Luke Benson,TE
+30,Los Angeles Chargers,25966,Zamari Walton,CB
+30,Los Angeles Chargers,26097,Jalyn Phillips,S
+30,Los Angeles Chargers,26368,Isaiah Wooden,WR
+30,Los Angeles Chargers,27206,Elijah Dotson,RB
+30,Los Angeles Chargers,29220,Micheal Mason,DE
+30,Los Angeles Chargers,36278,Caleb Murphy,LB
+30,Los Angeles Chargers,36316,Andrew Farmer,LB
+30,Los Angeles Chargers,37152,Leon Johnson III,WR
+30,Los Angeles Chargers,47384,Team,
+30,Los Angeles Chargers,48434,Praise Olatoke,WR
+31,Los Angeles Rams,129,Darious Williams,CB
+31,Los Angeles Rams,305,Demarcus Robinson,WR
+31,Los Angeles Rams,410,Larrell Murchison,DT
+31,Los Angeles Rams,627,Miller Forristall,TE
+31,Los Angeles Rams,677,John Johnson III,S
+31,Los Angeles Rams,835,Boston Scott,RB
+31,Los Angeles Rams,977,Jimmy Garoppolo,QB
+31,Los Angeles Rams,1157,Zachary Thomas,OT
+31,Los Angeles Rams,1332,Kamren Curl,S
+31,Los Angeles Rams,1479,Tre'Davious White,CB
+31,Los Angeles Rams,1506,Nikola Kalinic,TE
+31,Los Angeles Rams,1590,Kevin Dotson,G
+31,Los Angeles Rams,1623,Ahkello Witherspoon,CB
+31,Los Angeles Rams,1650,Colby Parkinson,TE
+31,Los Angeles Rams,1758,Olakunle Fatukasi,LB
+31,Los Angeles Rams,1800,Hunter Long,TE
+31,Los Angeles Rams,1864,Tyler Johnson,WR
+31,Los Angeles Rams,2118,Carlos Watkins,DE
+31,Los Angeles Rams,2121,Neville Gallimore,DT
+31,Los Angeles Rams,2204,Troy Reeder,LB
+31,Los Angeles Rams,2227,Matthew Stafford,QB
+31,Los Angeles Rams,2233,Ronnie Rivers,RB
+31,Los Angeles Rams,2234,Kyren Williams,RB
+31,Los Angeles Rams,2235,Tutu Atwell,WR
+31,Los Angeles Rams,2239,Cooper Kupp,WR
+31,Los Angeles Rams,2248,Tyler Higbee,TE
+31,Los Angeles Rams,2259,AJ Arcuri,OT
+31,Los Angeles Rams,2269,Zach VanValkenburg,LB
+31,Los Angeles Rams,2270,Bobby Brown III,DT
+31,Los Angeles Rams,2275,Michael Hoecht,LB
+31,Los Angeles Rams,2277,Jonah Williams,DE
+31,Los Angeles Rams,2283,Jake Hummel,LB
+31,Los Angeles Rams,2286,Christian Rozeboom,LB
+31,Los Angeles Rams,2290,Cobie Durant,CB
+31,Los Angeles Rams,2293,Shaun Jolly,CB
+31,Los Angeles Rams,2300,Quentin Lake,S
+31,Los Angeles Rams,2303,Russ Yeast,S
+31,Los Angeles Rams,2840,Keir Thomas,LB
+31,Los Angeles Rams,6801,Ochaun Mathis,LB
+31,Los Angeles Rams,7580,Jared Verse,LB
+31,Los Angeles Rams,8139,Xavier Smith,WR
+31,Los Angeles Rams,9044,Jason Taylor II,S
+31,Los Angeles Rams,9378,Charles Woods,CB
+31,Los Angeles Rams,9476,Kobie Turner,DT
+31,Los Angeles Rams,9945,Byron Young,LB
+31,Los Angeles Rams,9975,Jaylen McCollough,S
+31,Los Angeles Rams,10606,Desjuan Johnson,DE
+31,Los Angeles Rams,11499,Cody Schrader,RB
+31,Los Angeles Rams,12660,Braden Fiske,DT
+31,Los Angeles Rams,14005,Steve Avila,G
+31,Los Angeles Rams,14063,Tre'Vius HodgesTomlinson,CB
+31,Los Angeles Rams,14462,Stetson Bennett,QB
+31,Los Angeles Rams,15098,Blake Corum,RB
+31,Los Angeles Rams,15365,Drake Stoops,WR
+31,Los Angeles Rams,15857,Cory Durden,DT
+31,Los Angeles Rams,15900,Tanner Ingle,S
+31,Los Angeles Rams,16127,Kamren Kinchens,S
+31,Los Angeles Rams,16519,Beaux Limmer,C
+31,Los Angeles Rams,16946,Zach Evans,RB
+31,Los Angeles Rams,17559,Puka Nacua,WR
+31,Los Angeles Rams,18523,Nick Hampton,LB
+31,Los Angeles Rams,20169,Eli Neal,LB
+31,Los Angeles Rams,20373,Anthony Goodlow,DE
+31,Los Angeles Rams,21251,Sam Wiglusz,WR
+31,Los Angeles Rams,22015,Ty Zentner,P
+31,Los Angeles Rams,22858,Josh Wallace,CB
+31,Los Angeles Rams,23437,Emmanuel Forbes,CB
+31,Los Angeles Rams,24042,Joshua Karty,PK
+31,Los Angeles Rams,24147,SaRodorick Thompson,RB
+31,Los Angeles Rams,24400,Jordan Whittington,WR
+31,Los Angeles Rams,25135,Brennan Jackson,LB
+31,Los Angeles Rams,25172,Cam Lampkin,CB
+31,Los Angeles Rams,25391,Omar Speights,LB
+31,Los Angeles Rams,25592,Tuli Letuligasenoa,DT
+31,Los Angeles Rams,26008,Davis Allen,TE
+31,Los Angeles Rams,26053,Tyler Davis,DT
+31,Los Angeles Rams,27957,Cameron McCutcheon,CB
+31,Los Angeles Rams,29893,Dresser Winn,QB
+31,Los Angeles Rams,36317,Ethan Evans,P
+31,Los Angeles Rams,48273,JJ Laap,WR
+31,Los Angeles Rams,48436,David Olajiga,DE
+32,Minnesota Vikings,99,Cam Robinson,OT
+32,Minnesota Vikings,125,Shaquill Griffin,CB
+32,Minnesota Vikings,270,Jihad Ward,LB
+32,Minnesota Vikings,278,Fabian Moreau,CB
+32,Minnesota Vikings,313,Josh Oliver,TE
+32,Minnesota Vikings,441,Theo Jackson,S
+32,Minnesota Vikings,467,T.J. Hockenson,TE
+32,Minnesota Vikings,661,Jordan Kunaszyk,LB
+32,Minnesota Vikings,669,A.J. Green,CB
+32,Minnesota Vikings,817,Byron Murphy Jr.,CB
+32,Minnesota Vikings,1054,Aaron Jones,RB
+32,Minnesota Vikings,1129,N'Keal Harry,TE
+32,Minnesota Vikings,1315,Jamin Davis,LB
+32,Minnesota Vikings,1334,Bobby McCain,CB
+32,Minnesota Vikings,1339,Matt Corral,QB
+32,Minnesota Vikings,1340,Sam Darnold,QB
+32,Minnesota Vikings,1547,Stephon Gilmore,CB
+32,Minnesota Vikings,1786,Myles Gaskin,RB
+32,Minnesota Vikings,1793,Trent Sherfield,WR
+32,Minnesota Vikings,1831,Andrew Van Ginkel,LB
+32,Minnesota Vikings,1887,Jonathan Greenard,LB
+32,Minnesota Vikings,1896,Blake Cashman,LB
+32,Minnesota Vikings,1897,Kamu Grugier-Hill,LB
+32,Minnesota Vikings,2127,Jabril Cox,LB
+32,Minnesota Vikings,2140,Nahshon Wright,CB
+32,Minnesota Vikings,2195,Jerry Tillery,DT
+32,Minnesota Vikings,2229,Cam Akers,RB
+32,Minnesota Vikings,2241,Brandon Powell,WR
+32,Minnesota Vikings,2277,Jonah Williams,DE
+32,Minnesota Vikings,2309,Nick Mullens,QB
+32,Minnesota Vikings,2310,Ty Chandler,RB
+32,Minnesota Vikings,2314,Kene Nwangwu,RB
+32,Minnesota Vikings,2315,C.J. Ham,FB
+32,Minnesota Vikings,2318,Trishton Jackson,WR
+32,Minnesota Vikings,2319,Justin Jefferson,WR
+32,Minnesota Vikings,2321,Jalen Nailor,WR
+32,Minnesota Vikings,2328,Johnny Mundt,TE
+32,Minnesota Vikings,2329,Nick Muse,TE
+32,Minnesota Vikings,2340,Christian Darrisaw,OT
+32,Minnesota Vikings,2342,Brian O'Neill,OT
+32,Minnesota Vikings,2343,Jonathan Bullard,DE
+32,Minnesota Vikings,2347,James Lynch,DT
+32,Minnesota Vikings,2348,Harrison Phillips,DT
+32,Minnesota Vikings,2352,Brian Asamoah II,LB
+32,Minnesota Vikings,2358,Patrick Jones II,LB
+32,Minnesota Vikings,2367,Akayleb Evans,CB
+32,Minnesota Vikings,2371,Duke Shelley,CB
+32,Minnesota Vikings,2373,Camryn Bynum,S
+32,Minnesota Vikings,2374,Lewis Cine,S
+32,Minnesota Vikings,2376,Josh Metellus,S
+32,Minnesota Vikings,2377,Harrison Smith,S
+32,Minnesota Vikings,2379,Ryan Wright,P
+32,Minnesota Vikings,2380,Andrew DePaola,LS
+32,Minnesota Vikings,2388,Sammis Reyes,TE
+32,Minnesota Vikings,2538,Justin Hall,WR
+32,Minnesota Vikings,2680,Seth Vernon,P
+32,Minnesota Vikings,2819,Jacobi Francis,CB
+32,Minnesota Vikings,2848,John Parker Romo,PK
+32,Minnesota Vikings,10619,Dallas Gant,LB
+32,Minnesota Vikings,11251,DeWayne McBride,RB
+32,Minnesota Vikings,11730,Mohamed Ibrahim,RB
+32,Minnesota Vikings,13832,Jaylin Williams,CB
+32,Minnesota Vikings,14191,Dallas Turner,LB
+32,Minnesota Vikings,14218,Will Reichard,PK
+32,Minnesota Vikings,14658,Taki Taimani,DT
+32,Minnesota Vikings,15093,J.J. McCarthy,QB
+32,Minnesota Vikings,15406,Jalen Redmond,DT
+32,Minnesota Vikings,15816,Thayer Thomas,WR
+32,Minnesota Vikings,15923,Jordan Addison,WR
+32,Minnesota Vikings,16501,Trey Knox,TE
+32,Minnesota Vikings,16570,Dwight McGlothern,CB
+32,Minnesota Vikings,17537,Jaren Hall,QB
+32,Minnesota Vikings,17999,Jeshaun Jones,WR
+32,Minnesota Vikings,19138,Bo Richter,LB
+32,Minnesota Vikings,19570,Tyler Manoa,DT
+32,Minnesota Vikings,19584,Gabriel Murphy,LB
+32,Minnesota Vikings,20155,Owen Porter,LB
+32,Minnesota Vikings,21694,Ty James,WR
+32,Minnesota Vikings,21918,Malik Knowles,WR
+32,Minnesota Vikings,22350,Andre Carter II,DE
+32,Minnesota Vikings,25812,Jaquelin Roy,DT
+32,Minnesota Vikings,25849,Jay Ward,S
+32,Minnesota Vikings,36267,Ivan Pace Jr.,LB
+32,Minnesota Vikings,36319,Lucky Jackson,WR
+32,Minnesota Vikings,44711,Levi Drake Rodriguez,DT
+32,Minnesota Vikings,58241,Team,

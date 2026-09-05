@@ -1,0 +1,39 @@
+# Ignore Python environment & bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignore SQLite and logs
+*.sqlite3
+*.db
+*.log
+
+# Ignore environment files
+.env
+*.env
+.env.*
+
+# Ignore node and build output
+node_modules/
+# .gitignore
+dist/
+!.netlify
+!.render
+!_redirects
+build/
+frontend/dist/
+frontend/.vite/
+frontend/node_modules/
+
+# Ignore system/IDE junk
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Ignore PyInstaller build spec
+*.spec
+
+# Ignore coverage/test artifacts
+.coverage
+htmlcov/
