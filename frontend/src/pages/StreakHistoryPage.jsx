@@ -9,6 +9,7 @@ import {
     CartesianGrid,
     Legend
 } from "recharts";
+import { apiFetch } from "@/services/api";
 import "../styles/streakHistory.css";
 
 export default function StreakHistoryPage() {
@@ -22,9 +23,19 @@ export default function StreakHistoryPage() {
                 ? `/api/streak-history/league/${leagueId}`
                 : `/api/streak-history/global`;
 
-        fetch(endpoint)
-            .then(res => res.json())
-            .then(data => setHistory(data));
+        // apiFetch prepends VITE_API_BASE_URL. A bare fetch() would hit the static
+        // host, whose SPA rewrite returns index.html with a 200 -- res.json() then
+        // throws on the HTML and the page silently renders nothing.
+        apiFetch(endpoint)
+            .then(res => {
+                if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+                return res.json();
+            })
+            .then(data => setHistory(Array.isArray(data) ? data : []))
+            .catch(err => {
+                console.error("Failed to load streak history:", err);
+                setHistory([]);
+            });
     }, [leagueId, viewMode]);
 
     // 🔥 Compute Top Records Dynamically
