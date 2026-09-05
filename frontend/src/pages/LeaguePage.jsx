@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import UserWeeklyTable from "../components/UserWeeklyTable";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useUser } from "@/context/UserContext";
 import { useSeason } from "@/context/SeasonContext";
 import { useLeague } from "@/context/LeagueContext";
@@ -19,7 +19,19 @@ const POSITIONS = ["QB", "RB", "WR"];
 
 const LeaguePage = () => {
     const { user } = useUser();
-    const { activeLeagueId } = useLeague();
+    const { id: leagueIdParam } = useParams();
+    const { activeLeagueId, setActiveLeagueId } = useLeague();
+
+    // The route is /leagues/:id, but the active league normally comes from
+    // LeagueContext (localStorage). Fall back to the URL so a shared link works
+    // for someone who has never opened this league in this browser.
+    const leagueId = activeLeagueId || (leagueIdParam ? Number(leagueIdParam) : null);
+
+    useEffect(() => {
+        if (!activeLeagueId && leagueIdParam) {
+            setActiveLeagueId(Number(leagueIdParam));
+        }
+    }, [activeLeagueId, leagueIdParam, setActiveLeagueId]);
 
     const token = user?.token || ""; // fix missing token
 
@@ -58,7 +70,7 @@ const LeaguePage = () => {
 
     const fetchLeague = async () => {
         try {
-            const data = await getLeagueDetails(activeLeagueId);
+            const data = await getLeagueDetails(leagueId);
             setLeague(data);
         } catch {
             toast.error("Error loading league");
@@ -68,10 +80,10 @@ const LeaguePage = () => {
     const [allPicks, setAllPicks] = useState([]);
 
     const fetchAllPicks = async () => {
-        if (!activeLeagueId || !season) return;
+        if (!leagueId || !season) return;
 
         const res = await apiFetch(
-            `/api/picks/league/${activeLeagueId}/season/${season}/with-weeklyhits`
+            `/api/picks/league/${leagueId}/season/${season}/with-weeklyhits`
         );
 
         const { picks, weekly_hits } = await res.json();
@@ -157,7 +169,7 @@ const LeaguePage = () => {
     useEffect(() => {
         fetchLeague();
         fetchAllPicks();
-    }, [activeLeagueId, season]);
+    }, [leagueId, season]);
 
     // Fetch current week when season changes
     useEffect(() => {
@@ -190,9 +202,9 @@ const LeaguePage = () => {
 
     // Fetch standings based on last finalized week
     useEffect(() => {
-        if (!activeLeagueId || !season || !currentFinalizedWeek) return;
+        if (!leagueId || !season || !currentFinalizedWeek) return;
 
-        apiFetch(`/api/standings?week=${currentFinalizedWeek}&league_id=${activeLeagueId}&season=${season}`, {
+        apiFetch(`/api/standings?week=${currentFinalizedWeek}&league_id=${leagueId}&season=${season}`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then((res) => res.json())
@@ -200,7 +212,7 @@ const LeaguePage = () => {
                 //     console.log("Standings response data:", data); 
                 setStandings(data);
             }).catch((err) => console.error("Failed to fetch standings:", err));
-    }, [activeLeagueId, season, currentWeek, currentFinalizedWeek, token]);
+    }, [leagueId, season, currentWeek, currentFinalizedWeek, token]);
 
     const findPlayer = (pos, playerId) =>
         playersByPosition[pos]?.find((p) => String(p.player_id) === String(playerId)) || null;
@@ -238,7 +250,7 @@ const LeaguePage = () => {
                                                 toast.error("User not logged in");
                                                 return;
                                             }
-                                            generateInviteLink(activeLeagueId, user)
+                                            generateInviteLink(leagueId, user)
                                                 .then((res) => {
                                                     const fullUrl = `${window.location.origin}${res.invite_url || res.url || res.link}`;
                                                     setInviteUrl(fullUrl);
@@ -279,7 +291,7 @@ const LeaguePage = () => {
                         )}
 
                         {/* Per-season "are you in?" check-in */}
-                        <SeasonCheckIn leagueId={activeLeagueId} seasonYear={season} />
+                        <SeasonCheckIn leagueId={leagueId} seasonYear={season} />
 
                         {/* Lower box: Join button left, Top 3 users left-aligned, View Standings right-aligned */}
                         <div className="bg-blue-500/30 rounded-xl p-4 mt-4">
@@ -291,7 +303,7 @@ const LeaguePage = () => {
                                         <Button
                                             className="bg-yellow-400 text-black hover:bg-yellow-500 shadow mb-4"
                                             onClick={() => {
-                                                joinLeague(activeLeagueId)
+                                                joinLeague(leagueId)
                                                     .then(() => {
                                                         toast.success("Joined league");
                                                         fetchLeague();
