@@ -315,30 +315,33 @@ class SeasonMemberStatusUpdate(BaseModel):
 
 # --- Streak History ---
 class StreakHistoryBase(BaseModel):
+    # Every column on streak_season_history is nullable, and the generator does
+    # not populate podium finishes at all; the global row also omits the per-user
+    # ids. Requiring them here makes the endpoint 500 on real rows.
     scope: str
-    league_id: Optional[int]
+    league_id: Optional[int] = None
     season: int
 
-    champion_id: int
-    runner_up_id: int
-    third_place_id: int
+    champion_id: Optional[int] = None
+    runner_up_id: Optional[int] = None
+    third_place_id: Optional[int] = None
 
-    member_count: int
+    member_count: Optional[int] = None
 
-    best_triple_start: int
-    best_triple_start_user_id: int
+    best_triple_start: Optional[int] = None
+    best_triple_start_user_id: Optional[int] = None
 
-    longest_triple_streak: int
-    longest_triple_user_id: int
+    longest_triple_streak: Optional[int] = None
+    longest_triple_user_id: Optional[int] = None
 
-    longest_qb_streak: int
-    longest_rb_streak: int
-    longest_wr_streak: int
+    longest_qb_streak: Optional[int] = None
+    longest_rb_streak: Optional[int] = None
+    longest_wr_streak: Optional[int] = None
 
-    most_triples_in_season: int
-    most_triples_user_id: int
+    most_triples_in_season: Optional[int] = None
+    most_triples_user_id: Optional[int] = None
 
-    clinched_week: Optional[int]
+    clinched_week: Optional[int] = None
 
 
 class StreakHistoryCreate(StreakHistoryBase):
@@ -347,6 +350,11 @@ class StreakHistoryCreate(StreakHistoryBase):
 
 class StreakHistoryOut(StreakHistoryBase):
     id: int
+
+    # Resolved from the *_id columns by the route -- the page shows names.
+    champion_name: Optional[str] = None
+    runner_up_name: Optional[str] = None
+    third_place_name: Optional[str] = None
 
     class Config:
         from_attributes = True    

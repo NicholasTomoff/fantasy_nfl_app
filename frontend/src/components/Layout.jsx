@@ -100,8 +100,15 @@ const Layout = ({ children }) => {
 
   const protectedRoutes = ["/select", "/standings", "/leagues"];
   useEffect(() => {
-    if (!user && protectedRoutes.includes(location.pathname)) {
-      navigate("/login");
+    // Match sub-paths too: /leagues/1 is as protected as /leagues. Without this
+    // a shared link lands a logged-out visitor on a page that reads user.email
+    // and crashes to a blank screen. Carry the destination through login so the
+    // link actually delivers them where it pointed.
+    const isProtected = protectedRoutes.some(
+      (r) => location.pathname === r || location.pathname.startsWith(r + "/")
+    );
+    if (!user && isProtected) {
+      navigate(`/login?redirect=${encodeURIComponent(location.pathname)}`);
     }
   }, [user, location.pathname]);
 

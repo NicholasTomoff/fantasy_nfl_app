@@ -22,6 +22,7 @@ from app.routes.ranks import router as ranks_router
 from app.routes.invites import router as invites_router
 from app.routes.seasons import router as seasons_router
 from app.routes.weeks import router as weeks_router
+from app.routes.streak_history import router as streak_history_router
 from app.routes import admin
 
 # Set up logging early
@@ -107,6 +108,7 @@ app.include_router(ranks_router, prefix="/api/user", tags=["user"])
 app.include_router(invites_router, prefix="/api/invites", tags=["invites"])
 app.include_router(seasons_router, prefix="/api/seasons", tags=["seasons"])
 app.include_router(weeks_router, prefix="/api/weeks", tags=["weeks"])
+app.include_router(streak_history_router, prefix="/api", tags=["streak history"])
 app.include_router(admin.router)
 
 if __name__ == "__main__":

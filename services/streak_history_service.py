@@ -217,6 +217,34 @@ async def _calculate_most_triples(session: AsyncSession, league_id, season):
 # -----------------------------------------
 # MAIN ENTRY FUNCTION
 # -----------------------------------------
+async def _calculate_podium(session: AsyncSession, league_id, season):
+    """
+    Final finishing order for a season, as (champion, runner_up, third) user ids.
+
+    WeeklyScore.total_points is cumulative -- each week carries the previous
+    total forward -- so a user's season total is simply their highest weekly
+    value. Pass league_id=None to rank across every league (the global row).
+
+    Returns None in any place that has no user (e.g. a two-person league).
+    """
+    stmt = (
+        select(User.id, func.max(WeeklyScore.total_points).label("pts"))
+        .join(WeeklyScore, WeeklyScore.user_email == User.email)
+        .where(WeeklyScore.season == season)
+    )
+    if league_id is not None:
+        stmt = stmt.where(WeeklyScore.league_id == league_id)
+
+    stmt = (
+        stmt.group_by(User.id)
+        .order_by(func.max(WeeklyScore.total_points).desc(), User.id)
+        .limit(3)
+    )
+    ids = [r[0] for r in (await session.execute(stmt)).all()]
+    ids += [None] * (3 - len(ids))
+    return ids[0], ids[1], ids[2]
+
+
 async def generate_streak_history_for_season(season: int, session: AsyncSession):
 
     league_result = await session.execute(select(League))
@@ -244,6 +272,7 @@ async def generate_streak_history_for_season(season: int, session: AsyncSession)
         longest_wr = await _calculate_longest_position(session, league_id, season, "WR")
 
         most_triples, most_triples_user = await _calculate_most_triples(session, league_id, season)
+        champion_id, runner_up_id, third_place_id = await _calculate_podium(session, league_id, season)
 
         existing_result = await session.execute(
             select(StreakSeasonHistory).where(
@@ -262,6 +291,9 @@ async def generate_streak_history_for_season(season: int, session: AsyncSession)
             league_id=league_id,
             season=season,
             member_count=member_count,
+            champion_id=champion_id,
+            runner_up_id=runner_up_id,
+            third_place_id=third_place_id,
             best_triple_start=best_start,
             best_triple_start_user_id=best_start_user,
             longest_triple_streak=longest_triple,
@@ -304,11 +336,16 @@ async def generate_streak_history_for_season(season: int, session: AsyncSession)
     if not league_rows:
         return
 
+    g_champion, g_runner_up, g_third = await _calculate_podium(session, None, season)
+
     global_row = StreakSeasonHistory(
         scope="global",
         league_id=None,
         season=season,
         member_count=sum(r.member_count for r in league_rows),
+        champion_id=g_champion,
+        runner_up_id=g_runner_up,
+        third_place_id=g_third,
         best_triple_start=max(r.best_triple_start for r in league_rows),
         longest_triple_streak=max(r.longest_triple_streak for r in league_rows),
         longest_qb_streak=max(r.longest_qb_streak for r in league_rows),
