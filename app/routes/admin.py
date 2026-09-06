@@ -7,13 +7,101 @@ from sqlalchemy.future import select
 from sqlalchemy import func, distinct
 from app.database import get_db
 from app.models import (League, WeeklyScore, LeagueMember, Season, NFLGame,
-                        Player, PositionStreak, AllPositionStreak, LeagueSeasonMember)
+                        Player, PositionStreak, AllPositionStreak, LeagueSeasonMember,
+                        PlayerGameStat, User)
+from app.auth import get_current_user
 from services.scoring import score_week
 from services.load_player_game_stats import load_player_stats_for_week
 from app.utils.season import get_current_season, get_current_week
 from datetime import datetime
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
+
+
+SKILL_POSITIONS = ("QB", "RB", "WR", "TE")
+
+
+async def _require_commissioner(db: AsyncSession, current_user) -> None:
+    """
+    The /admin router is otherwise unauthenticated. This endpoint writes to the
+    players table, so at minimum require a signed-in user who hosts a league.
+    """
+    hosts = (await db.execute(
+        select(func.count(League.id)).filter(League.created_by_user_id == current_user.id)
+    )).scalar_one()
+    if not hosts:
+        raise HTTPException(
+            status_code=403,
+            detail="Only a league commissioner can run player maintenance.",
+        )
+
+
+@router.post("/players/reactivate-from-stats")
+async def reactivate_players_from_stats(
+    season: int = Query(2025, description="Season whose game stats prove a player is real"),
+    apply: bool = Query(False, description="false previews, true writes"),
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    """
+    Undo an over-eager roster load.
+
+    load_players.py marks every player inactive and then reactivates whoever the
+    provider returned. When the provider's roster endpoint is incomplete -- which
+    it is for 2026 -- real players silently vanish from the pick lists.
+
+    This reactivates skill players who demonstrably played in `season`: they have
+    player_game_stats rows for a game in that season, on the same team. Evidence,
+    not guesswork, so it cannot resurrect someone who never appeared.
+    """
+    await _require_commissioner(db, current_user)
+
+    played_that_season = (
+        select(PlayerGameStat.id)
+        .join(NFLGame, NFLGame.id == PlayerGameStat.game_id)
+        .where(
+            PlayerGameStat.player_id == Player.player_id,
+            PlayerGameStat.team_id == Player.team_id,
+            NFLGame.season == season,
+        )
+        .exists()
+    )
+
+    candidates = (await db.execute(
+        select(Player).where(
+            Player.active.is_(False),
+            Player.position.in_(SKILL_POSITIONS),
+            played_that_season,
+        )
+    )).scalars().all()
+
+    by_position = {}
+    for p in candidates:
+        by_position[p.position] = by_position.get(p.position, 0) + 1
+
+    if apply:
+        for p in candidates:
+            p.active = True
+        await db.commit()
+
+    active_now = (await db.execute(
+        select(func.count(Player.id)).where(Player.active.is_(True))
+    )).scalar_one()
+
+    return {
+        "season_used_as_evidence": season,
+        "applied": apply,
+        "matched": len(candidates),
+        "by_position": by_position,
+        "sample": [
+            {"player_id": p.player_id, "name": p.player_name,
+             "position": p.position, "team": p.team_name}
+            for p in candidates[:15]
+        ],
+        "active_players_now": active_now,
+        "note": None if apply else "Preview only -- call again with apply=true to write.",
+    }
+
 
 # --------- Season readiness: what still needs doing before week 1 ---------
 @router.get("/season/{year}/readiness")
