@@ -1,11 +1,13 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useContext, useState } from "react";
 import UserContext from "../context/UserContext";
+import { useLeague } from "@/context/LeagueContext";
 import { apiFetch } from "@/services/api";
 
 export default function JoinLeague() {
     const { token: inviteToken } = useParams(); // from the URL
     const { user } = useContext(UserContext);
+    const { setActiveLeagueId } = useLeague();
     const navigate = useNavigate();
 
     const [message, setMessage] = useState("Processing league invite...");
@@ -37,18 +39,21 @@ export default function JoinLeague() {
                 // Optional: check if already in the league
                 let inviteInfo;
                 if (user.leagues && user.leagues.length > 0) {
-                    const res = await apiFetch(`/api/invites/${tokenToUse}`);
+                    const res = await apiFetch(`/api/invites/invite-info/${tokenToUse}`);
                     if (!res.ok) throw new Error("Invalid invite token");
                     inviteInfo = await res.json();
 
+                    // invite-info responds with LeagueOut = { id, name }
+                    const invitedLeagueId = inviteInfo.id ?? inviteInfo.league_id;
                     const alreadyInLeague = user.leagues.some(
-                        (l) => l.id === inviteInfo.league_id
+                        (l) => l.id === invitedLeagueId
                     );
                     if (alreadyInLeague) {
                         setMessage("You're already a member of this league. Redirecting...");
                         localStorage.removeItem("pending_invite_token");
                         setTimeout(() => {
-                            navigate(`/leagues/${inviteInfo.league_id}`);
+                            setActiveLeagueId(invitedLeagueId);
+                            navigate(`/leagues/${invitedLeagueId}`);
                         }, 1500);
                         return;
                     }
@@ -81,7 +86,10 @@ export default function JoinLeague() {
 
             } catch (err) {
                 console.error("Error processing invite:", err);
-                setError("Invite invalid or expired.");
+                setError(
+                    "We couldn't process that invite. Ask for a fresh link, or " +
+                    "join from the Leagues page once you're signed in."
+                );
             }
         };
 

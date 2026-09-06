@@ -84,7 +84,12 @@ async def join_league_by_token(token: str, db: AsyncSession = Depends(get_db), c
     existing = result.unique().scalar_one_or_none()
     if existing:
         print("🔁 User is already a member of the league.")
-        return {"message": "You are already a member of this league."}
+        # league_id must come back here too -- the client needs it to redirect,
+        # and without it an already-a-member invite looks like a failure.
+        return {
+            "message": "You are already a member of this league.",
+            "league_id": invite.league_id,
+        }
 
     # ✅ Add user to league
     print(f"➕ Adding user {current_user.id} to league {invite.league_id}")
@@ -126,4 +131,4 @@ async def get_invite_info(token: str, db: AsyncSession = Depends(get_db)):
         raise HTTPException(status_code=404, detail="League not found for invite.")
 
     print(f"📦 Returning league info for: {league.name}")
-    return schemas.LeagueOut.from_orm(league)
+    return schemas.LeagueOut.model_validate(league)

@@ -66,7 +66,9 @@ class LeagueOut(BaseModel):
     name: str
 
     class Config:
-        orm_mode = True
+        # Pydantic v2 name. `orm_mode` is the v1 spelling and, although v2 warns
+        # and maps most of it, model_validate/from_orm still refuse without this.
+        from_attributes = True
 
 class UserOut(UserBase):
     id: int
