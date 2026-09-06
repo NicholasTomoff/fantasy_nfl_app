@@ -24,6 +24,8 @@ const STATUS_STYLE = {
 const SeasonCheckIn = ({ leagueId, seasonYear }) => {
   const [roster, setRoster] = useState(null);
   const [busy, setBusy] = useState(false);
+  // Members whose status control the commissioner has explicitly revealed.
+  const [editing, setEditing] = useState(() => new Set());
 
   const load = async () => {
     if (!leagueId || !seasonYear) return;
@@ -57,6 +59,11 @@ const SeasonCheckIn = ({ leagueId, seasonYear }) => {
     setBusy(true);
     try {
       setRoster(await setMemberSeasonStatus(leagueId, seasonYear, userId, status));
+      setEditing((prev) => {
+        const next = new Set(prev);
+        next.delete(userId);
+        return next;
+      });
       toast.success("Updated");
     } catch (err) {
       console.error(err);
@@ -146,32 +153,43 @@ const SeasonCheckIn = ({ leagueId, seasonYear }) => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {members.map((m) => (
-              <div
-                key={m.user_id}
-                className="bg-blue-700 rounded-xl p-3 shadow-md flex items-center justify-between gap-2"
-              >
-                {/* Names wrap rather than truncate -- a half-shown name is
-                    useless when the whole point is knowing who has answered. */}
-                <div className="flex-1 min-w-0">
-                  <p className="text-white font-medium break-words leading-tight">
-                    {m.user_name || m.user_email}
-                  </p>
-                  <span className={`inline-block mt-1 px-2 py-0.5 rounded-full border text-xs ${STATUS_STYLE[m.status]}`}>
+              <div key={m.user_id} className="bg-blue-700 rounded-xl p-3 shadow-md">
+                {/* Name gets the full width of the card on its own line. Sharing
+                    a flex row with the select squeezed it to one letter. */}
+                <p className="text-white font-medium leading-snug">
+                  {m.user_name || m.user_email}
+                </p>
+
+                <div className="mt-2 flex items-center justify-between gap-2">
+                  <span className={`px-2 py-0.5 rounded-full border text-xs whitespace-nowrap ${STATUS_STYLE[m.status]}`}>
                     {STATUS_LABEL[m.status]}
-                    {m.set_by_commissioner && " (set by you)"}
+                    {m.set_by_commissioner && " · set by you"}
                   </span>
+
+                  {/* Answered members just show their status. The control only
+                      appears for people still to answer, or on demand. */}
+                  {m.status === "pending" || editing.has(m.user_id) ? (
+                    <select
+                      disabled={busy}
+                      value={m.status}
+                      onChange={(e) => setFor(m.user_id, e.target.value)}
+                      className="w-[76px] bg-blue-800 text-white text-xs rounded-md px-1 py-0.5 border border-blue-400/40"
+                    >
+                      <option value="in">In</option>
+                      <option value="out">Out</option>
+                      <option value="pending">—</option>
+                    </select>
+                  ) : (
+                    <button
+                      type="button"
+                      disabled={busy}
+                      onClick={() => setEditing((prev) => new Set(prev).add(m.user_id))}
+                      className="text-blue-200 underline text-xs hover:text-white"
+                    >
+                      Change
+                    </button>
+                  )}
                 </div>
-                <select
-                  disabled={busy}
-                  value={m.status}
-                  onChange={(e) => setFor(m.user_id, e.target.value)}
-                  title="Set this member's status for the season"
-                  className="shrink-0 bg-blue-800 text-white text-xs rounded-lg pl-1.5 pr-5 py-0.5 border border-blue-400/40"
-                >
-                  <option value="in">In</option>
-                  <option value="out">Out</option>
-                  <option value="pending">Pending</option>
-                </select>
               </div>
             ))}
           </div>
