@@ -88,8 +88,17 @@ const SeasonCheckIn = ({ leagueId, seasonYear }) => {
 
   if (!roster) return null;
 
-  const { my_status, is_commissioner, counts = {}, members = [] } = roster;
+  const { my_status, is_commissioner, counts = {}, members = [], check_in_open = true } = roster;
   const unanswered = counts.pending || 0;
+
+  // Only people who still need a decision get a card. Everyone settled is
+  // summarised in one line -- nine cards all saying "In" is just noise.
+  const needsAction = members.filter(
+    (m) => m.status === "pending" || editing.has(m.user_id)
+  );
+  const settledIn = members.filter((m) => m.status === "in" && !editing.has(m.user_id));
+  const settledOut = members.filter((m) => m.status === "out" && !editing.has(m.user_id));
+  const nameOf = (m) => m.user_name || m.user_email;
 
   return (
     <div className="bg-blue-500/30 rounded-xl p-4 mt-4 space-y-4">
@@ -102,7 +111,11 @@ const SeasonCheckIn = ({ leagueId, seasonYear }) => {
           </p>
         </div>
 
-        {my_status === "pending" ? (
+        {!check_in_open ? (
+          <span className={`px-3 py-1 rounded-full border text-sm ${STATUS_STYLE[my_status]}`}>
+            You: {STATUS_LABEL[my_status]}
+          </span>
+        ) : my_status === "pending" ? (
           <div className="flex items-center gap-2">
             <span className="text-white mr-1">Are you playing this season?</span>
             <Button
@@ -136,7 +149,7 @@ const SeasonCheckIn = ({ leagueId, seasonYear }) => {
         )}
       </div>
 
-      {is_commissioner && (
+      {is_commissioner && check_in_open && (
         <div className="border-t border-blue-300/30 pt-3 space-y-2">
           <div className="flex items-center justify-between">
             <p className="text-blue-100 text-sm font-semibold">Commissioner view</p>
@@ -151,8 +164,12 @@ const SeasonCheckIn = ({ leagueId, seasonYear }) => {
             )}
           </div>
 
+          {needsAction.length === 0 && (
+            <p className="text-blue-100 text-sm">Everyone has answered.</p>
+          )}
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {members.map((m) => (
+            {needsAction.map((m) => (
               <div key={m.user_id} className="bg-blue-700 rounded-xl p-3 shadow-md">
                 {/* Name gets the full width of the card on its own line. Sharing
                     a flex row with the select squeezed it to one letter. */}
@@ -193,6 +210,33 @@ const SeasonCheckIn = ({ leagueId, seasonYear }) => {
               </div>
             ))}
           </div>
+
+          {(settledIn.length > 0 || settledOut.length > 0) && (
+            <div className="text-blue-100 text-xs space-y-1 pt-1">
+              {settledIn.length > 0 && (
+                <p>
+                  <span className="text-green-300 font-semibold">In ({settledIn.length}):</span>{" "}
+                  {settledIn.map(nameOf).join(", ")}
+                </p>
+              )}
+              {settledOut.length > 0 && (
+                <p>
+                  <span className="text-gray-300 font-semibold">Out ({settledOut.length}):</span>{" "}
+                  {settledOut.map(nameOf).join(", ")}
+                </p>
+              )}
+              <button
+                type="button"
+                disabled={busy}
+                onClick={() =>
+                  setEditing(new Set([...settledIn, ...settledOut].map((m) => m.user_id)))
+                }
+                className="text-blue-200 underline hover:text-white"
+              >
+                Change someone
+              </button>
+            </div>
+          )}
 
           <p className="text-blue-200 text-xs">
             Marking someone out removes them from {seasonYear} scoring and standings only. Their

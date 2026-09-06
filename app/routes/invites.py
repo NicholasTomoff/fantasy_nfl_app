@@ -7,6 +7,7 @@ from datetime import datetime
 from app.database import get_db
 from app.auth import get_current_user
 from app import models, schemas
+from app.utils.membership import mark_in_for_season
 
 router = APIRouter()
 
@@ -100,6 +101,14 @@ async def join_league_by_token(token: str, db: AsyncSession = Depends(get_db), c
         user_id=current_user.id
     )
     db.add(membership)
+
+    # Accepting an invite is an answer -- don't make them confirm twice.
+    league = (await db.execute(
+        select(models.League).where(models.League.id == invite.league_id)
+    )).scalars().first()
+    if league:
+        await mark_in_for_season(db, league.id, league.season_year, current_user.id)
+
     await db.commit()
     await db.refresh(membership)
     print(f"✅ Membership created with ID: {membership.id}")

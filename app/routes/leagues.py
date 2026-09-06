@@ -10,6 +10,7 @@ from datetime import timezone, datetime
 from app import models, schemas
 from app.database import get_db
 from app.auth import get_current_user  # Auth dependency we built
+from app.utils.membership import mark_in_for_season, check_in_is_open
 import logging
 
 logger = logging.getLogger(__name__)
@@ -127,6 +128,8 @@ async def join_league(league_id: int, db: AsyncSession = Depends(get_db), curren
 
     new_member = models.LeagueMember(league_id=league_id, user_id=current_user.id)
     db.add(new_member)
+    # Joining is an answer -- see mark_in_for_season.
+    await mark_in_for_season(db, league_id, league.season_year, current_user.id)
     await db.commit()
     await db.refresh(new_member)
 
@@ -496,7 +499,7 @@ async def _season_member_rows(league_id: int, season_year: int, db: AsyncSession
     return {r.user_id: r for r in result.scalars().all()}
 
 
-def _roster_response(league, season_year, rows, current_user) -> schemas.LeagueSeasonRosterOut:
+def _roster_response(league, season_year, rows, current_user, check_in_open=True) -> schemas.LeagueSeasonRosterOut:
     is_commissioner = league.created_by_user_id == current_user.id
     members, counts = [], {"in": 0, "out": 0, "pending": 0}
     my_status = schemas.SeasonMemberStatus.pending
@@ -526,6 +529,7 @@ def _roster_response(league, season_year, rows, current_user) -> schemas.LeagueS
         league_name=league.name,
         season_year=season_year,
         is_commissioner=is_commissioner,
+        check_in_open=check_in_open,
         my_status=my_status,
         counts=counts,
         members=members,
@@ -563,7 +567,8 @@ async def _set_status(league_id, season_year, user_id, status, db, set_by=None):
 async def get_season_roster(league_id: int, season_year: int, db: AsyncSession = Depends(get_db), current_user: models.User = Depends(get_current_user)):
     league = await _load_league(league_id, db)
     rows = await _season_member_rows(league_id, season_year, db)
-    return _roster_response(league, season_year, rows, current_user)
+    return _roster_response(league, season_year, rows, current_user,
+                            await check_in_is_open(db, season_year))
 
 
 # --------- Open the season: create pending rows for the whole roster ---------
@@ -595,7 +600,8 @@ async def open_season(league_id: int, season_year: int, db: AsyncSession = Depen
     logger.info(f"Opened season {season_year} for league {league_id}: {created} pending rows")
 
     rows = await _season_member_rows(league_id, season_year, db)
-    return _roster_response(league, season_year, rows, current_user)
+    return _roster_response(league, season_year, rows, current_user,
+                            await check_in_is_open(db, season_year))
 
 
 # --------- Member answers "in" or "out" for themselves ---------
@@ -607,7 +613,8 @@ async def set_my_season_status(league_id: int, season_year: int, payload: schema
 
     await _set_status(league_id, season_year, current_user.id, payload.status.value, db)
     rows = await _season_member_rows(league_id, season_year, db)
-    return _roster_response(league, season_year, rows, current_user)
+    return _roster_response(league, season_year, rows, current_user,
+                            await check_in_is_open(db, season_year))
 
 
 # --------- Commissioner sets a member's status ---------
@@ -621,4 +628,5 @@ async def set_member_season_status(league_id: int, season_year: int, user_id: in
 
     await _set_status(league_id, season_year, user_id, payload.status.value, db, set_by=current_user.id)
     rows = await _season_member_rows(league_id, season_year, db)
-    return _roster_response(league, season_year, rows, current_user)
+    return _roster_response(league, season_year, rows, current_user,
+                            await check_in_is_open(db, season_year))

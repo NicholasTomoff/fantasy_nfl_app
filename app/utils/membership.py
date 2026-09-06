@@ -12,11 +12,13 @@ Everything that iterates players for a season (scoring, standings) should go
 through here rather than reading league_members directly.
 """
 
-from sqlalchemy import and_
+from datetime import datetime
+
+from sqlalchemy import and_, func
 from sqlalchemy.future import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models import User, LeagueMember, LeagueSeasonMember
+from app.models import User, LeagueMember, LeagueSeasonMember, NFLGame
 
 # A member who has not answered yet is still scored. Only an explicit "out"
 # removes someone from a season -- far better to include someone who forgot to
@@ -77,3 +79,51 @@ async def season_is_opened(db: AsyncSession, league_id: int, season_year: int) -
         .limit(1)
     )
     return (await db.execute(stmt)).scalars().first() is not None
+
+
+async def mark_in_for_season(
+    db: AsyncSession, league_id: int, season_year: int, user_id: int
+) -> None:
+    """
+    Record a member as playing this season.
+
+    Accepting an invite is itself an answer, so someone who joins should not
+    land on "no answer yet" and have to confirm a second time. Existing rows are
+    left alone: if they had already said they were sitting out, re-joining
+    should not silently overturn that.
+    """
+    existing = (await db.execute(
+        select(LeagueSeasonMember).filter_by(
+            league_id=league_id, season_year=season_year, user_id=user_id
+        )
+    )).scalars().first()
+    if existing:
+        return
+
+    db.add(
+        LeagueSeasonMember(
+            league_id=league_id,
+            season_year=season_year,
+            user_id=user_id,
+            status="in",
+            responded_at=datetime.utcnow(),
+        )
+    )
+
+
+async def check_in_is_open(db: AsyncSession, season_year: int) -> bool:
+    """
+    Check-in closes when the season starts -- once the first regular-season game
+    has kicked off, who is playing is settled and the controls only invite
+    mistakes. Open if the season has no games yet.
+    """
+    first_kickoff = (await db.execute(
+        select(func.min(NFLGame.date)).filter(
+            NFLGame.season == season_year,
+            NFLGame.stage == "Regular Season",
+        )
+    )).scalar_one_or_none()
+
+    if first_kickoff is None:
+        return True
+    return datetime.utcnow() < first_kickoff
