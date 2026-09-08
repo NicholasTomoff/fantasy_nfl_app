@@ -10,22 +10,40 @@ import {
     Legend
 } from "recharts";
 import { apiFetch } from "@/services/api";
+import { useUser } from "@/context/UserContext";
+import { useLeague } from "@/context/LeagueContext";
 import "../styles/streakHistory.css";
 
 export default function StreakHistoryPage() {
+    const { user } = useUser();
+    const { activeLeagueId } = useLeague();
+
     const [viewMode, setViewMode] = useState("league");
-    const [leagueId, setLeagueId] = useState(1);
+    // Follow whichever league you are actually in. This used to be hardcoded to
+    // 1, so every league showed the OGs' history.
+    const [leagueId, setLeagueId] = useState(activeLeagueId ?? null);
     const [history, setHistory] = useState([]);
-    const [leagues, setLeagues] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    // Only your own leagues -- /api/leagues/all lists every league on the site.
+    const leagues = Array.isArray(user?.leagues) ? user.leagues : [];
 
     useEffect(() => {
-        apiFetch("/api/leagues/all")
-            .then(res => (res.ok ? res.json() : []))
-            .then(data => setLeagues(Array.isArray(data) ? data : []))
-            .catch(err => console.error("Failed to load leagues:", err));
-    }, []);
+        if (activeLeagueId && leagueId == null) setLeagueId(activeLeagueId);
+    }, [activeLeagueId, leagueId]);
+
+    // Fall back to the first league you belong to if nothing is active yet.
+    useEffect(() => {
+        if (leagueId == null && leagues.length > 0) setLeagueId(leagues[0].id);
+    }, [leagues, leagueId]);
 
     useEffect(() => {
+        if (viewMode === "league" && leagueId == null) {
+            setHistory([]);
+            setLoading(false);
+            return;
+        }
+        setLoading(true);
         const endpoint =
             viewMode === "league"
                 ? `/api/streak-history/league/${leagueId}`
@@ -43,7 +61,8 @@ export default function StreakHistoryPage() {
             .catch(err => {
                 console.error("Failed to load streak history:", err);
                 setHistory([]);
-            });
+            })
+            .finally(() => setLoading(false));
     }, [leagueId, viewMode]);
 
     // 🔥 Compute Top Records Dynamically
@@ -95,14 +114,34 @@ export default function StreakHistoryPage() {
             {viewMode === "league" && (
                 <div className="league-select">
                     <select
-                        value={leagueId}
-                        onChange={(e) => setLeagueId(Number(e.target.value))}
+                        value={leagueId ?? ""}
+                        onChange={(e) => setLeagueId(e.target.value ? Number(e.target.value) : null)}
                     >
-                        {leagues.length === 0 && <option value={leagueId}>Loading…</option>}
+                        {leagues.length === 0 && (
+                            <option value="">
+                                {user ? "You're not in any leagues yet" : "Sign in to pick a league"}
+                            </option>
+                        )}
                         {leagues.map(l => (
                             <option key={l.id} value={l.id}>{l.name}</option>
                         ))}
                     </select>
+                </div>
+            )}
+
+            {!loading && history.length === 0 && (
+                <div className="empty-state">
+                    <h3>No history yet</h3>
+                    <p>
+                        {viewMode === "league"
+                            ? (leagues.find(l => l.id === leagueId)?.name
+                                ? `${leagues.find(l => l.id === leagueId).name} hasn't finished a season yet.`
+                                : "This league hasn't finished a season yet.")
+                            : "No completed seasons on record yet."}
+                    </p>
+                    <p className="empty-hint">
+                        Records and the trend chart appear here once a season wraps up.
+                    </p>
                 </div>
             )}
 
@@ -151,8 +190,8 @@ export default function StreakHistoryPage() {
                 </div>
             )}
 
-            {/* TREND CHART */}
-            <div className="chart-container">
+            {history.length > 0 && (
+                <div className="chart-container">
                 <ResponsiveContainer width="100%" height={350}>
                     <LineChart data={history}>
                         <CartesianGrid strokeDasharray="3 3" />
@@ -180,7 +219,8 @@ export default function StreakHistoryPage() {
                         />
                     </LineChart>
                 </ResponsiveContainer>
-            </div>
+                </div>
+            )}
 
             {/* SEASON CARDS */}
             <div className="stat-card-grid">

@@ -175,7 +175,7 @@ class ForgotPasswordRequest(BaseModel):
     email: EmailStr
 
 class ResetPasswordRequest(BaseModel):
-    email: EmailStr
+    current_password: str
     new_password: str
     confirm_password: str
 
@@ -187,36 +187,55 @@ async def forgot_password(payload: ForgotPasswordRequest = Body(...), db: AsyncS
 
 # Request to reset password (forgot password) by user (generate new password for user)
 @router.post("/reset-password")
-async def reset_password(payload: ResetPasswordRequest = Body(...), db: AsyncSession = Depends(get_db)):
+async def reset_password(
+    payload: ResetPasswordRequest = Body(...),
+    db: AsyncSession = Depends(get_db),
+    current_user: schemas.UserOut = Depends(get_current_user),
+):
+    """
+    Change your own password.
+
+    This used to accept {email, new_password} with no authentication at all: it
+    looked the user up by email, overwrote their password and handed back a
+    valid token. Anyone who knew a member's email address could take over their
+    account. It now requires a signed-in caller and their current password, and
+    can only ever change the caller's own account.
+    """
     if payload.new_password != payload.confirm_password:
         raise HTTPException(status_code=400, detail="Passwords do not match")
+    if len(payload.new_password) < 8:
+        raise HTTPException(status_code=400, detail="Password must be at least 8 characters")
 
-    stmt = (
+    result = await db.execute(
         select(models.User)
         .options(joinedload(models.User.memberships).joinedload(models.LeagueMember.league))
-        .filter(models.User.email == payload.email)
+        .filter(models.User.email == current_user.email)
     )
-    result = await db.execute(select(models.User).filter(models.User.email == payload.email))
-    user = result.scalars().first()
+    user = result.scalars().unique().first()
     if not user:
-        raise HTTPException(status_code=404, detail="User not found")
+        raise HTTPException(status_code=401, detail="Invalid credentials")
 
-    hashed = pwd_context.hash(payload.new_password)
-    user.hashed_password = hashed
+    if not pwd_context.verify(payload.current_password, user.hashed_password):
+        logger.warning("Password change rejected: wrong current password for %s", user.email)
+        raise HTTPException(status_code=401, detail="Current password is incorrect")
+
+    user.hashed_password = pwd_context.hash(payload.new_password)
     await db.commit()
+    logger.info("Password changed for %s", user.email)
 
-    access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-    token = create_access_token(data={"sub": user.email}, expires_delta=access_token_expires)
-    leagues = [
-        {"id": m.league.id, "name": m.league.name, "season": m.league.season_year}
-        for m in user.memberships
-    ]
+    token = create_access_token(
+        data={"sub": user.email},
+        expires_delta=timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES),
+    )
     return {
         "user": {
             "id": user.id,
             "email": user.email,
             "name": user.name,
-            "leagues": leagues,
+            "leagues": [
+                {"id": m.league.id, "name": m.league.name, "season": m.league.season_year}
+                for m in user.memberships if m.league
+            ],
         },
         "token": token,
     }

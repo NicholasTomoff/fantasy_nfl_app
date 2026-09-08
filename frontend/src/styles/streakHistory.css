@@ -172,3 +172,33 @@
     margin-bottom: 6px;
     opacity: 0.85;
 }
+
+/* Shown when a league has no completed seasons yet -- a blank chart with no
+   explanation reads as a bug. */
+.empty-state {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border: 1px dashed rgba(148, 163, 184, 0.35);
+    border-radius: 16px;
+    padding: 40px 24px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.empty-state h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #f1f5f9;
+}
+
+.empty-state p {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 15px;
+}
+
+.empty-state .empty-hint {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #94a3b8;
+}
