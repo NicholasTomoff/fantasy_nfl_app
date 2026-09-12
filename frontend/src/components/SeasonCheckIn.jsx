@@ -88,7 +88,18 @@ const SeasonCheckIn = ({ leagueId, seasonYear }) => {
 
   if (!roster) return null;
 
-  const { my_status, is_commissioner, counts = {}, members = [], check_in_open = true } = roster;
+  const {
+    my_status, is_commissioner, counts = {}, members = [],
+    check_in_open = true, check_in_closes_at = null,
+  } = roster;
+
+  // Server sends naive UTC; mark it as such so it renders in local time.
+  const closesAt = check_in_closes_at
+    ? new Date(check_in_closes_at.endsWith("Z") ? check_in_closes_at : `${check_in_closes_at}Z`)
+    : null;
+  const closesLabel = closesAt
+    ? closesAt.toLocaleString(undefined, { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })
+    : null;
   const unanswered = counts.pending || 0;
 
   // Only people who still need a decision get a card. Everyone settled is
@@ -109,6 +120,11 @@ const SeasonCheckIn = ({ leagueId, seasonYear }) => {
             {counts.in || 0} in · {counts.out || 0} out
             {unanswered > 0 && ` · ${unanswered} yet to answer`}
           </p>
+          {check_in_open && closesLabel && (
+            <p className="text-blue-200 text-xs mt-1">
+              Opt in or out until the end of Week 1 — closes {closesLabel}
+            </p>
+          )}
         </div>
 
         {!check_in_open ? (

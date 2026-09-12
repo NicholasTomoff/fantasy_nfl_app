@@ -306,8 +306,9 @@ class LeagueSeasonRosterOut(BaseModel):
     league_name: Optional[str] = None
     season_year: int
     is_commissioner: bool = False
-    # False once the season's first regular-season game has kicked off.
+    # False once Week 1 is finalised (12h after its last game).
     check_in_open: bool = True
+    check_in_closes_at: Optional[datetime] = None
     my_status: SeasonMemberStatus = SeasonMemberStatus.pending
     counts: Dict[str, int] = Field(default_factory=dict)
     members: List[LeagueSeasonMemberOut] = Field(default_factory=list)

@@ -10,7 +10,8 @@ from datetime import timezone, datetime
 from app import models, schemas
 from app.database import get_db
 from app.auth import get_current_user  # Auth dependency we built
-from app.utils.membership import mark_in_for_season, check_in_is_open
+from app.utils.membership import (mark_in_for_season, check_in_is_open,
+                                  check_in_deadline)
 import logging
 
 logger = logging.getLogger(__name__)
@@ -171,7 +172,7 @@ async def get_league_finance(league_id: int, season_year: int, db: AsyncSession 
             return schemas.LeagueSeasonFinanceOut(
                 id=0,
                 league_id=league_id,
-                season_year=season.year,
+                season_year=season_year,
                 entry_fee=None,
                 total_pot=0,
                 payouts={},
@@ -195,7 +196,7 @@ async def get_league_finance(league_id: int, season_year: int, db: AsyncSession 
             return schemas.LeagueSeasonFinanceOut(
                 id=0,
                 league_id=league_id,
-                season_year=season.year,
+                season_year=season_year,
                 entry_fee=None,
                 total_pot=0,
                 payouts={},
@@ -263,6 +264,31 @@ async def get_league_finance(league_id: int, season_year: int, db: AsyncSession 
                 payouts=finance.payouts or {},
                 member_payments=member_payments_out
             )
+
+        # No finance row for this league/season yet -- normal for a season nobody
+        # has set an entry fee for. Previously the function just fell off the end
+        # and returned None, which failed response_model validation as a 500 and
+        # made the whole admin page unloadable.
+        logger.info("No finance row yet; returning an empty sheet with the roster.")
+        return schemas.LeagueSeasonFinanceOut(
+            id=0,
+            league_id=league_id,
+            season_year=season_year,
+            entry_fee=None,
+            total_pot=0,
+            payouts={},
+            member_payments=[
+                schemas.LeagueSeasonMemberPaymentOut(
+                    id=0,
+                    season_finance_id=0,
+                    user_id=m.user.id,
+                    user_name=m.user.name or m.user.email,
+                    paid=False,
+                    paid_date=None,
+                )
+                for m in league.members if m.user
+            ],
+        )
 
     except SQLAlchemyError:
         logger.exception("❌ SQLAlchemy database error occurred!")
@@ -499,7 +525,7 @@ async def _season_member_rows(league_id: int, season_year: int, db: AsyncSession
     return {r.user_id: r for r in result.scalars().all()}
 
 
-def _roster_response(league, season_year, rows, current_user, check_in_open=True) -> schemas.LeagueSeasonRosterOut:
+def _roster_response(league, season_year, rows, current_user, check_in_open=True, closes_at=None) -> schemas.LeagueSeasonRosterOut:
     is_commissioner = league.created_by_user_id == current_user.id
     members, counts = [], {"in": 0, "out": 0, "pending": 0}
     my_status = schemas.SeasonMemberStatus.pending
@@ -530,6 +556,7 @@ def _roster_response(league, season_year, rows, current_user, check_in_open=True
         season_year=season_year,
         is_commissioner=is_commissioner,
         check_in_open=check_in_open,
+        check_in_closes_at=closes_at,
         my_status=my_status,
         counts=counts,
         members=members,
@@ -568,7 +595,8 @@ async def get_season_roster(league_id: int, season_year: int, db: AsyncSession =
     league = await _load_league(league_id, db)
     rows = await _season_member_rows(league_id, season_year, db)
     return _roster_response(league, season_year, rows, current_user,
-                            await check_in_is_open(db, season_year))
+                            await check_in_is_open(db, season_year),
+                            await check_in_deadline(db, season_year))
 
 
 # --------- Open the season: create pending rows for the whole roster ---------
@@ -601,7 +629,8 @@ async def open_season(league_id: int, season_year: int, db: AsyncSession = Depen
 
     rows = await _season_member_rows(league_id, season_year, db)
     return _roster_response(league, season_year, rows, current_user,
-                            await check_in_is_open(db, season_year))
+                            await check_in_is_open(db, season_year),
+                            await check_in_deadline(db, season_year))
 
 
 # --------- Member answers "in" or "out" for themselves ---------
@@ -614,7 +643,8 @@ async def set_my_season_status(league_id: int, season_year: int, payload: schema
     await _set_status(league_id, season_year, current_user.id, payload.status.value, db)
     rows = await _season_member_rows(league_id, season_year, db)
     return _roster_response(league, season_year, rows, current_user,
-                            await check_in_is_open(db, season_year))
+                            await check_in_is_open(db, season_year),
+                            await check_in_deadline(db, season_year))
 
 
 # --------- Commissioner sets a member's status ---------
@@ -629,4 +659,5 @@ async def set_member_season_status(league_id: int, season_year: int, user_id: in
     await _set_status(league_id, season_year, user_id, payload.status.value, db, set_by=current_user.id)
     rows = await _season_member_rows(league_id, season_year, db)
     return _roster_response(league, season_year, rows, current_user,
-                            await check_in_is_open(db, season_year))
+                            await check_in_is_open(db, season_year),
+                            await check_in_deadline(db, season_year))

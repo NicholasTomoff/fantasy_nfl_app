@@ -12,7 +12,7 @@ Everything that iterates players for a season (scoring, standings) should go
 through here rather than reading league_members directly.
 """
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from sqlalchemy import and_, func
 from sqlalchemy.future import select
@@ -111,19 +111,41 @@ async def mark_in_for_season(
     )
 
 
-async def check_in_is_open(db: AsyncSession, season_year: int) -> bool:
+# Week 1 is an opt-in grace period: everyone gets the full opening week to say
+# whether they are playing. Check-in closes once Week 1 is finalised, using the
+# same 12-hour-after-the-last-game rule the scoring engine uses to decide a week
+# is done (see app/utils/season.get_current_finalized_week).
+WEEK_1_GRACE_HOURS = 12
+
+
+async def check_in_deadline(db: AsyncSession, season_year: int):
     """
-    Check-in closes when the season starts -- once the first regular-season game
-    has kicked off, who is playing is settled and the controls only invite
-    mistakes. Open if the season has no games yet.
+    When check-in closes: 12 hours after the last Week 1 regular-season game.
+    Returns None if the season has no Week 1 games, meaning no deadline yet.
     """
-    first_kickoff = (await db.execute(
-        select(func.min(NFLGame.date)).filter(
+    last_week1_game = (await db.execute(
+        select(func.max(NFLGame.date)).filter(
             NFLGame.season == season_year,
             NFLGame.stage == "Regular Season",
+            NFLGame.week == "Week 1",
         )
     )).scalar_one_or_none()
 
-    if first_kickoff is None:
+    if last_week1_game is None:
+        return None
+    return last_week1_game + timedelta(hours=WEEK_1_GRACE_HOURS)
+
+
+async def check_in_is_open(db: AsyncSession, season_year: int) -> bool:
+    """
+    Open through the whole of Week 1, not just up to the first kickoff.
+
+    Closing at the opening game left anyone who had not clicked by Thursday
+    night with no way to opt in, which is the opposite of the intent: a member
+    who has not answered is still scored, so the window exists to let people
+    opt OUT, and they deserve the full week to do it.
+    """
+    deadline = await check_in_deadline(db, season_year)
+    if deadline is None:
         return True
-    return datetime.utcnow() < first_kickoff
+    return datetime.utcnow() < deadline
